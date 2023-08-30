@@ -6,7 +6,7 @@ const Content = () => {
     <section className='my-5 text-center'>
       <div className='mb-8'>
         <p className='text-lg text-neutral-800'>
-          I'm busy building something cool for you. And I can't wait for you to see it.
+          I&apos;m busy building something cool for you. And I can&apos;t wait for you to see it.
         </p>
         <p className='text-lg text-neutral-800'>Please check back soon.</p>
       </div>
