@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/713593e5-c04c-4bcd-8374-0649cd252594/deploy-status)](https://app.netlify.com/sites/almertampus/deploys)
+
+Check this out on https://almertampus.netlify.app
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
