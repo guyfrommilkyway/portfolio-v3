@@ -1,4 +1,11 @@
-const Main = (props) => {
+// import packages below
+import { ReactNode } from 'react';
+
+interface Props {
+  children: string | JSX.Element | JSX.Element[] | ReactNode;
+}
+
+const Main = (props: Props) => {
   // destructure props
   const { children } = props;
 
