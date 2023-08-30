@@ -5,10 +5,10 @@ const Content = () => {
   return (
     <section className='my-5 text-center'>
       <div className='mb-8'>
+        <h2 className='mb-2 text-4xl font-bold'>We&apos;ll be back.</h2>
         <p className='text-lg text-neutral-800'>
-          I&apos;m busy building something cool for you. And I can&apos;t wait for you to see it.
+          The site is undergoing maintenance and will be back soon.
         </p>
-        <p className='text-lg text-neutral-800'>Please check back soon.</p>
       </div>
       <div className='flex justify-center gap-5'>
         <a href='https://ph.linkedin.com/in/almerflorestampus' target='_blank' rel='no-referrer'>

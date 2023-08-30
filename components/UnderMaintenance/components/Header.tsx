@@ -1,7 +1,10 @@
+// import assets below
+import Logo from '@/assets/logo-black.svg';
+
 const Header = () => {
   return (
-    <header className='text-center'>
-      <h3 className='text-3xl text-neutral-800'>Hi, I&apos;m Almer!</h3>
+    <header className='mb-5 text-center'>
+      <Logo />
     </header>
   )
 }
