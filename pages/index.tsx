@@ -8,7 +8,7 @@ import UnderMaintenace from '@/components/UnderMaintenance'
 export default function Home() {
   return (
     <Fragment>
-      <Head title='Under Maintenace' />
+      <Head title='Under Maintenance' />
       <UnderMaintenace />
     </Fragment>
   )
