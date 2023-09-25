@@ -3,7 +3,7 @@ import React from 'react';
 
 // utils below
 import useScroll from '@/hooks/useScroll';
-import NavItem from './components/button';
+import NavItem from './components/NavItem';
 
 // data below
 import { nav } from '@/data/nav';
