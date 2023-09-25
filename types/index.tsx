@@ -16,7 +16,7 @@ export interface CardProps {
 	company: string;
 	link: string;
 	website: string;
-	description: string;
+	description: string[];
 	technologies: string[];
 }
 
@@ -38,7 +38,7 @@ export interface ExperienceItem {
 	company: string;
 	link: string;
 	website: string;
-	description: string;
+	description: string[];
 	technologies: string[];
 }
 
