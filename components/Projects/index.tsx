@@ -4,17 +4,18 @@ import React from 'react';
 // components below
 import Card from './components/Card';
 
-// data below
-import { work } from '@/data/work';
-import { personal } from '@/data/personal';
+// types below
+import { ProjectsProps } from '@/types';
 
-const Projects: React.FC = () => {
+const Projects: React.FC<ProjectsProps> = (props) => {
+	const { data, data2 } = props;
+
 	return (
 		<div className='project relative w-full mb-24 py-8'>
 			<div className='mb-20'>
 				<h6 className='mb-8 uppercase text-sm font-semibold'>WORK</h6>
 				<div className='flex flex-col gap-8'>
-					{work.map((item) => {
+					{data.map((item) => {
 						return <Card key={item.name} {...item} />;
 					})}
 				</div>
@@ -22,7 +23,7 @@ const Projects: React.FC = () => {
 			<div className='mb-20'>
 				<h6 className='mb-8 uppercase text-sm font-semibold'>Personal</h6>
 				<div className='flex flex-col gap-8'>
-					{personal.map((item) => {
+					{data2.map((item) => {
 						return <Card key={item.name} {...item} />;
 					})}
 				</div>
