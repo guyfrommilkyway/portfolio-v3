@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Tektur&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
+@font-face {
+	font-family: 'San Francisco';
+	src: url('../assets/fonts/SF-Pro-Display-Regular.otf');
+}
+
+* {
+	font-family: 'San Francisco', 'Open Sans', sans-serif;
+	font-display: swap;
 }
