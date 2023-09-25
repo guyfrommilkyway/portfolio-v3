@@ -1,25 +1,29 @@
 // import packages below
-import React, { ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
 // import components below
-import Header from './components/Header';
+import Container from './components/Container';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
 import Content from './components/Content';
-import Footer from './components/Footer';
+import Footer from '@/components/Footer';
 
-interface Props {
-  children: ReactNode;
-}
+// types below
+import { ChildrenProps } from '@/types';
 
-const Layout: React.FC<Props> = (props) => {
-  const { children } = props;
+const Layout: React.FC<ChildrenProps> = (props) => {
+	const { children } = props;
 
-  return (
-    <div>
-      <Header />
-      <Content>{children}</Content>
-      <Footer />
-    </div>
-  );
+	return (
+		<Fragment>
+			<Container>
+				<Header />
+				<Hero />
+				<Content>{children}</Content>
+			</Container>
+			<Footer />
+		</Fragment>
+	);
 };
 
 export default Layout;
