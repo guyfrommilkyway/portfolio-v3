@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Tektur&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #242f40;
-  font-family: 'Inter', sans-serif;
-  background-color: #e5e5e5;
+@font-face {
+	font-family: 'San Francisco';
+	src: url('../assets/fonts/SF-Pro-Display-Regular.otf');
+}
+
+* {
+	font-family: 'San Francisco', 'Open Sans', sans-serif;
 }
