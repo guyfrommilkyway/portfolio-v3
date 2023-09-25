@@ -18,7 +18,7 @@ const Card: React.FC<WorkCardProps> = (props) => {
 		<div className='flex flex-col lg:flex-row justify-start items-start gap-8 p-4 rounded-sm transition-transform ease-in-out delay-150 hover:scale-105 hover:bg-neutral-100'>
 			<div className='relative flex justify-center items-center w-[300px] min-h-[150px]  opacity-70 hover:opacity-100 transition-opacity ease-in delay-100 rounded-sm overflow-hidden'>
 				{image ? (
-					<Image src={image} width={1400} height={814} objectFit='cover' alt={name.toLowerCase()} />
+					<Image src={image} width={1400} height={814} alt={name.toLowerCase()} />
 				) : (
 					<Image src='/images/react.png' width={50} height={50} alt={name.toLowerCase()} />
 				)}

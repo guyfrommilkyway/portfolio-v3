@@ -24,7 +24,6 @@ const Photo = () => {
 						className='transition-transform ease-in-out delay-100 hover:scale-105'
 						src='/images/me.jpg'
 						fill={true}
-						objectFit='cover'
 						alt='almer-tampus.jpg'
 					/>
 					<div className='absolute left-10 top-10 z-[-1] w-full h-full bg-neutral-100 transition-transform ease-in-out delay-100 hover:scale-105'></div>
