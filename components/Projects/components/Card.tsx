@@ -16,7 +16,7 @@ const Card: React.FC<WorkCardProps> = (props) => {
 
 	return (
 		<div className='flex flex-col lg:flex-row justify-start items-start gap-8 p-4 rounded-sm transition-transform ease-in-out delay-150 hover:scale-105 hover:bg-neutral-100'>
-			<div className='relative flex justify-center items-center w-[300px] min-h-[150px]  opacity-70 hover:opacity-100 transition-opacity ease-in delay-100 rounded-sm overflow-hidden'>
+			<div className='relative flex justify-center items-center w-[240px] min-h-[150px]  opacity-70 hover:opacity-100 transition-opacity ease-in delay-100 rounded-sm overflow-hidden'>
 				{image ? (
 					<Image src={image} width={1400} height={814} alt={name.toLowerCase()} />
 				) : (

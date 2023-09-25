@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectsProps> = (props) => {
 	return (
 		<div className='project relative w-full mb-24 py-8'>
 			<div className='mb-20'>
-				<h6 className='mb-8 uppercase text-sm font-semibold'>WORK</h6>
+				<h5 className='mb-8 text-xl font-semibold'>Work</h5>
 				<div className='flex flex-col gap-8'>
 					{data.map((item) => {
 						return <Card key={item.name} {...item} />;
@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectsProps> = (props) => {
 				</div>
 			</div>
 			<div className='mb-20'>
-				<h6 className='mb-8 uppercase text-sm font-semibold'>Personal</h6>
+				<h5 className='mb-8 text-xl font-semibold'>Personal</h5>
 				<div className='flex flex-col gap-8'>
 					{data2.map((item) => {
 						return <Card key={item.name} {...item} />;

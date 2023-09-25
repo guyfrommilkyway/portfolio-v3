@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = (props) => {
 	return (
 		<div className='flex flex-col lg:flex-row gap-4 w-full p-4 tracking-wide leading-relaxed rounded-sm transition-transform ease-in-out delay-150 hover:scale-105 hover:bg-neutral-100'>
 			<div className='w-full lg:w-[20%]'>
-				<span className='w-fit text-neutral-500 text-sm uppercase leading-none tracking-tighter '>
+				<span className='w-fit text-neutral-600 text-sm uppercase leading-none tracking-tighter '>
 					{duration}
 				</span>
 			</div>
