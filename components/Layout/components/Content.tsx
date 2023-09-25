@@ -1,14 +1,17 @@
-// import packages below
-import React, { ReactNode } from 'react';
+// packages below
+import React from 'react';
 
-interface Props {
-  children: ReactNode;
-}
+// types below
+import { ChildrenProps } from '@/types';
 
-const Content: React.FC<Props> = (props) => {
-  const { children } = props;
+const Content: React.FC<ChildrenProps> = (props) => {
+	const { children } = props;
 
-  return <div>{children}</div>;
+	return (
+		<div className='relative w-full lg:max-w-[70%] mb-[180px] p-4 md:p-16 lg:px-20 lg:py-10'>
+			{children}
+		</div>
+	);
 };
 
 export default Content;
