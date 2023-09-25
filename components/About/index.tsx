@@ -9,7 +9,10 @@ const About: React.FC<AboutProps> = (props) => {
 
 	return (
 		<div className='about relative w-full mb-24 py-8'>
-			<h1 className='mb-4 font-bold text-4xl leading-normal'>{data.headline}</h1>
+			<h6 className='mb-4 text-sm underline tracking-tighter uppercase text-neutral-700 font-semibold'>
+				Short Biography
+			</h6>
+			<h1 className='mb-4 font-bold text-4xl tracking-wide leading-normal'>{data.headline}</h1>
 			{data.paragraphs.map((item, index) => {
 				return (
 					<p key={index} className='mb-4 text-lg leading-relaxed text-neutral-700'>
