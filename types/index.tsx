@@ -32,3 +32,30 @@ export interface WorkCardProps {
 	technologies: string[];
 	image: string;
 }
+export interface ExperienceItem {
+	duration: string;
+	title: string;
+	company: string;
+	link: string;
+	website: string;
+	description: string;
+	technologies: string[];
+}
+
+export interface ExperienceProps {
+	data: ExperienceItem[];
+}
+
+export interface ProjectItem {
+	name: string;
+	link: string;
+	website: string;
+	description: string;
+	technologies: string[];
+	image: string;
+}
+
+export interface ProjectsProps {
+	data: ProjectItem[];
+	data2: ProjectItem[];
+}
