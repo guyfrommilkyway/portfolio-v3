@@ -27,7 +27,15 @@ const Card: React.FC<CardProps> = (props) => {
 					{website}
 					<ArrowUpSVG width={14} height={14} />
 				</a>
-				<p className='mb-4 text-neutral-700 leading-relaxed'>{description}</p>
+				<ul className='mb-4 list-outside list-disc'>
+					{description.map((item, index) => {
+						return (
+							<li key={index} className='text-neutral-700 tracking-wide leading-relaxed'>
+								{item}
+							</li>
+						);
+					})}
+				</ul>
 				<div className='flex flex-wrap gap-2'>
 					{technologies.map((item) => {
 						return <Pill key={item} tech={item} />;
