@@ -59,3 +59,13 @@ export interface ProjectsProps {
 	data: ProjectItem[];
 	data2: ProjectItem[];
 }
+
+export interface Hero {
+	headline: string;
+	paragraphs: string[];
+	technologies: string[];
+}
+
+export interface AboutProps {
+	data: Hero;
+}
