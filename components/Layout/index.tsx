@@ -1,7 +1,8 @@
-// import packages below
+// packages below
 import React, { Fragment, ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
-// import components below
+// components below
 import Container from './components/Container';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -22,6 +23,7 @@ const Layout: React.FC<ChildrenProps> = (props) => {
 				<Content>{children}</Content>
 			</Container>
 			<Footer />
+			<Analytics />
 		</Fragment>
 	);
 };
