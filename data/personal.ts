@@ -1,4 +1,7 @@
-export const personal = [
+// types below
+import { ProjectItem } from '@/types';
+
+export const personal: ProjectItem[] = [
 	{
 		name: 'React Notes',
 		link: 'https://react-notes.almertampus.xyz/',

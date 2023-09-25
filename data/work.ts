@@ -1,4 +1,7 @@
-export const work = [
+// types below
+import { ProjectItem } from '@/types';
+
+export const work: ProjectItem[] = [
 	{
 		name: 'Operator Portal',
 		link: 'https://operator.seaplanegroup.com',
