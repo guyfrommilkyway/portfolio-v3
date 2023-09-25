@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = (props) => {
 				</span>
 			</div>
 			<div className='w-full lg:w-[80%]'>
-				<h6 className='mb-2 font-semibold'>{title}</h6>
+				<h5 className='mb-2 text-lg font-semibold'>{title}</h5>
 				<h6 className='mb-2text-neutral-700'>{company}</h6>
 				<a className='flex gap-2 w-fit mb-2 underline text-neutral-700' href={link} target='_blank'>
 					{website}

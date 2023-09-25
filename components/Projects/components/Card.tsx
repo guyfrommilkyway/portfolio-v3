@@ -24,7 +24,7 @@ const Card: React.FC<WorkCardProps> = (props) => {
 				)}
 			</div>
 			<div className='w-full'>
-				<h6 className='mb-2 font-semibold'>{name}</h6>
+				<h5 className='mb-2 text-lg font-semibold'>{name}</h5>
 				<a
 					className='flex gap-2 w-fit mb-2 underline text-neutral-700 hover:text-black'
 					href={link}
