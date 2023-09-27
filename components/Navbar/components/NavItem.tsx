@@ -8,10 +8,7 @@ const NavItem: React.FC<NavItemProps> = (props) => {
 	const { name, onScroll } = props;
 
 	return (
-		<button
-			className='text-sm lg:text-base text-neutral-700 hover:text-black hover:underline'
-			onClick={onScroll}
-		>
+		<button className='text-sm lg:text-base text-white hover:underline' onClick={onScroll}>
 			{name}
 		</button>
 	);

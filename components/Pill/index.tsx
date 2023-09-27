@@ -8,7 +8,7 @@ const Pill: React.FC<PillProps> = (props) => {
 	const { tech } = props;
 
 	return (
-		<span className='mr-2 text-neutral-700 hover:font-semibold hover:underline hover:text-black transition ease-in-out delay-110 cursor-pointer'>
+		<span className='mr-2 p-2 text-sm text-white bg-neutral-500 rounded-sm hover:underline transition ease-in-out delay-100 cursor-pointer'>
 			{tech}
 		</span>
 	);

@@ -4,7 +4,7 @@ import React from 'react';
 const Logo: React.FC = () => {
 	return (
 		<div className=''>
-			<span className='font-bold'>AFT</span>
+			<span className='text-white font-bold'>AFT</span>
 		</div>
 	);
 };
