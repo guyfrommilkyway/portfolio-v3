@@ -69,3 +69,8 @@ export interface Hero {
 export interface AboutProps {
 	data: Hero;
 }
+
+export interface LoadingScreenProps {
+	isLoading: boolean;
+	isRemoving: boolean;
+}
