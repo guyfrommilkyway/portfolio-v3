@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 	const { scrollHandler } = useScroll();
 
 	return (
-		<nav className='flex gap-4 lg:gap-8 justify-center lg:justify-start bg-neutral-700'>
+		<nav className='flex gap-4 justify-center lg:justify-start'>
 			{nav.map((item) => {
 				return (
 					<NavItem key={item.class} name={item.name} onScroll={() => scrollHandler(item.class)} />

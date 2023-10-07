@@ -1,12 +1,11 @@
-// packages belo
+// packages
 import React from 'react';
 
+// assets
+import LogoSVG from '@/assets/svg/logo.svg';
+
 const Logo: React.FC = () => {
-	return (
-		<div className=''>
-			<span className='text-white font-bold'>AFT</span>
-		</div>
-	);
+	return <LogoSVG width='42px' />;
 };
 
 export default Logo;
