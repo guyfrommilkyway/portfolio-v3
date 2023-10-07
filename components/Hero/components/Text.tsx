@@ -2,58 +2,35 @@
 import React, { Fragment } from 'react';
 
 // assets below
-import LinkedInSVG from '@/assets/svg/mdi_linkedin.svg';
-import GithubSVG from '@/assets/svg/mdi_github.svg';
-import TwitterSVG from '@/assets/svg/mdi_twitter.svg';
-import InstagramSVG from '@/assets/svg/mdi_instagram.svg';
+import Link from './Social';
 
-const Text: React.FC = () => {
+// types
+type Social = {
+	name: string;
+	link: string;
+};
+interface Props {
+	name: string;
+	title: string;
+	description: string;
+	social: Social[];
+}
+
+const Text: React.FC<Props> = (props) => {
+	const { name, title, description, social } = props;
+
 	return (
 		<Fragment>
-			<h1 className='mb-2 text-white font-bold text-4xl leading-tight tracking-wide'>
-				Almer Tampus
-			</h1>
-			<p className='mb-4 text-xl text-white'>Agile Web Developer</p>
-			<p className='w-full max-w-[540px] mb-8 text-lg text-neutral-100 leading-relaxed'>
-				Deeply committed to infusing innovation and user-centricity into every project I take on.
-				Continuously strive to craft captivating and seamless online experiences that leave a
-				lasting impact on users.
-			</p>
+			<h1 className='mb-2 text-white font-bold text-4xl leading-tighter tracking-wider'>{name}</h1>
+			<h6 className='mb-4 text-lg text-neutral-300'>{title}</h6>
+			{/* <p className='w-full max-w-[540px] mb-8 text-lg text-neutral-100 leading-relaxed'>
+				{description}
+			</p> */}
 			<div className='flex gap-4'>
-				<a
-					className='transition ease-in-out delay-100 hover:scale-125'
-					href='https://linkedin.com/in/almerflorestampus'
-					target='_blank'
-				>
-					<LinkedInSVG width='32px' height='32px' fill='#ffffff' />
-				</a>
-				<a
-					className='transition ease-in-out delay-100 hover:scale-125'
-					href='https://github.com/guyfrommilkyway'
-					target='_blank'
-				>
-					<GithubSVG width='32px' height='32px' fill='#ffffff' />
-				</a>
-				<a
-					className='transition ease-in-out delay-100 hover:scale-125'
-					href='https://twitter.com/guyfrommilkyway'
-					target='_blank'
-				>
-					<TwitterSVG width='32px' height='32px' fill='#ffffff' />
-				</a>
-				<a
-					className='transition ease-in-out delay-100 hover:scale-125'
-					href='https://instagram.com/aftampus'
-					target='_blank'
-				>
-					<InstagramSVG width='32px' height='32px' fill='#ffffff' />
-				</a>
+				{social.map((item, index) => {
+					return <Link key={index} name={item.name} link={item.link} />;
+				})}
 			</div>
-			{/* <div className='flex gap-8 lg:gap-16 items-center'>
-				<button className='w-fit px-6 py-3 text-white uppercase hover:underline bg-black rounded-sm transition-transform ease-in-out delay-100 hover:scale-105'>
-					Hire Me
-				</button>
-			</div> */}
 		</Fragment>
 	);
 };

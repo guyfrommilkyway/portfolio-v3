@@ -14,9 +14,9 @@ const Card: React.FC<CardProps> = (props) => {
 	const { duration, title, company, link, website, description, technologies } = props;
 
 	return (
-		<div className='flex flex-col lg:flex-row gap-4 w-full p-4 tracking-wide leading-relaxed rounded-sm transition-transform ease-in-out delay-100 hover:scale-105 hover:bg-neutral-700'>
+		<div className='flex flex-col lg:flex-row gap-4 w-full tracking-wide leading-relaxed'>
 			<div className='w-full lg:w-[20%]'>
-				<span className='w-fit text-white text-sm uppercase leading-none tracking-tighter '>
+				<span className='w-fit text-neutral-300 text-sm uppercase leading-none tracking-tighter'>
 					{duration}
 				</span>
 			</div>
@@ -31,10 +31,10 @@ const Card: React.FC<CardProps> = (props) => {
 					{website}
 					<ArrowUpSVG width={14} height={14} />
 				</a>
-				<ul className='mb-4 list-outside list-disc'>
+				<ul className='mb-4 list-inside list-disc'>
 					{description.map((item, index) => {
 						return (
-							<li key={index} className='text-white tracking-wide leading-relaxed'>
+							<li key={index} className='text-neutral-300 tracking-wide leading-relaxed'>
 								{item}
 							</li>
 						);
