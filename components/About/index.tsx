@@ -8,7 +8,7 @@ const About: React.FC<AboutProps> = (props) => {
 	const { data } = props;
 
 	return (
-		<div className='about relative w-full px-4 py-16 md:p-16 lg:px-20 border-b border-neutral-900'>
+		<section className='about relative w-full px-4 py-16 md:p-16 lg:px-20 border-b border-neutral-900'>
 			<h6 className='mb-4 text-sm underline tracking-wide uppercase text-neutral-300 font-semibold'>
 				Short Biography
 			</h6>
@@ -22,7 +22,7 @@ const About: React.FC<AboutProps> = (props) => {
 					</p>
 				);
 			})}
-		</div>
+		</section>
 	);
 };
 

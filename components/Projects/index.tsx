@@ -11,7 +11,7 @@ const Projects: React.FC<ProjectsProps> = (props) => {
 	const { data, data2 } = props;
 
 	return (
-		<div className='project relative w-full px-4 py-16 md:p-16 lg:px-20 border-b border-neutral-900'>
+		<section className='project relative w-full px-4 py-16 md:p-16 lg:px-20 border-b border-neutral-900'>
 			<div className='mb-20'>
 				<h3 className='mb-8 text-white text-2xl font-semibold'>Work</h3>
 				<div className='flex flex-col gap-8'>
@@ -28,7 +28,7 @@ const Projects: React.FC<ProjectsProps> = (props) => {
 					})}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
