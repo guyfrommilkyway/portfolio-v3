@@ -19,7 +19,7 @@ const Layout: React.FC<ChildrenProps> = (props) => {
 
 	// will run on initial page load only
 	useEffect(() => {
-		const loadingTimeout = setTimeout(() => setIsLoading(false), 300);
+		const loadingTimeout = setTimeout(() => setIsLoading(false), 200);
 
 		return () => clearTimeout(loadingTimeout);
 	}, []);
