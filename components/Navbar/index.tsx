@@ -14,9 +14,7 @@ const Navbar: React.FC = () => {
 	return (
 		<nav className='flex gap-4 justify-center lg:justify-start'>
 			{nav.map((item) => {
-				return (
-					<NavItem key={item.class} name={item.name} onScroll={() => scrollHandler(item.class)} />
-				);
+				return <NavItem key={item.id} name={item.name} onScroll={() => scrollHandler(item.id)} />;
 			})}
 		</nav>
 	);
