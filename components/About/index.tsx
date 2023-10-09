@@ -20,7 +20,7 @@ const About: React.FC<AboutProps> = (props) => {
 			</h1>
 			{data.paragraphs.map((item, index) => {
 				return (
-					<p key={index} className='mb-4 text-lg leading-relaxed text-neutral-300'>
+					<p key={index} className='mb-4 leading-relaxed text-neutral-300'>
 						{item}
 					</p>
 				);
