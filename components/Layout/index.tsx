@@ -11,38 +11,30 @@ import Footer from '@/components/Footer';
 
 // types
 import { ChildrenProps } from '@/types';
-import LoadingScreen from '../LoadingScreen';
 
 const Layout: React.FC<ChildrenProps> = (props) => {
 	const { children } = props;
 
-	// state
-	const [isLoading, setIsLoading] = useState(true);
-	const [isRemoving, setIsRemoving] = useState(false);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
-	// will only run on initial load
+	// will run on initial page load only
 	useEffect(() => {
-		// timers
-		const loadingTimeout = setTimeout(() => setIsLoading(false), 400);
-		const removingTimeout = setTimeout(() => setIsRemoving(true), 600);
+		const loadingTimeout = setTimeout(() => setIsLoading(false), 300);
 
-		// clean up function
-		return () => {
-			clearTimeout(loadingTimeout);
-			clearTimeout(removingTimeout);
-		};
+		return () => clearTimeout(loadingTimeout);
 	}, []);
+
+	const loading = isLoading ? 'opacity-0' : 'opacity-100';
 
 	return (
 		<Fragment>
-			<Container>
+			<Container loading={loading}>
 				<Header />
 				<Hero />
 				<Content>{children}</Content>
 			</Container>
 			<Footer />
 			<Analytics />
-			<LoadingScreen isLoading={isLoading} isRemoving={isRemoving} />
 		</Fragment>
 	);
 };

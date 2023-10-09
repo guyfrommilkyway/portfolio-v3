@@ -16,19 +16,12 @@ const Card: React.FC<WorkCardProps> = (props) => {
 
 	return (
 		<div className='flex flex-col lg:flex-row justify-start items-start gap-8'>
-			{/* <div className='relative flex justify-center items-center w-[240px] min-h-[150px] opacity-80 transition-opacity ease-in delay-100 rounded-sm overflow-hidden'>
-				{image ? (
-					<Image src={image} width={1400} height={814} alt={name.toLowerCase()} />
-				) : (
-					<Image src='/images/react.png' width={50} height={50} alt={name.toLowerCase()} />
-				)}
-			</div> */}
 			<div className='w-full'>
 				<h4 className='mb-2 text-white text-xl font-semibold'>{name}</h4>
 				<a
 					className='flex gap-2 w-fit mb-2 text-neutral-300 underline hover:text-white'
 					href={link}
-					target='_blank'
+					target={link === '#' ? '_self' : '_blank'}
 				>
 					{website}
 					<ArrowUpSVG width={14} height={14} />

@@ -29,6 +29,7 @@ const RecentNews: React.FC = () => {
 					</a>
 					: Deployed initial version with Netlify
 				</li>
+				<li>Finished watching Ted Lasso series</li>
 				<li>
 					Completed{' '}
 					<a
@@ -92,6 +93,8 @@ const RecentNews: React.FC = () => {
 						React - The Complete Guide
 					</a>
 				</li>
+				<li>Finished playing Tom Clancy&apos;s Ghost Recon: Wildlands</li>
+				<li>Finished playing Shadow Tactics: Blades of the Shogun</li>
 			</ul>
 		</ContentBox>
 	);
