@@ -13,7 +13,7 @@ const Container: React.FC<Props> = (props) => {
 
 	return (
 		<main
-			className={`relative flex flex-col lg:flex-row gap-0 w-full max-w-[1920px] h-full mx-auto border-x border-neutral-900 transition-opacity ease-in-out delay-200 ${loading}`}
+			className={`relative flex flex-col lg:flex-row gap-0 w-full max-w-[1920px] h-full mx-auto border-x border-neutral-900 transition-opacity ease-in-out delay-150 ${loading}`}
 		>
 			{children}
 		</main>
