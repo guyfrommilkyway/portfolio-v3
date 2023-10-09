@@ -25,7 +25,11 @@ const Card: React.FC<WorkCardProps> = (props) => {
 			</div> */}
 			<div className='w-full'>
 				<h4 className='mb-2 text-white text-xl font-semibold'>{name}</h4>
-				<a className='flex gap-2 w-fit mb-2 text-white hover:underline' href={link} target='_blank'>
+				<a
+					className='flex gap-2 w-fit mb-2 text-neutral-300 underline hover:text-white'
+					href={link}
+					target='_blank'
+				>
 					{website}
 					<ArrowUpSVG width={14} height={14} />
 				</a>

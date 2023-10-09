@@ -14,37 +14,26 @@ const Card: React.FC<CardProps> = (props) => {
 	const { duration, title, company, link, website, description, technologies } = props;
 
 	return (
-		<div className='flex flex-col lg:flex-row gap-4 w-full tracking-wide leading-relaxed'>
-			<div className='w-full lg:w-[20%]'>
-				<span className='w-fit text-neutral-300 text-sm uppercase leading-none tracking-tighter'>
-					{duration}
-				</span>
-			</div>
-			<div className='w-full lg:w-[80%]'>
-				<h4 className='mb-2 text-white text-xl font-semibold'>{title}</h4>
+		<div className='flex flex-col gap-4 w-full tracking-wide leading-relaxed'>
+			<span className='w-fit text-neutral-300 text-sm uppercase leading-none tracking-tighter'>
+				{duration}
+			</span>
+			<div className='flex flex-col gap-1'>
+				<h4 className='text-white text-xl font-semibold'>{title}</h4>
 				<h5 className='text-lg text-white'>{company}</h5>
 				<a
-					className='flex gap-2 w-fit mb-2 text-neutral-100 hover:underline'
+					className='flex gap-2 w-fit text-neutral-300 underline hover:text-white'
 					href={link}
 					target='_blank'
 				>
 					{website}
 					<ArrowUpSVG width={14} height={14} />
 				</a>
-				<ul className='mb-4 list-inside list-disc'>
-					{description.map((item, index) => {
-						return (
-							<li key={index} className='text-neutral-300 tracking-wide leading-relaxed'>
-								{item}
-							</li>
-						);
-					})}
-				</ul>
-				<div className='flex flex-wrap gap-2'>
-					{technologies.map((item) => {
-						return <Pill key={item} tech={item} />;
-					})}
-				</div>
+			</div>
+			<div className='flex flex-wrap gap-2'>
+				{technologies.map((item) => {
+					return <Pill key={item} tech={item} />;
+				})}
 			</div>
 		</div>
 	);
