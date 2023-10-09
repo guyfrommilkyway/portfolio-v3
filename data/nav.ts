@@ -1,5 +1,5 @@
 export const nav = [
-	{ name: 'About', class: '.about' },
-	{ name: 'Experience', class: '.experience' },
-	{ name: 'Project', class: '.project' },
+	{ name: 'About', id: '#about' },
+	{ name: 'Experience', id: '#experience' },
+	{ name: 'Project', id: '#project' },
 ];
