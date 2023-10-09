@@ -1,7 +1,7 @@
-// packages below
+// packages
 import React from 'react';
 
-// components below
+// components
 import Navbar from '@/components/Navbar';
 import Logo from '@/components/Logo';
 

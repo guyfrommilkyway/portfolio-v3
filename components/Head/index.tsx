@@ -1,4 +1,4 @@
-// import packages below
+// packages
 import { default as NextHead } from 'next/head';
 
 interface Props {

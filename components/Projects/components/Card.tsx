@@ -1,14 +1,14 @@
-// packages below
+// packages
 import React from 'react';
 import Image from 'next/image';
 
-// comopnents below
+// comopnents
 import Pill from '@/components/Pill';
 
-// types below
+// types
 import { WorkCardProps } from '@/types';
 
-// assets below
+// assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
 const Card: React.FC<WorkCardProps> = (props) => {

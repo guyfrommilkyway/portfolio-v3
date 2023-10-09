@@ -1,7 +1,7 @@
-// packages below
+// packages
 import React from 'react';
 
-// types below
+// types
 import { PillProps } from '@/types';
 
 const Pill: React.FC<PillProps> = (props) => {

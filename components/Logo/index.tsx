@@ -9,7 +9,7 @@ const Logo: React.FC = () => {
 	return (
 		<Link href='/' className='flex items-center gap-2'>
 			<LogoSVG width='42px' />
-			<span className='text-white hover:underline'>AFT Studio</span>
+			<span className='hidden sm:inline text-sm text-white hover:underline'>AFT Studio</span>
 		</Link>
 	);
 };

@@ -1,15 +1,15 @@
-// packages below
+// packages
 import React, { Fragment, useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 
-// components below
+// components
 import Container from './components/Container';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Content from './components/Content';
 import Footer from '@/components/Footer';
 
-// types below
+// types
 import { ChildrenProps } from '@/types';
 import LoadingScreen from '../LoadingScreen';
 

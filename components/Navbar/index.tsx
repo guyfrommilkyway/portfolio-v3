@@ -1,11 +1,11 @@
-// packages below
+// packages
 import React from 'react';
 
-// utils below
+// utils
 import useScroll from '@/hooks/useScroll';
 import NavItem from './components/NavItem';
 
-// data below
+// data
 import { nav } from '@/data/nav';
 
 const Navbar: React.FC = () => {
