@@ -15,20 +15,9 @@ import { ChildrenProps } from '@/types';
 const Layout: React.FC<ChildrenProps> = (props) => {
 	const { children } = props;
 
-	const [isLoading, setIsLoading] = useState<boolean>(true);
-
-	// will run on initial page load only
-	useEffect(() => {
-		const loadingTimeout = setTimeout(() => setIsLoading(false), 200);
-
-		return () => clearTimeout(loadingTimeout);
-	}, []);
-
-	const loading = isLoading ? 'opacity-0' : 'opacity-100';
-
 	return (
 		<Fragment>
-			<Container loading={loading}>
+			<Container>
 				<Header />
 				<Hero />
 				<Content>{children}</Content>

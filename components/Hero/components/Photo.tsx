@@ -10,7 +10,7 @@ const Photo: React.FC = () => {
 					className='aspect-auto'
 					priority={true}
 					fill={true}
-					sizes='100%'
+					sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
 					src='/images/me.jpg'
 					alt='almer-tampus.jpg'
 				/>
@@ -20,7 +20,7 @@ const Photo: React.FC = () => {
 					className='aspect-auto'
 					priority={true}
 					fill={true}
-					sizes='100%'
+					sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
 					src='/images/me_2.jpg'
 					alt='almer-tampus.jpg'
 				/>

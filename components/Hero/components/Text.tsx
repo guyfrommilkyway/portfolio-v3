@@ -22,10 +22,7 @@ const Text: React.FC<Props> = (props) => {
 	return (
 		<Fragment>
 			<h1 className='mb-2 text-white font-bold text-4xl leading-tighter tracking-wider'>{name}</h1>
-			<h6 className='mb-4 text-lg text-neutral-300'>{title}</h6>
-			{/* <p className='w-full max-w-[540px] mb-8 text-lg text-neutral-100 leading-relaxed'>
-				{description}
-			</p> */}
+			<h2 className='mb-4 text-xl text-neutral-300'>{title}</h2>
 			<div className='flex gap-4'>
 				{social.map((item, index) => {
 					return <Link key={index} name={item.name} link={item.link} />;
