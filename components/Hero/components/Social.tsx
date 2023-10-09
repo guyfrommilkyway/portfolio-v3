@@ -13,7 +13,7 @@ const Link: React.FC<Props> = (props) => {
 
 	return (
 		<a
-			className='text-neutral-300 transition ease-in-out delay-100 hover:text-white hover:underline'
+			className='text-neutral-300 underline transition ease-in-out delay-100 hover:text-white'
 			href={link}
 			target='_blank'
 			referrerPolicy='no-referrer'
