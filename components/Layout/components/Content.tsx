@@ -1,7 +1,7 @@
-// packages below
+// packages
 import React from 'react';
 
-// types below
+// types
 import { ChildrenProps } from '@/types';
 
 const Content: React.FC<ChildrenProps> = (props) => {

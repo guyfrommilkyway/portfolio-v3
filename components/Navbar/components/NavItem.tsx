@@ -1,4 +1,4 @@
-// packages below
+// packages
 import React from 'react';
 
 // types

@@ -1,10 +1,10 @@
-// packages below
+// packages
 import React from 'react';
 
-// assets below
+// assets
 import SpinnerSVG from '@/assets/svg/spinner.svg';
 
-// types below
+// types
 import { LoadingScreenProps } from '@/types';
 
 const LoadingScreen: React.FC<LoadingScreenProps> = (props) => {

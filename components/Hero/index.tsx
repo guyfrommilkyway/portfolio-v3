@@ -1,7 +1,7 @@
-// packages belo
+// packages
 import React from 'react';
 
-// components below
+// components
 import Photo from './components/Photo';
 import Text from './components/Text';
 

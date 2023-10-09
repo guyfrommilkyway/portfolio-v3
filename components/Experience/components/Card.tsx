@@ -1,13 +1,13 @@
-// packages below
+// packages
 import React from 'react';
 
 // components below
 import Pill from '@/components/Pill';
 
-// types below
+// types
 import { CardProps } from '@/types';
 
-// assets below
+// assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
 const Card: React.FC<CardProps> = (props) => {

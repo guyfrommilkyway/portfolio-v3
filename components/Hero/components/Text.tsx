@@ -1,7 +1,7 @@
-// packages below
+// packages
 import React, { Fragment } from 'react';
 
-// assets below
+// assets
 import Link from './Social';
 
 // types
