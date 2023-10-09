@@ -13,12 +13,25 @@ const WhatsNew: React.FC = () => {
 				<li>Studying Python, SQL, Django, API design and database design</li>
 				<li>Studying React Design Patterns, Best Practices and Clean Code</li>
 				<li>
-					<span className='underline'>portfolio-v3</span>: Integrating Firebase Realtime Database
-					and other third-party APIs (GitHub API, Spotify API, etc.)
+					<a
+						className='underline transition ease-in-out delay-100 hover:text-white'
+						href='https://github.com/guyfrommilkyway/portfolio-v3'
+						target='_blank'
+					>
+						portfolio-v3
+					</a>
+					: Integrating Firebase Realtime Database and other third-party APIs (GitHub API, Spotify
+					API, etc.)
 				</li>
 				<li>
-					<span className='underline'>react-notes</span>: Integrating Auth0, developing more
-					features, functionalities, and design improvements
+					<a
+						className='underline transition ease-in-out delay-100 hover:text-white'
+						href='https://github.com/guyfrommilkyway/react-notes'
+						target='_blank'
+					>
+						react-notes
+					</a>
+					: Integrating Auth0, developing more features, functionalities, and design improvements
 				</li>
 				<li>
 					Currently pursuing the following courses on Coursera:
