@@ -54,7 +54,7 @@ const WhatsNew: React.FC = (props) => {
 							);
 						})}
 			</div>
-			<ShowMore />
+			{Object.keys(data).length > 5 && <ShowMore />}
 		</div>
 	);
 };
