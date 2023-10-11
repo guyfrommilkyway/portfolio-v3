@@ -1,0 +1,22 @@
+{
+  "headline": "Almer Tampus",
+    "title": "Agile Software Developer",
+    "social": {
+      "001": {
+        "name": "LinkedIn",
+        "link": "https://linkedin.com/in/almerflorestampus"
+      },
+      "002": {
+        "name": "GitHub",
+        "link": "https://github.com/guyfrommilkyway"
+      },
+      "003": {
+        "name": "Twitter",
+        "link": "https://twitter.com/guyfrommilkyway"
+      },
+      "004": {
+        "name": "Instagram",
+        "link": "https://instagram.com/aftampus"
+      }
+    }
+}

@@ -1,0 +1,103 @@
+{
+  "001": {
+    "name": "Operator Portal",
+    "website": "operator.seaplanegroup.com",
+    "link": "https://operator.seaplanegroup.com",
+    "description": "Asset Management and Monitoring System for Seaplane Group management, and its partner operators",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "Next.js",
+      "004": "Zustand",
+      "005": "Chakra UI"
+    }
+  },
+  "002": {
+    "name": "Mile High Roller Club",
+    "website": "mhrc.io",
+    "link": "https://mhrc.io",
+    "description": "A collection of non-fungible tokens built on the ethereum network. It's the official loyalty program of Seaplane Group. It consists of five (5) NFT tiers: Voyager, Silver, Gold, Diamond and Platinum, with each tier offering different real-life utility values",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "Next.js",
+      "004": "Context API",
+      "005": "Tailwind"
+    }
+  },
+  "003": {
+    "name": "APTI",
+    "website": "apti.com.ph",
+    "link": "https://apti.com.ph",
+    "description": "Business website with Content Management System for Accel Prime Technologies, a computer parts retailer based in the Philippines.",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "BEM"
+    }
+  },
+  "004": {
+    "name": "PNP-eDPCR",
+    "website": "link-unavailable-for-internal-use",
+    "link": "#",
+    "description": "Report Management System for the Philippine National Police - Directorate for Police Community Relations",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "BEM"
+    }
+  },
+  "005": {
+    "name": "Manda HIS",
+    "website": "link-unavailable-for-internal-use",
+    "link": "#",
+    "description": "Hospital Information System for a government-controlled hospital in Mandaluyong, Philippines",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "BEM"
+    }
+  },
+  "006": {
+    "name": "DGCondo",
+    "website": "link-unavailable-for-internal-use",
+    "link": "#",
+    "description": "Condominium Management System for DGCondo, a real estate operator based in the Philippines",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "BEM"
+    }
+  },
+  "007": {
+    "name": "PNP-LMS",
+    "website": "link-unavailable-for-internal-use",
+    "link": "#",
+    "description": "Learning Management System for the Philippine National Police",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "BEM"
+    }
+  }
+}
