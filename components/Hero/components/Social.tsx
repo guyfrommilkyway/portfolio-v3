@@ -2,14 +2,10 @@
 import React from 'react';
 
 // types
-interface Props {
-	key: number;
-	link: string;
-	name: string;
-}
+import { SocialProps } from '@/types';
 
-const Link: React.FC<Props> = (props) => {
-	const { link, name } = props;
+const Link: React.FC<SocialProps> = (props) => {
+	const { name, link } = props;
 
 	return (
 		<a
