@@ -45,9 +45,9 @@ const About: React.FC = (props) => {
 
 	return (
 		<ContentBox id='about'>
-			<h3 className='mb-4 text-white text-2xl font-semibold'>Biography</h3>
 			{!isLoading && Object.keys(data).length !== 0 && (
 				<Fragment>
+					<h3 className='mb-4 text-white text-2xl font-semibold'>{data.headline}</h3>
 					<h4 className='mb-4 text-neutral-100 font-bold text-xl tracking-wide leading-normal'>
 						{data.subheadline}
 					</h4>
