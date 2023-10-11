@@ -18,7 +18,15 @@ const About: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/biography`);
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/biography`, {
+			method: 'GET',
+			headers: {
+				'Access-Control-Allow-Origin': 'https://almertampus.xyz',
+				'Access-Control-Allow-Methods': 'GET',
+				'Access-Control-Allow-Headers': 'Content-Type',
+			},
+		});
+
 		const data = response.json();
 
 		// save to store

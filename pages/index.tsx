@@ -51,7 +51,15 @@ const Home: React.FC<HomeProps> = (props) => {
 
 export async function getServerSideProps() {
 	// api call
-	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`);
+	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`, {
+		method: 'GET',
+		headers: {
+			'Access-Control-Allow-Origin': 'https://almertampus.xyz',
+			'Access-Control-Allow-Methods': 'GET',
+			'Access-Control-Allow-Headers': 'Content-Type',
+		},
+	});
+
 	const data = await response.json();
 
 	return {
