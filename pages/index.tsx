@@ -54,9 +54,10 @@ export async function getServerSideProps() {
 	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`, {
 		method: 'GET',
 		headers: {
-			'Access-Control-Allow-Origin': 'https://almertampus.xyz',
-			'Access-Control-Allow-Methods': 'GET',
-			'Access-Control-Allow-Headers': 'Content-Type',
+			'Access-Control-Allow-Origin': 'https://almertampus.xyz, https://*.vercel.app',
+			'Access-Control-Allow-Methods': 'GET,DELETE,PATCH,POST,PUT',
+			'Access-Control-Allow-Headers':
+				'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
 		},
 	});
 

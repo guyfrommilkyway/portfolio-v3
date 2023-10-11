@@ -7,9 +7,19 @@ import fetchFirebase from '@/services/firebase';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	try {
 		// Set the necessary CORS headers
-		res.setHeader('Access-Control-Allow-Origin', 'https://almertampus.xyz');
-		res.setHeader('Access-Control-Allow-Methods', 'GET');
-		res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+		res.setHeader('Access-Control-Allow-Credentials', 'true');
+		res.setHeader('Access-Control-Allow-Origin', 'https://almertampus.xyz, https://*.vercel.app');
+		res.setHeader('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT');
+		res.setHeader(
+			'Access-Control-Allow-Headers',
+			'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+		);
+
+		// specific logic for the preflight request
+		if (req.method === 'OPTIONS') {
+			res.status(200).end();
+			return;
+		}
 
 		const response = await fetchFirebase('');
 
