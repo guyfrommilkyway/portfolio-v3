@@ -1,5 +1,5 @@
 // packages
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 // components
@@ -7,19 +7,19 @@ import ContentBox from '@/components/ContentBox';
 import Card from './components/Card';
 
 // helpers
-import useExperienceStore from '@/store/experience';
+import usePersonalStore from '@/store/personal';
 
 // utils
 import fetchFirebase from '@/services/firebase';
 
-const Experience: React.FC = (props) => {
+const Personal: React.FC = (props) => {
 	// store
-	const { experience, dataHandler } = useExperienceStore((state) => state);
+	const { personal, dataHandler } = usePersonalStore((state) => state);
 
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('experience');
+		const response = await fetchFirebase('personal');
 
 		// save to store
 		dataHandler(response);
@@ -29,7 +29,7 @@ const Experience: React.FC = (props) => {
 
 	// query
 	const { data, isLoading } = useQuery({
-		queryKey: ['experience'],
+		queryKey: ['personal'],
 		queryFn: queryHandler,
 		initialData: props,
 		staleTime: 1000 * 60 * 10, // 10 minutes
@@ -38,10 +38,10 @@ const Experience: React.FC = (props) => {
 	});
 
 	return (
-		<ContentBox id='experience'>
-			<Fragment>
-				<h3 className='mb-8 text-white text-2xl font-semibold'>Experience</h3>
-				<div className='flex flex-col gap-8'>
+		<ContentBox id='project'>
+			<div className='mb-20'>
+				<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
+				<div className='flex flex-col gap-5'>
 					{!isLoading &&
 						Object.keys(data)
 							.sort()
@@ -50,9 +50,9 @@ const Experience: React.FC = (props) => {
 								return <Card key={item} {...data[item]} />;
 							})}
 				</div>
-			</Fragment>
+			</div>
 		</ContentBox>
 	);
 };
 
-export default Experience;
+export default Personal;

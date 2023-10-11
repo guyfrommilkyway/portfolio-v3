@@ -14,7 +14,7 @@ const ContentBox: React.FC<Props> = (props) => {
 	return (
 		<section
 			id={id}
-			className='relative w-full px-4 py-16 md:p-16 lg:px-20 border-b border-neutral-900'
+			className='relative w-full px-4 py-12 md:px-8 lg:px-12 border-b border-neutral-900'
 		>
 			{children}
 		</section>

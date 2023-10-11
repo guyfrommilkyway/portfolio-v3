@@ -14,6 +14,12 @@ export interface PillProps {
 	tech: string;
 }
 
+export interface LayoutProps {
+	renderHero: () => ReactNode;
+	renderContent: () => ReactNode;
+	renderNews: () => ReactNode;
+}
+
 export interface HeroProps {
 	headline: string;
 	title: string;
@@ -31,13 +37,11 @@ export interface HomeProps {
 }
 
 export interface AboutProps {
-	headline: string;
-	subheadline: string;
-	paragraphs: any;
+	staticData: any;
 }
 
 export interface ExperienceProps {
-	data: any;
+	staticData: any;
 }
 
 export interface ExperienceCardProps {
@@ -63,24 +67,24 @@ export interface ProjectCardProps {
 }
 
 export interface WhatsNewProps {
-	data: any;
+	staticData: any;
 }
 
 export interface RecentNewsProps {
-	data: any;
+	staticData: any;
 }
 
 export interface DataType {
-	hero: HeroProps;
-	biography: AboutProps;
-	whatsnew: WhatsNewProps;
-	recentnews: RecentNewsProps;
-	experience: ExperienceProps;
+	hero: any;
+	biography: any;
+	whatsnew: any;
+	recentnews: any;
+	experience: any;
 	work: any;
 	personal: any;
 }
 
 export interface DataStoreType {
 	data: DataType | {};
-	setData: (param: any) => void;
+	dataHandler: (param: any) => void;
 }

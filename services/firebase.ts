@@ -12,12 +12,14 @@ const options = {
 
 const Firebase = axios.create(options);
 
-export const getAll = async () => {
+const fetchFirebase = async (endpoint: string) => {
 	try {
-		const response = await Firebase.get(`.json?auth=${API_KEY}`);
+		const response = await Firebase.get(`${endpoint}.json?auth=${API_KEY}`);
 
 		return response.data;
 	} catch (error) {
 		return error;
 	}
 };
+
+export default fetchFirebase;

@@ -1,24 +1,63 @@
 // packages
 import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 // components
-import ContentBox from '@/components/ContentBox';
+import ShowMore from '@/components/ShowMore';
 
-// types
-import { WhatsNewProps } from '@/types';
+// helpers
+import useWhatsNewStore from '@/store/whats-new';
 
-const WhatsNew: React.FC<WhatsNewProps> = (props) => {
-	const { data } = props;
+// utils
+import fetchFirebase from '@/services/firebase';
+
+const WhatsNew: React.FC = (props) => {
+	// store
+	const { whatsnew, dataHandler } = useWhatsNewStore((state) => state);
+
+	// query handler
+	const queryHandler = async () => {
+		// api
+		const response = await fetchFirebase('whatsnew');
+
+		// save to store
+		dataHandler(response);
+
+		return response;
+	};
+
+	// query
+	const { data, isLoading } = useQuery({
+		queryKey: ['whatsnew'],
+		queryFn: queryHandler,
+		initialData: props,
+		staleTime: 1000 * 60 * 10, // 10 minutes
+		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		refetchIntervalInBackground: true,
+	});
 
 	return (
-		<ContentBox id='whatsnew'>
-			<h3 className='mb-4 text-white text-2xl font-semibold'>What&apos;s New</h3>
-			<ul className='list-inside list-disc text-neutral-300'>
-				{Object.keys(data).map((item) => {
-					return <li key={item}>{data[item]}</li>;
-				})}
-			</ul>
-		</ContentBox>
+		<div className='w-full py-4 border-b border-neutral-900'>
+			<span className='block mx-4 mb-2 text-white text-lg font-semibold'>What&apos;s New</span>
+			<div className='flex flex-col mb-2 text-neutral-300'>
+				{!isLoading &&
+					Object.keys(data)
+						.sort()
+						.reverse()
+						.slice(0, 5)
+						.map((item) => {
+							return (
+								<div
+									key={item}
+									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
+								>
+									{data[item]}
+								</div>
+							);
+						})}
+			</div>
+			<ShowMore />
+		</div>
 	);
 };
 

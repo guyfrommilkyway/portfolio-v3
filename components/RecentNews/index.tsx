@@ -1,24 +1,63 @@
 // packages
 import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 // components
-import ContentBox from '@/components/ContentBox';
+import ShowMore from '@/components/ShowMore';
 
-// types
-import { RecentNewsProps } from '@/types';
+// helpers
+import useRecentNewsStore from '@/store/recent-news';
 
-const RecentNews: React.FC<RecentNewsProps> = (props) => {
-	const { data } = props;
+// utils
+import fetchFirebase from '@/services/firebase';
+
+const RecentNews: React.FC = (props) => {
+	// store
+	const { recentnews, dataHandler } = useRecentNewsStore((state) => state);
+
+	// query handler
+	const queryHandler = async () => {
+		// api
+		const response = await fetchFirebase('recentnews');
+
+		// save to store
+		dataHandler(response);
+
+		return response;
+	};
+
+	// query
+	const { data, isLoading } = useQuery({
+		queryKey: ['recentnews'],
+		queryFn: queryHandler,
+		initialData: props,
+		staleTime: 1000 * 60 * 10, // 10 minutes
+		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		refetchIntervalInBackground: true,
+	});
 
 	return (
-		<ContentBox id='whatsnew'>
-			<h3 className='mb-4 text-white text-2xl font-semibold'>Recent News</h3>
-			<ul className='list-inside list-disc text-neutral-300'>
-				{Object.keys(data).map((item) => {
-					return <li key={item}>{data[item]}</li>;
-				})}
-			</ul>
-		</ContentBox>
+		<div className='py-4 border-b border-neutral-900'>
+			<span className='block mx-4 mb-2 text-white text-lg font-semibold'>Recent News</span>
+			<div className='flex flex-col mb-2 text-neutral-300'>
+				{!isLoading &&
+					Object.keys(data)
+						.sort()
+						.reverse()
+						.slice(0, 5)
+						.map((item) => {
+							return (
+								<div
+									key={item}
+									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
+								>
+									{data[item]}
+								</div>
+							);
+						})}
+			</div>
+			<ShowMore />
+		</div>
 	);
 };
 
