@@ -1,17 +1,17 @@
 // packages
 import React from 'react';
 
-// components below
+// components
 import Pill from '@/components/Pill';
 
 // types
-import { CardProps } from '@/types';
+import { ExperienceCardProps } from '@/types';
 
 // assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
-const Card: React.FC<CardProps> = (props) => {
-	const { duration, title, company, link, website, description, technologies } = props;
+const Card: React.FC<ExperienceCardProps> = (props) => {
+	const { duration, title, company, link, website, technologies } = props;
 
 	return (
 		<div className='flex flex-col gap-4 w-full tracking-wide leading-relaxed'>
@@ -19,8 +19,8 @@ const Card: React.FC<CardProps> = (props) => {
 				{duration}
 			</span>
 			<div className='flex flex-col gap-1'>
-				<h4 className='text-white text-xl font-semibold'>{title}</h4>
-				<h5 className='text-lg text-white'>{company}</h5>
+				<h4 className='text-white text-lg font-semibold'>{title}</h4>
+				<h5 className='text-white'>{company}</h5>
 				<a
 					className='flex gap-2 w-fit text-neutral-300 underline hover:text-white'
 					href={link}
@@ -31,8 +31,8 @@ const Card: React.FC<CardProps> = (props) => {
 				</a>
 			</div>
 			<div className='flex flex-wrap gap-2'>
-				{technologies.map((item) => {
-					return <Pill key={item} tech={item} />;
+				{Object.keys(technologies).map((item) => {
+					return <Pill key={item} tech={technologies[item]} />;
 				})}
 			</div>
 		</div>

@@ -8,7 +8,7 @@ import ContentBox from '@/components/ContentBox';
 import { AboutProps } from '@/types';
 
 const About: React.FC<AboutProps> = (props) => {
-	const { data } = props;
+	const { headline, subheadline, paragraphs } = props;
 
 	const copyHandler = () => {
 		navigator.clipboard.writeText('almerflorestampus@gmail.com');
@@ -16,14 +16,14 @@ const About: React.FC<AboutProps> = (props) => {
 
 	return (
 		<ContentBox id='about'>
-			<h3 className='mb-4 text-white text-2xl font-semibold'>Short Biography</h3>
+			<h3 className='mb-4 text-white text-2xl font-semibold'>{headline}</h3>
 			<h4 className='mb-4 text-neutral-100 font-bold text-xl tracking-wide leading-normal'>
-				{data.headline}
+				{subheadline}
 			</h4>
-			{data.paragraphs.map((item, index) => {
+			{Object.keys(paragraphs).map((item) => {
 				return (
-					<p key={index} className='mb-4 leading-relaxed text-neutral-300'>
-						{item}
+					<p key={item} className='mb-4 leading-relaxed text-neutral-300'>
+						{paragraphs[item]}
 					</p>
 				);
 			})}

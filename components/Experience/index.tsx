@@ -5,7 +5,7 @@ import React from 'react';
 import ContentBox from '@/components/ContentBox';
 import Card from './components/Card';
 
-// data
+// types
 import { ExperienceProps } from '@/types';
 
 const Experience: React.FC<ExperienceProps> = (props) => {
@@ -15,8 +15,8 @@ const Experience: React.FC<ExperienceProps> = (props) => {
 		<ContentBox id='experience'>
 			<h3 className='mb-8 text-white text-2xl font-semibold'>Experience</h3>
 			<div className='flex flex-col gap-8'>
-				{data.map((item) => {
-					return <Card key={item.link} {...item} />;
+				{Object.keys(data).map((item) => {
+					return <Card key={item} {...data[item]} />;
 				})}
 			</div>
 		</ContentBox>
