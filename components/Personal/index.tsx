@@ -16,7 +16,7 @@ const Personal: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/personal`);
+		const response = await fetch('/api/v1/firebase/personal');
 		const data = response.json();
 
 		// save to store
