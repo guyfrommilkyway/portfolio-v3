@@ -8,9 +8,6 @@ import ShowMore from '@/components/ShowMore';
 // helpers
 import useRecentNewsStore from '@/store/recent-news';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const RecentNews: React.FC = (props) => {
 	// store
 	const { recentnews, dataHandler } = useRecentNewsStore((state) => state);
@@ -18,12 +15,13 @@ const RecentNews: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('recentnews');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/recent-news`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query

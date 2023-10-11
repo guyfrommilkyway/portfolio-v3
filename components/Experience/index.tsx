@@ -9,9 +9,6 @@ import Card from './components/Card';
 // helpers
 import useExperienceStore from '@/store/experience';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const Experience: React.FC = (props) => {
 	// store
 	const { experience, dataHandler } = useExperienceStore((state) => state);
@@ -19,12 +16,13 @@ const Experience: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('experience');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/experience`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query

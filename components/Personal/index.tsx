@@ -9,9 +9,6 @@ import Card from './components/Card';
 // helpers
 import usePersonalStore from '@/store/personal';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const Personal: React.FC = (props) => {
 	// store
 	const { personal, dataHandler } = usePersonalStore((state) => state);
@@ -19,12 +16,13 @@ const Personal: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('personal');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/personal`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query
