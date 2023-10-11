@@ -3,7 +3,6 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 // components
-import LoadingBox from '@/components/LoadingBox';
 import ShowMore from '@/components/ShowMore';
 
 // helpers
@@ -12,7 +11,7 @@ import useWhatsNewStore from '@/store/whats-new';
 // utils
 import fetchFirebase from '@/services/firebase';
 
-const WhatsNew: React.FC = () => {
+const WhatsNew: React.FC = (props) => {
 	// store
 	const { whatsnew, dataHandler } = useWhatsNewStore((state) => state);
 
@@ -28,9 +27,10 @@ const WhatsNew: React.FC = () => {
 	};
 
 	// query
-	const { isLoading } = useQuery({
+	const { data, isLoading } = useQuery({
 		queryKey: ['whatsnew'],
 		queryFn: queryHandler,
+		initialData: props,
 		staleTime: 1000 * 60 * 10, // 10 minutes
 		refetchInterval: 1000 * 60 * 10, // 10 minutes
 		refetchIntervalInBackground: true,
@@ -40,9 +40,8 @@ const WhatsNew: React.FC = () => {
 		<div className='w-full py-4 border-b border-neutral-900'>
 			<span className='block mx-4 mb-2 text-white text-lg font-semibold'>What&apos;s New</span>
 			<div className='flex flex-col mb-2 text-neutral-300'>
-				{isLoading && <LoadingBox />}
 				{!isLoading &&
-					Object.keys(whatsnew)
+					Object.keys(data)
 						.sort()
 						.reverse()
 						.slice(0, 5)
@@ -52,7 +51,7 @@ const WhatsNew: React.FC = () => {
 									key={item}
 									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
 								>
-									{whatsnew[item]}
+									{data[item]}
 								</div>
 							);
 						})}

@@ -4,60 +4,61 @@ import React, { Fragment } from 'react';
 // components
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
-import WhatsNew from '@/components/WhatsNew';
-import RecentNews from '@/components/RecentNews';
+import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
-import Projects from '@/components/Projects';
-
-// helpers
-import useDataStore from '@/store/data';
+import Work from '@/components/Work';
+import Personal from '@/components/Personal';
+import WhatsNew from '@/components/WhatsNew';
+import RecentNews from '@/components/RecentNews';
 
 // utils
-import { getAll } from '@/services/firebase';
+import fetchFirebase from '@/services/firebase';
 
 // types
 import { HomeProps } from '@/types';
 
 const Home: React.FC<HomeProps> = (props) => {
+	// static data
 	const { staticData } = props;
-
-	// store
-	const data = useDataStore((state: any) => state.data);
-
-	// data
-	const whatsnew = data.whatsnew || staticData.whatsnew;
-	const recentnews = data.recentnews || staticData.recentnews;
-	const biography = data.biography || staticData.biography;
-	const experience = data.experience || staticData.experience;
-	const work = data.work || staticData.work;
-	const personal = data.personal || staticData.personal;
 
 	return (
 		<Fragment>
 			<Head title='Almer Tampus' />
-			<Layout>
-				{Object.keys(data).length !== 0 && (
-					<Fragment>
-						<WhatsNew data={whatsnew} />
-						<RecentNews data={recentnews} />
-						<About {...biography} />
-						<Experience data={experience} />
-						<Projects work={work} personal={personal} />
-					</Fragment>
-				)}
-			</Layout>
+			<Layout
+				renderHero={() => {
+					return <Hero {...staticData.hero} />;
+				}}
+				renderContent={() => {
+					return (
+						<Fragment>
+							<About {...staticData.biography} />
+							<Experience {...staticData.experience} />
+							<Work {...staticData.work} />
+							<Personal {...staticData.personal} />
+						</Fragment>
+					);
+				}}
+				renderNews={() => {
+					return (
+						<Fragment>
+							<WhatsNew {...staticData.whatsnew} />
+							<RecentNews {...staticData.recentnews} />
+						</Fragment>
+					);
+				}}
+			></Layout>
 		</Fragment>
 	);
 };
 
 export async function getStaticProps() {
-	// api
-	const staticData = await getAll();
+	// api call
+	const response = await fetchFirebase('');
 
 	return {
 		props: {
-			staticData,
+			staticData: response,
 		},
 	};
 }

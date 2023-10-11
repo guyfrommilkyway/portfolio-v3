@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ContentBox from '@/components/ContentBox';
-import LoadingBox from '@/components/LoadingBox';
 import Card from './components/Card';
 
 // helpers
@@ -13,7 +12,7 @@ import useWorkStore from '@/store/work';
 // utils
 import fetchFirebase from '@/services/firebase';
 
-const Work: React.FC = () => {
+const Work: React.FC = (props) => {
 	// store
 	const { work, dataHandler } = useWorkStore((state) => state);
 
@@ -29,9 +28,10 @@ const Work: React.FC = () => {
 	};
 
 	// query
-	const { isLoading } = useQuery({
+	const { data, isLoading } = useQuery({
 		queryKey: ['work'],
 		queryFn: queryHandler,
+		initialData: props,
 		staleTime: 1000 * 60 * 10, // 10 minutes
 		refetchInterval: 1000 * 60 * 10, // 10 minutes
 		refetchIntervalInBackground: true,
@@ -42,13 +42,12 @@ const Work: React.FC = () => {
 			<div className='mb-20'>
 				<h3 className='mb-8 text-white text-2xl font-semibold'>Work</h3>
 				<div className='flex flex-col gap-5'>
-					{isLoading && <LoadingBox />}
 					{!isLoading &&
-						Object.keys(work)
+						Object.keys(data)
 							.sort()
 							.reverse()
 							.map((item) => {
-								return <Card key={item} {...work[item]} />;
+								return <Card key={item} {...data[item]} />;
 							})}
 				</div>
 			</div>

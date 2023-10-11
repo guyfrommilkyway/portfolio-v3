@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ContentBox from '@/components/ContentBox';
-import LoadingBox from '@/components/LoadingBox';
 import Card from './components/Card';
 
 // helpers
@@ -13,7 +12,7 @@ import usePersonalStore from '@/store/personal';
 // utils
 import fetchFirebase from '@/services/firebase';
 
-const Personal: React.FC = () => {
+const Personal: React.FC = (props) => {
 	// store
 	const { personal, dataHandler } = usePersonalStore((state) => state);
 
@@ -29,9 +28,10 @@ const Personal: React.FC = () => {
 	};
 
 	// query
-	const { isLoading } = useQuery({
+	const { data, isLoading } = useQuery({
 		queryKey: ['personal'],
 		queryFn: queryHandler,
+		initialData: props,
 		staleTime: 1000 * 60 * 10, // 10 minutes
 		refetchInterval: 1000 * 60 * 10, // 10 minutes
 		refetchIntervalInBackground: true,
@@ -42,13 +42,12 @@ const Personal: React.FC = () => {
 			<div className='mb-20'>
 				<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
 				<div className='flex flex-col gap-5'>
-					{isLoading && <LoadingBox />}
 					{!isLoading &&
-						Object.keys(personal)
+						Object.keys(data)
 							.sort()
 							.reverse()
 							.map((item) => {
-								return <Card key={item} {...personal[item]} />;
+								return <Card key={item} {...data[item]} />;
 							})}
 				</div>
 			</div>
