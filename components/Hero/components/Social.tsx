@@ -9,7 +9,7 @@ const Link: React.FC<SocialProps> = (props) => {
 
 	return (
 		<a
-			className='text-neutral-300 font-medium transition ease-in-out delay-100 hover:text-white hover:underline'
+			className='text-neutral-300 underline font-medium transition ease-in-out delay-100 hover:text-white hover:underline'
 			href={link}
 			target='_blank'
 			referrerPolicy='no-referrer'

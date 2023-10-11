@@ -37,7 +37,7 @@ const RecentNews: React.FC = (props) => {
 	});
 
 	return (
-		<div className='py-4 border-b border-neutral-900'>
+		<div className='py-4 bg-neutral-900 rounded-3xl'>
 			<span className='block mx-4 mb-2 text-white text-lg font-semibold'>Recent News</span>
 			<div className='flex flex-col mb-2 text-neutral-300'>
 				{!isLoading &&

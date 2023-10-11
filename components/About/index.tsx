@@ -10,6 +10,7 @@ import useAboutStore from '@/store/about';
 
 // utils
 import fetchFirebase from '@/services/firebase';
+import { toastSuccess } from '@/utils/notifications';
 
 const About: React.FC = (props) => {
 	// store
@@ -39,6 +40,7 @@ const About: React.FC = (props) => {
 	// copy-paste handler
 	const copyPasteHandler = () => {
 		navigator.clipboard.writeText('almerflorestampus@gmail.com');
+		toastSuccess('Copied to clipboard');
 	};
 
 	return (
