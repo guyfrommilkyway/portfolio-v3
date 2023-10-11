@@ -31,13 +31,11 @@ export interface HomeProps {
 }
 
 export interface AboutProps {
-	headline: string;
-	subheadline: string;
-	paragraphs: any;
+	staticData: any;
 }
 
 export interface ExperienceProps {
-	data: any;
+	staticData: any;
 }
 
 export interface ExperienceCardProps {
@@ -63,11 +61,11 @@ export interface ProjectCardProps {
 }
 
 export interface WhatsNewProps {
-	data: any;
+	staticData: any;
 }
 
 export interface RecentNewsProps {
-	data: any;
+	staticData: any;
 }
 
 export interface DataType {
