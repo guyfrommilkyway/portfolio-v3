@@ -4,20 +4,10 @@ import React from 'react';
 // assets
 import SpinnerSVG from '@/assets/svg/spinner.svg';
 
-// types
-import { LoadingScreenProps } from '@/types';
-
-const LoadingScreen: React.FC<LoadingScreenProps> = (props) => {
-	const { isLoading, isRemoving } = props;
-
-	const loading = isLoading ? 'opacity-100' : 'opacity-0';
-	const removing = isRemoving ? 'hidden' : 'block';
-
+const LoadingScreen: React.FC = () => {
 	return (
-		<div
-			className={`fixed top-0 right-0 bottom-0 left-0 z-[99] flex justify-center items-center w-screen h-screen bg-black transition-opacity ease-in-out delay-150 ${loading} ${removing}`}
-		>
-			<SpinnerSVG width={80} height={80} />
+		<div className='fixed top-0 right-0 bottom-0 left-0 z-[99] flex justify-center items-center w-screen h-screen bg-[#050505] transition-opacity ease-in-out delay-150'>
+			<SpinnerSVG width={60} height={60} />
 		</div>
 	);
 };
