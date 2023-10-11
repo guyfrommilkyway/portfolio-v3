@@ -30,8 +30,8 @@ const Work: React.FC = (props) => {
 		queryKey: ['work'],
 		queryFn: queryHandler,
 		initialData: props,
-		staleTime: 1000 * 60 * 10, // 10 minutes
-		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		staleTime: 1000 * 5, // 10 minutes
+		refetchInterval: 1000 * 5, // 10 minutes
 		refetchIntervalInBackground: true,
 	});
 
