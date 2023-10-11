@@ -12,9 +12,6 @@ import Personal from '@/components/Personal';
 import WhatsNew from '@/components/WhatsNew';
 import RecentNews from '@/components/RecentNews';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 // types
 import { HomeProps } from '@/types';
 
@@ -54,11 +51,12 @@ const Home: React.FC<HomeProps> = (props) => {
 
 export async function getServerSideProps() {
 	// api call
-	const response = await fetchFirebase('');
+	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`);
+	const data = await response.json();
 
 	return {
 		props: {
-			staticData: response,
+			staticData: data,
 		},
 	};
 }

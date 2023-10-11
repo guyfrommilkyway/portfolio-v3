@@ -10,9 +10,6 @@ import Link from './components/Social';
 // helpers
 import useHeroStore from '@/store/hero';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const Hero: React.FC = (props) => {
 	// store
 	const { hero, dataHandler } = useHeroStore((state) => state);
@@ -20,12 +17,13 @@ const Hero: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('hero');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/hero`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query

@@ -9,7 +9,6 @@ import ContentBox from '@/components/ContentBox';
 import useAboutStore from '@/store/about';
 
 // utils
-import fetchFirebase from '@/services/firebase';
 import { toastSuccess } from '@/utils/notifications';
 
 const About: React.FC = (props) => {
@@ -19,12 +18,13 @@ const About: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('biography');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/biography`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query

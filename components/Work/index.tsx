@@ -9,9 +9,6 @@ import Card from './components/Card';
 // helpers
 import useWorkStore from '@/store/work';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const Work: React.FC = (props) => {
 	// store
 	const { work, dataHandler } = useWorkStore((state) => state);
@@ -19,12 +16,13 @@ const Work: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('work');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/work`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query

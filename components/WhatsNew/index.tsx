@@ -8,9 +8,6 @@ import ShowMore from '@/components/ShowMore';
 // helpers
 import useWhatsNewStore from '@/store/whats-new';
 
-// utils
-import fetchFirebase from '@/services/firebase';
-
 const WhatsNew: React.FC = (props) => {
 	// store
 	const { whatsnew, dataHandler } = useWhatsNewStore((state) => state);
@@ -18,12 +15,13 @@ const WhatsNew: React.FC = (props) => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetchFirebase('whatsnew');
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/whats-new`);
+		const data = response.json();
 
 		// save to store
-		dataHandler(response);
+		dataHandler(data);
 
-		return response;
+		return data;
 	};
 
 	// query
