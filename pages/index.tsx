@@ -52,7 +52,7 @@ const Home: React.FC<HomeProps> = (props) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	// api call
 	const response = await fetchFirebase('');
 
