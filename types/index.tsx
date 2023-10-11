@@ -10,67 +10,77 @@ export interface NavItemProps {
 	onScroll: () => void;
 }
 
-export interface CardProps {
-	duration: string;
-	title: string;
-	company: string;
-	link: string;
-	website: string;
-	description: string[];
-	technologies: string[];
-}
-
 export interface PillProps {
 	tech: string;
 }
 
-export interface WorkCardProps {
+export interface HeroProps {
+	headline: string;
+	title: string;
+	social: any;
+}
+
+// types
+export interface SocialProps {
 	name: string;
 	link: string;
-	website: string;
-	description: string;
-	technologies: string[];
-	image: string;
 }
-export interface ExperienceItem {
+
+export interface HomeProps {
+	staticData: any;
+}
+
+export interface AboutProps {
+	headline: string;
+	subheadline: string;
+	paragraphs: any;
+}
+
+export interface ExperienceProps {
+	data: any;
+}
+
+export interface ExperienceCardProps {
 	duration: string;
 	title: string;
 	company: string;
 	link: string;
 	website: string;
-	description: string[];
-	technologies: string[];
+	technologies: any;
 }
 
-export interface ExperienceProps {
-	data: ExperienceItem[];
+export interface ProjectsProps {
+	work: any;
+	personal: any;
 }
 
-export interface ProjectItem {
+export interface ProjectCardProps {
 	name: string;
 	link: string;
 	website: string;
 	description: string;
-	technologies: string[];
-	image: string;
+	technologies: any;
 }
 
-export interface ProjectsProps {
-	data: ProjectItem[];
-	data2: ProjectItem[];
+export interface WhatsNewProps {
+	data: any;
 }
 
-export interface Hero {
-	headline: string;
-	paragraphs: string[];
-	technologies: string[];
+export interface RecentNewsProps {
+	data: any;
 }
 
-export interface AboutProps {
-	data: Hero;
+export interface DataType {
+	hero: HeroProps;
+	biography: AboutProps;
+	whatsnew: WhatsNewProps;
+	recentnews: RecentNewsProps;
+	experience: ExperienceProps;
+	work: any;
+	personal: any;
 }
 
-export interface LoadingScreenProps {
-	isLoading: boolean;
-	isRemoving: boolean;
+export interface DataStoreType {
+	data: DataType | {};
+	setData: (param: any) => void;
 }

@@ -6,7 +6,11 @@ import useScroll from '@/hooks/useScroll';
 import NavItem from './components/NavItem';
 
 // data
-import { nav } from '@/data/nav';
+const nav = [
+	{ name: 'About', id: '#about' },
+	{ name: 'Experience', id: '#experience' },
+	{ name: 'Project', id: '#project' },
+];
 
 const Navbar: React.FC = () => {
 	const { scrollHandler } = useScroll();

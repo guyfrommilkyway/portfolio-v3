@@ -1,0 +1,244 @@
+{
+  "hero": {
+    "headline": "Almer Tampus",
+    "title": "Agile Software Developer",
+    "social": {
+      "001": {
+        "name": "LinkedIn",
+        "link": "https://linkedin.com/in/almerflorestampus"
+      },
+      "002": {
+        "name": "GitHub",
+        "link": "https://github.com/guyfrommilkyway"
+      },
+      "003": {
+        "name": "Twitter",
+        "link": "https://twitter.com/guyfrommilkyway"
+      },
+      "004": {
+        "name": "Instagram",
+        "link": "https://instagram.com/aftampus"
+      }
+    }
+  },
+  "whatsnew": {
+    "001": "Mastering React + Redux + TypeScript + Tailwind",
+    "002": "Studying Python, SQL, Django, API and database design",
+    "003": "Researching React Design Patterns, Best Practices and Clean Code",
+    "004": "portfolio-v3: Integrating Firebase Realtime Database and other third-party APIs (GitHub API, Spotify API, etc.)",
+    "005": "react-notes: Integrating Auth0, developing more features, functionalities, and design improvements",
+    "006": "Currently taking JavaScript Security Specialization",
+    "007": "Currently taking Meta Back-End Developer Professional Certificate",
+    "008": "Currently taking Google UX Design Professional Certificate",
+    "009": "Currently taking IBM DevOps and Software Engineering Professional Certificate"
+  },
+  "recentnews": {
+    "001": "portfolio-v3: Deployed initial version with Vercel",
+    "002": "react-notes: Deployed initial version with Netlify",
+    "003": "Finished watching Ted Lasso series",
+    "004": "Completed Meta Front-End Developer Professional Certificate",
+    "005": "Completed Software Development Lifecycle Specialization",
+    "006": "Finished playing with Subnautica: Below Zero",
+    "007": "Finished playing with Subnautica",
+    "008": "Finished playing with Shadow Tactics: Blades of the Shogun - Aiko's Choice",
+    "009": "Completed Understanding Typescript",
+    "010": "Completed Clean Code",
+    "011": "Completed Next.js & React - The Complete Guide",
+    "012": "Completed React - The Complete Guide",
+    "013": "Finished playing Tom Clancy's Ghost Recon: Wildlands",
+    "014": "Finished playing Shadow Tactics: Blades of the Shogun"
+  },
+  "biography": {
+    "headline": "Short Biography",
+    "paragraphs": {
+      "001": "A coder and designer with over a year of professional experience in front-end web development. Experience in building web applications, from developing interfaces to integrating data and services. My expertise is currently somewhere in the realm of JavaScript, TypeScript, React, Next.js, Redux, Zustand, Tailwind and Chakra UI.",
+      "002": "Despite still being early on my career, I've been fortunate enough to have given opportunities to contribute to various projects in the industry. Most recently I've worked at Seaplane Group, a Hong Kong-based startup company, where I've took ownership of the maintenance and development of user-facing features for two company projects. Prior to joining Seaplane Group, I've worked at Highly Succeed Inc., a Philippine-based company offering a diverse range of IT services. During my tenure, I've had the opportunity to co-develop web applications for our private and government clients.",
+      "003": "As a lifelong learner, I'm passionate and dedicated to continuous learning. To stay at the forefront of the ever-evolving tech landscape, I spend significant time and effort to investing in my personal growth and development. In these past few days, I've been broadening my existing skill set and expertise into adjacent domains, encompassing user experience, backend development, and the intricacies of devops.",
+      "004": "To maintain a work-life balance, you'll often find me engaged in spending quality time with my loyal German Shepherd, Comet, forging a bond while honing our skills together. When not in training mode, my other canine companions, Brew and Latte, eargerly join the mix, creating a playful and vibrant atmosphere. In addition, I occasionally indulge in watching TV series such as SEAL Team, The Big Bang Theory, Suits, etc.. I'm also an enthusiastic gamer with a particular fondness for real-time strategy, single-player campaigns with compelling narratives, and tactical shooter games.",
+      "005": "Currently, I'm actively seeking new opportunities in the field of front-end development and enthusiastically open to embracing and mastering emerging technologies. I'm excited to contribute my expertise, passion and dedication to create exceptional user experiences for startups and small businesses.",
+      "006": "Got a question, or just want to say hello? Hit me up! Have a proposal, or project in mind? Let's collaborate!"
+    },
+    "subheadline": "Born in 1997. Raised in a small town in Philippines."
+  },
+  "experience": {
+    "e001": {
+      "company": "Seaplane Group (Seaplane Hong Kong Limited)",
+      "duration": "Nov 2022 - Jun 2023",
+      "link": "https://seaplanegroup.com/",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "Next.js",
+        "004": "Zustand",
+        "005": "Chakra UI",
+        "006": "Tailwind"
+      },
+      "title": "Front-End Web Developer",
+      "website": "seaplanegroup.com"
+    },
+    "e002": {
+      "company": "Highly Succeed Inc.",
+      "duration": "Jan 2022 - Jun 2023",
+      "link": "https://highlysucceed.com/",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "Bem"
+      },
+      "title": "Front-End Web Developer",
+      "website": "highlysucceed.com"
+    }
+  },
+  "personal": {
+    "001": {
+      "name": "React Notes",
+      "website": "react-notes.almertampus.xyz",
+      "link": "https://react-notes.almertampus.xyz",
+      "description": "Inspired by Google Keep",
+      "technologies": {
+        "001": "TypeScript",
+        "002": "React",
+        "003": "Redux",
+        "004": "Redux Toolkit",
+        "005": "Draft.js",
+        "006": "Chakra UI",
+        "007": "Vite"
+      }
+    },
+    "002": {
+      "name": "Portfolio V3",
+      "website": "github.com/guyfrommilkyway/portfolio-v3",
+      "link": "https://github.com/guyfrommilkyway/portfolio-v3",
+      "description": "Portfolio website by yours truly",
+      "technologies": {
+        "001": "TypeScript",
+        "002": "React",
+        "003": "Next.js",
+        "005": "Tailwind"
+      }
+    },
+    "003": {
+      "name": "DMS",
+      "website": "github.com/guyfrommilkyway/dms-v1",
+      "link": "https://github.com/guyfrommilkyway/dms-v1",
+      "description": "Dormitory Management System",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "Node.js",
+        "003": "Express.js",
+        "004": "Handlebars.js",
+        "005": "MongoDB",
+        "006": "Bootstrap",
+        "007": "Sass",
+        "008": "BEM"
+      }
+    }
+  },
+  "work": {
+    "001": {
+      "name": "Operator Portal",
+      "website": "operator.seaplanegroup.com",
+      "link": "https://operator.seaplanegroup.com",
+      "description": "Asset Management and Monitoring System for Seaplane Group management, and its partner operators",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "Next.js",
+        "004": "Zustand",
+        "005": "Chakra UI"
+      }
+    },
+    "002": {
+      "name": "Mile High Roller Club",
+      "website": "mhrc.io",
+      "link": "https://mhrc.io",
+      "description": "A collection of non-fungible tokens built on the ethereum network. It's the official loyalty program of Seaplane Group. It consists of five (5) NFT tiers: Voyager, Silver, Gold, Diamond and Platinum, with each tier offering different real-life utility values",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "Next.js",
+        "004": "Context API",
+        "005": "Tailwind"
+      }
+    },
+    "003": {
+      "name": "APTI",
+      "website": "apti.com.ph",
+      "link": "https://apti.com.ph",
+      "description": "Business website with Content Management System for Accel Prime Technologies, a computer parts retailer based in the Philippines.",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "BEM"
+      }
+    },
+    "004": {
+      "name": "PNP-eDPCR",
+      "website": "link-unavailable-for-internal-use",
+      "link": "#",
+      "description": "Report Management System for the Philippine National Police - Directorate for Police Community Relations",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "BEM"
+      }
+    },
+    "005": {
+      "name": "Manda HIS",
+      "website": "link-unavailable-for-internal-use",
+      "link": "#",
+      "description": "Hospital Information System for a government-controlled hospital in Mandaluyong, Philippines",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "BEM"
+      }
+    },
+    "006": {
+      "name": "DGCondo",
+      "website": "link-unavailable-for-internal-use",
+      "link": "#",
+      "description": "Condominium Management System for DGCondo, a real estate operator based in the Philippines",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "BEM"
+      }
+    },
+    "007": {
+      "name": "PNP-LMS",
+      "website": "link-unavailable-for-internal-use",
+      "link": "#",
+      "description": "Learning Management System for the Philippine National Police",
+      "technologies": {
+        "001": "JavaScript",
+        "002": "React",
+        "003": "React Router",
+        "004": "Context API",
+        "005": "Bootstrap",
+        "006": "Sass",
+        "007": "BEM"
+      }
+    }
+  }
+}

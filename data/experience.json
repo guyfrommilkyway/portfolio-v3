@@ -1,0 +1,33 @@
+{
+    "e001": {
+    "company": "Seaplane Group (Seaplane Hong Kong Limited)",
+    "duration": "Nov 2022 - Jun 2023",
+    "link": "https://seaplanegroup.com/",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "Next.js",
+      "004": "Zustand",
+      "005": "Chakra UI",
+      "006": "Tailwind"
+    },
+    "title": "Front-End Web Developer",
+    "website": "seaplanegroup.com"
+  },
+  "e002": {
+    "company": "Highly Succeed Inc.",
+    "duration": "Jan 2022 - Jun 2023",
+    "link": "https://highlysucceed.com/",
+    "technologies": {
+      "001": "JavaScript",
+      "002": "React",
+      "003": "React Router",
+      "004": "Context API",
+      "005": "Bootstrap",
+      "006": "Sass",
+      "007": "Bem"
+    },
+    "title": "Front-End Web Developer",
+    "website": "highlysucceed.com"
+  }
+}

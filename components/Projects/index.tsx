@@ -9,23 +9,23 @@ import Card from './components/Card';
 import { ProjectsProps } from '@/types';
 
 const Projects: React.FC<ProjectsProps> = (props) => {
-	const { data, data2 } = props;
+	const { work, personal } = props;
 
 	return (
 		<ContentBox id='project'>
 			<div className='mb-20'>
 				<h3 className='mb-8 text-white text-2xl font-semibold'>Work</h3>
 				<div className='flex flex-col gap-8'>
-					{data.map((item) => {
-						return <Card key={item.name} {...item} />;
+					{Object.keys(work).map((item) => {
+						return <Card key={item} {...work[item]} />;
 					})}
 				</div>
 			</div>
 			<div className='mb-20'>
 				<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
 				<div className='flex flex-col gap-8'>
-					{data2.map((item) => {
-						return <Card key={item.name} {...item} />;
+					{Object.keys(personal).map((item) => {
+						return <Card key={item} {...personal[item]} />;
 					})}
 				</div>
 			</div>
