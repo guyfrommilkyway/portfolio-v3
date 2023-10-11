@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 import useDataStore from '@/store/data';
 
 // utils
-import { getAll } from '@/services/axios';
+import { getAll } from '@/services/firebase';
 
 // types
 import { ChildrenProps } from '@/types';

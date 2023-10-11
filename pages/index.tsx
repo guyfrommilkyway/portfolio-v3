@@ -14,7 +14,7 @@ import Projects from '@/components/Projects';
 import useDataStore from '@/store/data';
 
 // utils
-import { getAll } from '@/services/axios';
+import { getAll } from '@/services/firebase';
 
 // types
 import { HomeProps } from '@/types';
