@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ShowMore from '@/components/ShowMore';
+import NewsCard from '@/components/NewsCard';
 
 // helpers
 import useRecentNewsStore from '@/store/recent-news';
@@ -44,14 +45,7 @@ const RecentNews: React.FC = (props) => {
 						.reverse()
 						.slice(0, 5)
 						.map((item) => {
-							return (
-								<div
-									key={item}
-									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
-								>
-									{data[item]}
-								</div>
-							);
+							return <NewsCard key={item} {...data[item]} />;
 						})}
 			</div>
 			{Object.keys(data).length > 5 && <ShowMore />}
