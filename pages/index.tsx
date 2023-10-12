@@ -12,9 +12,6 @@ import Personal from '@/components/Personal';
 import WhatsNew from '@/components/WhatsNew';
 import RecentNews from '@/components/RecentNews';
 
-// types
-import { HomeProps } from '@/types';
-
 const Home: React.FC<HomeProps> = (props) => {
 	// static data
 	const { staticData } = props;
