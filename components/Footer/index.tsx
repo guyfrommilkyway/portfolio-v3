@@ -2,8 +2,6 @@
 import React from 'react';
 
 // components
-import Logo from '@/components/Logo';
-import Navbar from '@/components/Navbar';
 import Info from './components/Info';
 
 const Footer: React.FC = () => {
