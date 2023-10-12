@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ContentBox from '@/components/ContentBox';
-import Card from './components/Card';
+import ProjectCard from '@/components/ProjectCard';
 
 // helpers
 import useWorkStore from '@/store/work';
@@ -45,7 +45,7 @@ const Work: React.FC = (props) => {
 							.sort()
 							.reverse()
 							.map((item) => {
-								return <Card key={item} {...data[item]} />;
+								return <ProjectCard key={item} {...data[item]} />;
 							})}
 				</div>
 			</div>
