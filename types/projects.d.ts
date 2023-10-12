@@ -1,8 +1,6 @@
 interface ProjectsProps {
-	work: any;
-	personal: any;
+	data: any;
 }
-
 interface ProjectCardProps {
 	name: string;
 	link: string;

@@ -14,7 +14,7 @@ interface NavItemProps {
 interface LayoutProps {
 	renderHero: Component;
 	renderContent: Component;
-	renderNews: Component;
+	// renderNews: Component;
 }
 
 interface ContentBoxProps {

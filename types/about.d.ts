@@ -1,3 +1,5 @@
 interface AboutProps {
-	staticData: any;
+	headline: any;
+	subheadline: any;
+	paragraphs: any;
 }
