@@ -2,7 +2,7 @@
 import React from 'react';
 
 // assets
-import LogoSVG from '@/assets/svg/logo-black.svg';
+import LogoSVG from '@/assets/svg/logo-white.svg';
 import Link from 'next/link';
 
 const Logo: React.FC = () => {
