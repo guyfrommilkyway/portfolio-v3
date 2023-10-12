@@ -6,7 +6,7 @@ const useExperienceStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				experience: {},
+				experience: null,
 				dataHandler: (data: any) => set({ experience: data }),
 			}),
 			{ name: 'experience-store' }

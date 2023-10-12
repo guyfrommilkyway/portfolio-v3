@@ -6,7 +6,7 @@ const useAboutStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				about: {},
+				about: null,
 				dataHandler: (data: any) => set({ about: data }),
 			}),
 			{ name: 'about-store' }

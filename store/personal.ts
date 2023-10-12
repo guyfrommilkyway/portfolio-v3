@@ -6,7 +6,7 @@ const usePersonalStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				personal: {},
+				personal: null,
 				dataHandler: (data: any) => set({ personal: data }),
 			}),
 			{ name: 'personal-store' }

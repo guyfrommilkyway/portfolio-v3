@@ -6,7 +6,7 @@ const useRecentNewsStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				recentnews: {},
+				recentnews: null,
 				dataHandler: (data: any) => set({ recentnews: data }),
 			}),
 			{ name: 'recentnews-store' }
