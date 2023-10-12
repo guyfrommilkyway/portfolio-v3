@@ -45,7 +45,7 @@ const RecentNews: React.FC = (props) => {
 						.reverse()
 						.slice(0, 5)
 						.map((item) => {
-							return <NewsCard key={item} {...data[item]} />;
+							return <NewsCard key={item} item={data[item]} />;
 						})}
 			</div>
 			{Object.keys(data).length > 5 && <ShowMore />}
