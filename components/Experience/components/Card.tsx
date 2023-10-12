@@ -4,9 +4,6 @@ import React from 'react';
 // components
 import Pill from '@/components/Pill';
 
-// types
-import { ExperienceCardProps } from '@/types';
-
 // assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 

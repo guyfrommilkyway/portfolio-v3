@@ -1,8 +1,5 @@
 // packages
-import React, { useState, useEffect } from 'react';
-
-// types
-import { ChildrenProps } from '@/types';
+import React from 'react';
 
 const Container: React.FC<ChildrenProps> = (props) => {
 	const { children } = props;

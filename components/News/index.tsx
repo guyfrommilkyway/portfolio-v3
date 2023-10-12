@@ -1,9 +1,6 @@
 // packages
 import React from 'react';
 
-// types
-import { ChildrenProps } from '@/types';
-
 const News: React.FC<ChildrenProps> = (props) => {
 	const { children } = props;
 

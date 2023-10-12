@@ -1,14 +1,7 @@
 // packages
 import React from 'react';
 
-// types
-import { ChildrenProps } from '@/types';
-
-interface Props extends ChildrenProps {
-	id: string;
-}
-
-const ContentBox: React.FC<Props> = (props) => {
+const ContentBox: React.FC<ContentBoxProps> = (props) => {
 	const { id, children } = props;
 
 	return (

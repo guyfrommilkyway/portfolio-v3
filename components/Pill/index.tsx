@@ -1,9 +1,6 @@
 // packages
 import React from 'react';
 
-// types
-import { PillProps } from '@/types';
-
 const Pill: React.FC<PillProps> = (props) => {
 	const { tech } = props;
 
