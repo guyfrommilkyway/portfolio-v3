@@ -19,7 +19,7 @@ const About: React.FC = (props) => {
 	const queryHandler = async () => {
 		// api
 		const response = await fetch('/api/v1/firebase/biography');
-		const data = response.json();
+		const data = await response.json();
 
 		// save to store
 		dataHandler(data);
@@ -31,9 +31,9 @@ const About: React.FC = (props) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['about'],
 		queryFn: queryHandler,
-		initialData: props,
-		staleTime: 1000 * 60 * 10, // 10 minutes
-		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		initialData: Object.keys(about).length > 0 ? about : props,
+		staleTime: 1000 * 60 * 1, // 1 minute
+		refetchInterval: 1000 * 60 * 1, // 1 minute
 		refetchIntervalInBackground: true,
 	});
 
