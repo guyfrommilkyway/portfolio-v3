@@ -1,0 +1,3 @@
+interface PillProps {
+	tech: string;
+}

@@ -1,0 +1,3 @@
+interface HomeProps {
+	staticData: any;
+}

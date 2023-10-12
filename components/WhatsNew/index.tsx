@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ShowMore from '@/components/ShowMore';
+import NewsCard from '@/components/NewsCard';
 
 // helpers
 import useWhatsNewStore from '@/store/whats-new';
@@ -16,7 +17,7 @@ const WhatsNew: React.FC = (props) => {
 	const queryHandler = async () => {
 		// api
 		const response = await fetch('/api/v1/firebase/whats-new');
-		const data = response.json();
+		const data = await response.json();
 
 		// save to store
 		dataHandler(data);
@@ -28,9 +29,9 @@ const WhatsNew: React.FC = (props) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['whatsnew'],
 		queryFn: queryHandler,
-		initialData: props,
-		staleTime: 1000 * 60 * 10, // 10 minutes
-		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		initialData: Object.keys(whatsnew).length > 0 ? whatsnew : props,
+		staleTime: 1000 * 60 * 1, // 1 minute
+		refetchInterval: 1000 * 60 * 1, // 1 minute
 		refetchIntervalInBackground: true,
 	});
 
@@ -44,14 +45,7 @@ const WhatsNew: React.FC = (props) => {
 						.reverse()
 						.slice(0, 5)
 						.map((item) => {
-							return (
-								<div
-									key={item}
-									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
-								>
-									{data[item]}
-								</div>
-							);
+							return <NewsCard key={item} item={data[item]} />;
 						})}
 			</div>
 			{Object.keys(data).length > 5 && <ShowMore />}

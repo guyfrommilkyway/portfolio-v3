@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ContentBox from '@/components/ContentBox';
-import Card from './components/Card';
+import ProjectCard from '@/components/ProjectCard';
 
 // helpers
 import usePersonalStore from '@/store/personal';
@@ -17,7 +17,7 @@ const Personal: React.FC = (props) => {
 	const queryHandler = async () => {
 		// api
 		const response = await fetch('/api/v1/firebase/personal');
-		const data = response.json();
+		const data = await response.json();
 
 		// save to store
 		dataHandler(data);
@@ -29,9 +29,9 @@ const Personal: React.FC = (props) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['personal'],
 		queryFn: queryHandler,
-		initialData: props,
-		staleTime: 1000 * 60 * 10, // 10 minutes
-		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		initialData: Object.keys(personal).length > 0 ? personal : props,
+		staleTime: 1000 * 60 * 1, // 1 minute
+		refetchInterval: 1000 * 60 * 1, // 1 minute
 		refetchIntervalInBackground: true,
 	});
 
@@ -45,7 +45,7 @@ const Personal: React.FC = (props) => {
 							.sort()
 							.reverse()
 							.map((item) => {
-								return <Card key={item} {...data[item]} />;
+								return <ProjectCard key={item} {...data[item]} />;
 							})}
 				</div>
 			</div>

@@ -1,9 +1,6 @@
 // packages
 import React from 'react';
 
-// types
-import { NavItemProps } from '@/types';
-
 const NavItem: React.FC<NavItemProps> = (props) => {
 	const { name, onScroll } = props;
 

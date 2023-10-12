@@ -1,9 +1,6 @@
 // packages
 import React from 'react';
 
-// types
-import { SocialProps } from '@/types';
-
 const Link: React.FC<SocialProps> = (props) => {
 	const { name, link } = props;
 

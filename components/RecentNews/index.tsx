@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 // components
 import ShowMore from '@/components/ShowMore';
+import NewsCard from '@/components/NewsCard';
 
 // helpers
 import useRecentNewsStore from '@/store/recent-news';
@@ -16,7 +17,7 @@ const RecentNews: React.FC = (props) => {
 	const queryHandler = async () => {
 		// api
 		const response = await fetch('/api/v1/firebase/recent-news');
-		const data = response.json();
+		const data = await response.json();
 
 		// save to store
 		dataHandler(data);
@@ -28,9 +29,9 @@ const RecentNews: React.FC = (props) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['recentnews'],
 		queryFn: queryHandler,
-		initialData: props,
-		staleTime: 1000 * 60 * 10, // 10 minutes
-		refetchInterval: 1000 * 60 * 10, // 10 minutes
+		initialData: Object.keys(recentnews).length > 0 ? recentnews : props,
+		staleTime: 1000 * 60 * 1, // 1 minute
+		refetchInterval: 1000 * 60 * 1, // 1 minute
 		refetchIntervalInBackground: true,
 	});
 
@@ -44,14 +45,7 @@ const RecentNews: React.FC = (props) => {
 						.reverse()
 						.slice(0, 5)
 						.map((item) => {
-							return (
-								<div
-									key={item}
-									className='px-4 py-2 transition ease-in-out delay-100 hover:bg-neutral-900 cursor-pointer'
-								>
-									{data[item]}
-								</div>
-							);
+							return <NewsCard key={item} item={data[item]} />;
 						})}
 			</div>
 			{Object.keys(data).length > 5 && <ShowMore />}

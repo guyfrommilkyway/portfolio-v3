@@ -1,17 +1,13 @@
 // packages
 import React from 'react';
-import Image from 'next/image';
 
 // components
 import Pill from '@/components/Pill';
 
-// types
-import { ProjectCardProps } from '@/types';
-
 // assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
-const Card: React.FC<ProjectCardProps> = (props) => {
+const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 	const { name, link, website, description, technologies } = props;
 
 	return (
@@ -37,4 +33,4 @@ const Card: React.FC<ProjectCardProps> = (props) => {
 	);
 };
 
-export default Card;
+export default ProjectCard;

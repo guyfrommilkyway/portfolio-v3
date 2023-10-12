@@ -7,9 +7,6 @@ import Container from './components/Container';
 import Content from './components/Content';
 import News from '@/components/News';
 
-// types
-import { LayoutProps } from '@/types';
-
 const Layout: React.FC<LayoutProps> = (props) => {
 	const { renderHero, renderContent, renderNews } = props;
 
