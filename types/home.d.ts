@@ -1,3 +1,3 @@
 interface HomeProps {
-	staticData: any;
+	staticdata: any;
 }

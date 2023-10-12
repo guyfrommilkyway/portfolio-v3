@@ -6,7 +6,7 @@ const useHeroStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				hero: {},
+				hero: null,
 				dataHandler: (data: any) => set({ hero: data }),
 			}),
 			{ name: 'hero-store' }

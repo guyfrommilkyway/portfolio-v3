@@ -6,7 +6,7 @@ const useWhatsNewStore = create<any>()(
 	devtools(
 		persist(
 			(set) => ({
-				whatsnew: {},
+				whatsnew: null,
 				dataHandler: (data: any) => set({ whatsnew: data }),
 			}),
 			{ name: 'whatsnew-store' }

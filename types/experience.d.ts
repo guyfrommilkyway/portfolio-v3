@@ -1,5 +1,5 @@
 interface ExperienceProps {
-	staticData: any;
+	data: any;
 }
 
 interface ExperienceCardProps {
