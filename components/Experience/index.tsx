@@ -1,5 +1,5 @@
 // packages
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 // components
@@ -37,18 +37,16 @@ const Experience: React.FC = (props) => {
 
 	return (
 		<ContentBox id='experience'>
-			<Fragment>
-				<h3 className='mb-8 text-white text-2xl font-semibold'>Experience</h3>
-				<div className='flex flex-col gap-8'>
-					{!isLoading &&
-						Object.keys(data)
-							.sort()
-							.reverse()
-							.map((item) => {
-								return <Card key={item} {...data[item]} />;
-							})}
-				</div>
-			</Fragment>
+			<h3 className='mb-8 text-white text-2xl font-semibold'>Experience</h3>
+			<div className='flex flex-col gap-8'>
+				{!isLoading &&
+					Object.keys(data)
+						.sort()
+						.reverse()
+						.map((item) => {
+							return <Card key={item} {...data[item]} />;
+						})}
+			</div>
 		</ContentBox>
 	);
 };
