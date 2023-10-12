@@ -46,16 +46,23 @@ const Home: React.FC<HomeProps> = (props) => {
 	);
 };
 
-export async function getServerSideProps() {
-	// api call
-	const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`);
-	const data = await response.json();
+export async function getStaticProps() {
+	try {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`);
+		const staticData = await response.json();
 
-	return {
-		props: {
-			staticData: data,
-		},
-	};
+		return {
+			props: {
+				staticData,
+			},
+		};
+	} catch (error) {
+		return {
+			props: {
+				staticData: null,
+			},
+		};
+	}
 }
 
 export default Home;
