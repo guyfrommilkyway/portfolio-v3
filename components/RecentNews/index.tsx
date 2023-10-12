@@ -3,24 +3,16 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 // components
+import LoadingBox from '@/components/LoadingBox';
 import ShowMore from '@/components/ShowMore';
 import NewsCard from '@/components/NewsCard';
 
-// helpers
-import useRecentNewsStore from '@/store/recent-news';
-
-const RecentNews: React.FC = (props) => {
-	// store
-	const { recentnews, dataHandler } = useRecentNewsStore((state) => state);
-
+const RecentNews: React.FC = () => {
 	// query handler
 	const queryHandler = async () => {
 		// api
-		const response = await fetch('/api/v1/firebase/recent-news');
+		const response = await fetch('api/v1/firebase/recent-news');
 		const data = await response.json();
-
-		// save to store
-		dataHandler(data);
 
 		return data;
 	};
@@ -29,7 +21,6 @@ const RecentNews: React.FC = (props) => {
 	const { data, isLoading } = useQuery({
 		queryKey: ['recentnews'],
 		queryFn: queryHandler,
-		initialData: Object.keys(recentnews).length > 0 ? recentnews : props,
 		staleTime: 1000 * 60 * 1, // 1 minute
 		refetchInterval: 1000 * 60 * 1, // 1 minute
 		refetchIntervalInBackground: true,
@@ -39,16 +30,18 @@ const RecentNews: React.FC = (props) => {
 		<div className='py-4 bg-neutral-900 rounded-3xl'>
 			<span className='block mx-4 mb-2 text-white text-lg font-semibold'>Recent News</span>
 			<div className='flex flex-col mb-2 text-neutral-300'>
+				{isLoading && <LoadingBox />}
 				{!isLoading &&
+					!!data &&
 					Object.keys(data)
 						.sort()
 						.reverse()
-						.slice(0, 5)
+						.slice(0, 3)
 						.map((item) => {
 							return <NewsCard key={item} item={data[item]} />;
 						})}
 			</div>
-			{Object.keys(data).length > 5 && <ShowMore />}
+			{!isLoading && !!data && Object.keys(data).length > 5 && <ShowMore />}
 		</div>
 	);
 };
