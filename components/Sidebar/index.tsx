@@ -17,7 +17,7 @@ const Sidebar: React.FC = () => {
 	const { toggle, toggleHandler } = useToggle();
 
 	return (
-		<div className='fixed top-5 right-4 z-50'>
+		<div className='fixed top-8 right-4 z-50'>
 			<button
 				className='relative z-50 block lg:hidden mb-2 bg-transparent'
 				onClick={() => toggleHandler()}
@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
 				)}
 			</button>
 			<div
-				className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[420px] px-4 py-16 bg-neutral-800 overflow-x-auto ${
+				className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[420px] px-4 pt-20 pb-12 bg-neutral-800 overflow-x-auto ${
 					toggle ? 'flex' : 'hidden'
 				}`}
 			>

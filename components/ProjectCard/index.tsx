@@ -12,12 +12,12 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 	const { name, link, website, description, technologies } = props;
 
 	return (
-		<div className='flex flex-col lg:flex-row justify-start items-start gap-8 w-[calc(50%-10px)]'>
-			<Card>
+		<div className='flex flex-col lg:flex-row justify-start items-start gap-8 w-full max-w-full xl:max-w-[calc(50%-10px)]'>
+			<Card height='h-full'>
 				<div className='w-full p-4'>
 					<h4 className='mb-2 text-white text-lg font-semibold'>{name}</h4>
 					<a
-						className='flex gap-2 w-fit mb-4 text-neutral-300 underline hover:text-white'
+						className='flex gap-2 w-fit mb-4 text-neutral-300 underline hover:text-white break-all'
 						href={link}
 						target={link === '#' ? '_self' : '_blank'}
 					>

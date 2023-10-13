@@ -10,7 +10,7 @@ const Hero: React.FC<HeroProps> = (props) => {
 	const { headline, title, social } = props;
 
 	return (
-		<aside className='relative md:sticky md:top-[80px] flex flex-col gap-3 w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
+		<aside className='relative lg:sticky lg:top-[80px] flex flex-col gap-3 w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
 			<Photo />
 			<h3 className='text-white font-bold text-3xl leading-tighter tracking-wider'>{headline}</h3>
 			<div className='flex gap-4'>
