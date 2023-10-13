@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 // components
+import Card from '@/components/Card';
 import LoadingBox from '@/components/LoadingBox';
 import ShowMore from '@/components/ShowMore';
 import NewsCard from '@/components/NewsCard';
@@ -27,8 +28,8 @@ const RecentNews: React.FC = () => {
 	});
 
 	return (
-		<div className='py-4 bg-neutral-900 rounded-3xl'>
-			<p className='mx-4 mb-2 text-white text-lg font-semibold'>Recent News</p>
+		<Card>
+			<h6 className='mx-4 mb-2 text-white text-lg font-semibold'>Recent News</h6>
 			<div className='flex flex-col mb-2 text-neutral-300'>
 				{isLoading && <LoadingBox />}
 				{!isLoading &&
@@ -42,7 +43,7 @@ const RecentNews: React.FC = () => {
 						})}
 			</div>
 			{!isLoading && !!data && Object.keys(data).length > 5 && <ShowMore />}
-		</div>
+		</Card>
 	);
 };
 
