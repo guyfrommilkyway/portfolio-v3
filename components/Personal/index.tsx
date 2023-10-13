@@ -11,7 +11,7 @@ const Personal: React.FC<ProjectsProps> = (props) => {
 	return (
 		<ContentBox id='project'>
 			<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
-			<div className='flex flex-col gap-5'>
+			<div className='flex flex-wrap items-stretch gap-5'>
 				{!!data &&
 					Object.keys(data)
 						.sort()
