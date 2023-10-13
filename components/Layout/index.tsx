@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 
 // components
+import Header from '@/components/Header';
 import Container from './components/Container';
 import Sidebar from '@/components/Sidebar';
 import Content from './components/Content';
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
 	return (
 		<Fragment>
+			<Header />
 			<Container>
 				<Sidebar />
 				{renderHero()}
