@@ -10,7 +10,7 @@ import RecentNews from '@/components/RecentNews';
 import useToggle from '@/hooks/useToggle';
 
 // assets
-import { IoMdMenu, IoMdClose } from 'react-icons/io';
+import { RiMenu3Fill, RiCloseFill } from 'react-icons/ri';
 
 const Sidebar: React.FC = () => {
 	// state
@@ -23,9 +23,9 @@ const Sidebar: React.FC = () => {
 				onClick={() => toggleHandler()}
 			>
 				{toggle ? (
-					<IoMdClose size='30px' color='#e5e5e5' />
+					<RiCloseFill size='24px' color='#e5e5e5' />
 				) : (
-					<IoMdMenu size='30px' color='#e5e5e5' />
+					<RiMenu3Fill size='24px' color='#e5e5e5' />
 				)}
 			</button>
 			<div
