@@ -10,8 +10,8 @@ const Hero: React.FC<HeroProps> = (props) => {
 	const { headline, title, social } = props;
 
 	return (
-		<aside className='lg:sticky lg:top-0 flex flex-col w-full lg:max-w-[340px] lg:h-screen p-8 border-b border-neutral-900'>
-			<div className='flex items-center gap-2 mt-2 mb-12'>
+		<aside className='lg:sticky lg:top-0 flex flex-col w-full lg:max-w-[340px] lg:h-screen p-4 border-b border-neutral-900'>
+			<div className='mb-12'>
 				<Logo />
 			</div>
 			<Photo />

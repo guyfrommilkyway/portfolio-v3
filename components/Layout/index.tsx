@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 // components
 import Container from './components/Container';
+import Sidebar from '@/components/Sidebar';
 import Content from './components/Content';
 import News from '@/components/News';
 import Resume from '@/components/Resume';
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 	return (
 		<Fragment>
 			<Container>
+				<Sidebar />
 				{renderHero()}
 				<Content>{renderContent()}</Content>
 				<News>
