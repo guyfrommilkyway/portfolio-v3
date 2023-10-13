@@ -7,7 +7,7 @@ const ContentBox: React.FC<ContentBoxProps> = (props) => {
 	return (
 		<section
 			id={id}
-			className='relative w-full px-4 py-12 md:px-8 lg:px-12 border-b border-neutral-900'
+			className='relative w-full px-4 py-8 md:px-8 lg:px-10 border-b border-neutral-900'
 		>
 			{children}
 		</section>

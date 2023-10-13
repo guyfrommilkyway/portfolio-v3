@@ -10,17 +10,15 @@ const Personal: React.FC<ProjectsProps> = (props) => {
 
 	return (
 		<ContentBox id='project'>
-			<div className='mb-20'>
-				<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
-				<div className='flex flex-col gap-5'>
-					{!!data &&
-						Object.keys(data)
-							.sort()
-							.reverse()
-							.map((item) => {
-								return <ProjectCard key={item} {...data[item]} />;
-							})}
-				</div>
+			<h3 className='mb-8 text-white text-2xl font-semibold'>Personal</h3>
+			<div className='flex flex-col gap-5'>
+				{!!data &&
+					Object.keys(data)
+						.sort()
+						.reverse()
+						.map((item) => {
+							return <ProjectCard key={item} {...data[item]} />;
+						})}
 			</div>
 		</ContentBox>
 	);
