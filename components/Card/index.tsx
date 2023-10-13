@@ -1,10 +1,10 @@
 // packages
 import React from 'react';
 
-const Card: React.FC<ChildrenProps> = (props) => {
-	const { children } = props;
+const Card: React.FC<CardProps> = (props) => {
+	const { height, children } = props;
 
-	return <div className='w-full h-full py-4 bg-neutral-900 rounded-2xl'>{children}</div>;
+	return <div className={`w-full py-4 bg-neutral-900 rounded-2xl ${height}`}>{children}</div>;
 };
 
 export default Card;
