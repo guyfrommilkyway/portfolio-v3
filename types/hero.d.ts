@@ -1,6 +1,6 @@
 interface HeroProps {
   headline: string;
-  title: string;
+  description: string;
 }
 
 // types
