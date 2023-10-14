@@ -8,8 +8,8 @@ import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
-import Work from '@/components/Work';
-import Personal from '@/components/Personal';
+import Work from '@/components/Projects/Work';
+import Personal from '@/components/Projects/Personal';
 
 const Home: React.FC<HomeProps> = props => {
   const { staticdata } = props;
