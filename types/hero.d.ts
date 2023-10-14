@@ -1,11 +1,11 @@
 interface HeroProps {
-	headline: string;
-	title: string;
-	social: any;
+  headline: string;
+  title: string;
 }
 
 // types
 interface SocialProps {
-	name: string;
-	link: string;
+  name: string;
+  link: string;
+  icon: Component;
 }
