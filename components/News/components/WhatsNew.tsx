@@ -7,13 +7,17 @@ import Card from '@/components/Card';
 import LoadingBox from '@/components/LoadingBox';
 import ShowMoreButton from './ShowMoreButton';
 import NewsCard from './NewsCard';
+import useWhatsNewStore from '@/store/whats-new';
 
 const WhatsNew: React.FC = () => {
+  const { whatsnew, dataHandler } = useWhatsNewStore(state => state);
+
   // query handler
   const queryHandler = async () => {
     // api
     const response = await fetch('api/v1/firebase/whats-new');
     const data = await response.json();
+    dataHandler(data);
 
     return data;
   };
@@ -22,8 +26,9 @@ const WhatsNew: React.FC = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['whatsnew'],
     queryFn: queryHandler,
-    staleTime: 1000 * 60 * 1, // 1 minute
-    refetchInterval: 1000 * 60 * 1, // 1 minute
+    placeholderData: whatsnew,
+    staleTime: 1000 * 30, // 30 seconds
+    refetchInterval: 1000 * 30, // 30 seconds
     refetchIntervalInBackground: true,
   });
 

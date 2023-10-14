@@ -7,13 +7,17 @@ import Card from '@/components/Card';
 import LoadingBox from '@/components/LoadingBox';
 import ShowMoreButton from './ShowMoreButton';
 import NewsCard from './NewsCard';
+import useRecentNewsStore from '@/store/recent-news';
 
 const RecentNews: React.FC = () => {
+  const { recentnews, dataHandler } = useRecentNewsStore(state => state);
+
   // query handler
   const queryHandler = async () => {
     // api
     const response = await fetch('api/v1/firebase/recent-news');
     const data = await response.json();
+    dataHandler(data);
 
     return data;
   };
@@ -22,8 +26,9 @@ const RecentNews: React.FC = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['recentnews'],
     queryFn: queryHandler,
-    staleTime: 1000 * 60 * 1, // 1 minute
-    refetchInterval: 1000 * 60 * 1, // 1 minute
+    placeholderData: recentnews,
+    staleTime: 1000 * 30, // 30 seconds
+    refetchInterval: 1000 * 30, // 30 seconds
     refetchIntervalInBackground: true,
   });
 
