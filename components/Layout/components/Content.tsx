@@ -2,17 +2,17 @@
 import React from 'react';
 
 // components
-import Footer from '@/components/Footer';
+import Footer from './Footer';
 
-const Content: React.FC<ChildrenProps> = (props) => {
-	const { children } = props;
+const Content: React.FC<ChildrenProps> = props => {
+  const { children } = props;
 
-	return (
-		<section className='relative w-full border-x border-neutral-900'>
-			{children}
-			<Footer />
-		</section>
-	);
+  return (
+    <section className='relative w-full border-x border-neutral-900'>
+      {children}
+      <Footer />
+    </section>
+  );
 };
 
 export default Content;

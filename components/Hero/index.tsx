@@ -6,7 +6,7 @@ import Photo from './components/Photo';
 import Link from './components/Social';
 
 // data
-import { social } from './data';
+import { social } from './components/data';
 
 const Hero: React.FC<HeroProps> = props => {
   const { headline, description } = props;

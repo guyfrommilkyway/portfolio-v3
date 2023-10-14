@@ -6,7 +6,7 @@ import Pill from '@/components/Pill';
 
 // assets
 import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
-import Card from '../Card';
+import Card from '../../Card';
 
 const ProjectCard: React.FC<ProjectCardProps> = props => {
   const { name, link, description, technologies } = props;
