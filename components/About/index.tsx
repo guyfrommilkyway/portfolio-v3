@@ -10,9 +10,9 @@ const About: React.FC<AboutProps> = props => {
   return (
     <ContentBox id='about'>
       <h3 className='mb-4 text-white text-2xl font-semibold'>{headline}</h3>
-      <h4 className='mb-4 text-neutral-100 font-bold text-xl tracking-wide leading-normal'>
+      {/* <h4 className='mb-4 text-neutral-100 font-bold text-xl tracking-wide leading-normal'>
         {subheadline}
-      </h4>
+      </h4> */}
       {!!paragraphs &&
         Object.keys(paragraphs).map(item => {
           return (
