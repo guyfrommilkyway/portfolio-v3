@@ -9,7 +9,7 @@ import Link from './components/Social';
 import { social } from './data';
 
 const Hero: React.FC<HeroProps> = props => {
-  const { headline, title } = props;
+  const { headline, description } = props;
 
   return (
     <aside className='relative lg:sticky lg:top-[80px] flex flex-col gap-4 w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
@@ -22,7 +22,9 @@ const Hero: React.FC<HeroProps> = props => {
           return <Link key={item.name} {...item} />;
         })}
       </div>
-      <p className='mb-4 text-lg text-neutral-300 leading-snug'>{title}</p>
+      <p className='mb-4 text-lg text-neutral-300 leading-snug'>
+        {description}
+      </p>
     </aside>
   );
 };

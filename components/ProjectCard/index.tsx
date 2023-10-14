@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
         <div className='w-full p-4'>
           <h4 className='mb-2 text-white text-lg font-semibold'>{name}</h4>
           <a
-            className='flex gap-1 w-fit mb-2 text-neutral-300 underline hover:text-white'
+            className='flex gap-1 w-fit mb-2 text-neutral-300 underline hover:text-white select-none'
             href={link}
             target={`${link === '#' ? '_self' : '_blank'}`}
           >
