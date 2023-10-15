@@ -5,16 +5,36 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'San Francisco';
-	src: url('../assets/fonts/SF-Pro-Display-Regular.otf');
-	font-display: swap;
+  font-family: 'San Francisco';
+  src: url('../assets/fonts/SF-Pro-Display-Regular.otf');
+  font-display: swap;
 }
 
 * {
-	font-family: 'San Francisco', 'Open Sans', sans-serif;
-	scroll-padding-top: 5rem;
+  font-family: 'San Francisco', 'Open Sans', sans-serif;
+  scroll-padding-top: 5rem;
 }
 
 body {
-	background-color: #080808;
+  background-color: #080808;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
 }

@@ -22,6 +22,7 @@ const Sidebar: React.FC = () => {
         className='relative z-50 block lg:hidden mb-2 bg-transparent'
         onClick={() => toggleHandler()}
       >
+        <span className='sr-only'>Menu</span>
         {toggle ? (
           <RiCloseFill size='24px' color='#e5e5e5' />
         ) : (
