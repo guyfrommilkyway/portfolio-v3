@@ -22,9 +22,7 @@ const Hero: React.FC<HeroProps> = props => {
           return <Link key={item.name} {...item} />;
         })}
       </div>
-      <p className='mb-4 text-lg text-neutral-300 leading-snug'>
-        {description}
-      </p>
+      <p className='mb-4 text-neutral-300 leading-snug'>{description}</p>
     </aside>
   );
 };
