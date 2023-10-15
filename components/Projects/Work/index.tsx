@@ -10,7 +10,7 @@ const Work: React.FC<ProjectsProps> = props => {
 
   return (
     <ContentBox id='project'>
-      <h3 className='mb-8 text-white text-2xl font-semibold'>Work</h3>
+      <h3 className='mb-8 text-white text-2xl font-semibold'>Projects</h3>
       <div className='flex flex-wrap items-stretch gap-5'>
         {!!data &&
           Object.keys(data)

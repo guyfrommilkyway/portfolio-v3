@@ -9,15 +9,18 @@ import Link from './components/Social';
 import { social } from './components/data';
 
 const Hero: React.FC<HeroProps> = props => {
-  const { headline, description } = props;
+  const { headline, title, description } = props;
 
   return (
-    <aside className='relative lg:sticky lg:top-[80px] flex flex-col gap-4 w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
+    <aside className='relative lg:sticky lg:top-[80px] flex flex-col w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
       <Photo />
-      <h3 className='text-white font-bold text-3xl leading-tighter tracking-wider'>
+      <h1 className='mb-2 text-white font-bold text-3xl leading-tighter tracking-wider'>
         {headline}
-      </h3>
-      <div className='flex gap-3'>
+      </h1>
+      <h2 className='mb-4 text-neutral-300 text-lg leading-tighter tracking-wider'>
+        {title}
+      </h2>
+      <div className='flex gap-4 mb-4'>
         {social.map((item: SocialProps) => {
           return <Link key={item.name} {...item} />;
         })}

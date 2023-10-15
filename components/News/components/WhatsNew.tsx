@@ -29,9 +29,9 @@ const WhatsNew: React.FC = () => {
 
   return (
     <Card>
-      <p className='mx-4 mb-2 text-white text-lg font-semibold'>
+      <h1 className='mx-4 mb-2 text-white text-lg font-semibold'>
         What&apos;s New
-      </p>
+      </h1>
       <div className='flex flex-col mb-2 text-neutral-300'>
         {isLoading && <LoadingBox />}
         {!isLoading &&
@@ -41,7 +41,7 @@ const WhatsNew: React.FC = () => {
             .reverse()
             .slice(0, 3)
             .map(item => {
-              return <NewsCard key={item} item={data[item]} />;
+              return <NewsCard key={item} {...data[item]} />;
             })}
       </div>
       {!isLoading && !!data && Object.keys(data).length > 5 && (
