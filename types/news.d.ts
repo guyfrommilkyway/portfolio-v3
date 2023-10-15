@@ -1,11 +1,12 @@
 interface NewsCardProps {
-	item: string;
+  tag: string;
+  description: string;
 }
 
 interface WhatsNewProps {
-	staticData: any;
+  staticData: any;
 }
 
 interface RecentNewsProps {
-	staticData: any;
+  staticData: any;
 }
