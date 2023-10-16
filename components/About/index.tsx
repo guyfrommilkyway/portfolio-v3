@@ -8,12 +8,17 @@ const About: React.FC<AboutProps> = props => {
   const { headline, subheadline, paragraphs } = props;
 
   return (
-    <ContentBox id='about'>
-      <h3 className='mb-4 text-white text-2xl font-semibold'>{headline}</h3>
+    <ContentBox id='summary'>
+      <h3 className='mb-4 text-white text-2xl font-semibold select-none'>
+        {headline}
+      </h3>
       {!!paragraphs &&
         Object.keys(paragraphs).map(item => {
           return (
-            <p key={item} className='mb-4 leading-relaxed text-neutral-300'>
+            <p
+              key={item}
+              className='mb-4 leading-relaxed text-neutral-300 select-none'
+            >
               {paragraphs[item]}
             </p>
           );
