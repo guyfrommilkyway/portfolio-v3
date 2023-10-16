@@ -8,7 +8,6 @@ import Container from './components/Container';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
 import News from '@/components/News';
-import Resume from '@/components/Resume';
 import WhatsNew from '@/components/News/components/WhatsNew';
 import RecentNews from '@/components/News/components/RecentNews';
 
@@ -23,7 +22,6 @@ const Layout: React.FC<LayoutProps> = props => {
         {renderHero()}
         <Content>{renderContent()}</Content>
         <News>
-          <Resume />
           <WhatsNew />
           <RecentNews />
         </News>

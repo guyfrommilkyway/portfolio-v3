@@ -5,13 +5,13 @@ import React from 'react';
 import ContentBox from '@/components/ContentBox';
 import Card from './components/Card';
 
-const Experience: React.FC<ExperienceProps> = props => {
+const Certifications: React.FC<CertificationsProps> = props => {
   const { data } = props;
 
   return (
-    <ContentBox id='experience'>
-      <h3 className='mb-8 text-white text-2xl font-semibold'>Experience</h3>
-      <div className='flex flex-col gap-8'>
+    <ContentBox id='certifications'>
+      <h1 className='mb-4 text-white text-2xl font-semibold'>Certifications</h1>
+      <div className='flex flex-wrap gap-5'>
         {!!data &&
           Object.keys(data)
             .sort()
@@ -24,4 +24,4 @@ const Experience: React.FC<ExperienceProps> = props => {
   );
 };
 
-export default Experience;
+export default Certifications;

@@ -2,7 +2,7 @@
 import React from 'react';
 
 // components
-import Resume from '@/components/Resume';
+import Navbar from '@/components/Navbar';
 import WhatsNew from '@/components/News/components/WhatsNew';
 import RecentNews from '@/components/News/components/RecentNews';
 
@@ -17,7 +17,7 @@ const Sidebar: React.FC = () => {
   const { toggle, toggleHandler } = useToggle();
 
   return (
-    <div className='fixed top-8 right-4 z-50'>
+    <div className='fixed top-7 right-4 z-50'>
       <button
         className='relative z-50 block lg:hidden mb-2 bg-transparent'
         onClick={() => toggleHandler()}
@@ -30,11 +30,14 @@ const Sidebar: React.FC = () => {
         )}
       </button>
       <div
-        className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[420px] px-4 pt-20 pb-12 bg-neutral-800 overflow-x-auto ${
+        className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[480px] px-4 pt-20 pb-12 bg-neutral-800 overflow-x-auto ${
           toggle ? 'flex' : 'hidden'
         }`}
       >
-        <Resume />
+        <div className='flex flex-col gap-2'>
+          <span className='text-sm text-neutral-500'>NAVIGATION</span>
+          <Navbar />
+        </div>
         <WhatsNew />
         <RecentNews />
       </div>

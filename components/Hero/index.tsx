@@ -14,10 +14,10 @@ const Hero: React.FC<HeroProps> = props => {
   return (
     <aside className='relative lg:sticky lg:top-[80px] flex flex-col w-full md:max-w-[320px] h-fit px-4 pt-4 pb-10 border-b md:border-none border-neutral-900'>
       <Photo />
-      <h1 className='mb-2 text-white font-bold text-3xl leading-tighter tracking-wider'>
+      <h1 className='mb-2 text-white font-bold text-3xl leading-tighter tracking-wider select-none'>
         {headline}
       </h1>
-      <h2 className='mb-4 text-neutral-300 text-lg leading-tighter tracking-wider'>
+      <h2 className='mb-4 text-neutral-300 text-lg leading-tighter tracking-wider select-none'>
         {title}
       </h2>
       <div className='flex gap-4 mb-4'>
@@ -25,7 +25,9 @@ const Hero: React.FC<HeroProps> = props => {
           return <Link key={item.name} {...item} />;
         })}
       </div>
-      <p className='mb-4 text-neutral-300 leading-snug'>{description}</p>
+      <p className='mb-4 text-neutral-300 leading-snug select-none'>
+        {description}
+      </p>
     </aside>
   );
 };
