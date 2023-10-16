@@ -8,5 +8,6 @@ module.exports = {
 
     return config;
   },
+  pageExtensions: ['page.tsx', 'tsx', 'ts'],
   reactStrictMode: true, // Include your Next.js configuration options here
 };
