@@ -9,7 +9,7 @@ const NewsCard: React.FC<NewsCardProps> = props => {
       <h2 className='text-neutral-400 leading-snug tracking-tighter select-none'>
         {tag}
       </h2>
-      <p className='text-white select-none'>{description}</p>
+      <p className='text-neutral-300 select-none'>{description}</p>
     </div>
   );
 };

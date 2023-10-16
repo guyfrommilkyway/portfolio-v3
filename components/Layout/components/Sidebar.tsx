@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
         }`}
       >
         <div className='flex flex-col gap-2'>
-          <span className='text-sm text-neutral-500'>NAVIGATION</span>
+          <span className='text-xs text-neutral-500'>NAVIGATION</span>
           <Navbar />
         </div>
         <WhatsNew />
