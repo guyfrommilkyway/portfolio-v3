@@ -15,7 +15,7 @@ const Initiatives: React.FC<StaticProps> = props => {
   return (
     <Fragment>
       <Head title='Initiatives' />
-      <Layout {...staticData.hero}>
+      <Layout data={staticData.hero}>
         <ContinuousLearning data={staticData.continuouslearning} />
         <Personal data={staticData.personal} />
         <Education data={staticData.education} />

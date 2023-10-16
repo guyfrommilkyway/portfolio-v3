@@ -13,14 +13,14 @@ import WhatsNew from '@/components/News/components/WhatsNew';
 import RecentNews from '@/components/News/components/RecentNews';
 
 const Layout: React.FC<LayoutProps> = props => {
-  const { hero, children } = props;
+  const { data, children } = props;
 
   return (
     <Fragment>
       <Header />
       <Container>
         <Sidebar />
-        <Hero {...hero} />
+        <Hero {...data} />
         <Content>{children}</Content>
         <News>
           <WhatsNew />

@@ -14,7 +14,7 @@ const Home: React.FC<StaticProps> = props => {
   return (
     <Fragment>
       <Head title='Almer Tampus' />
-      <Layout {...staticData.hero}>
+      <Layout data={staticData.hero}>
         <About {...staticData.biography} />
         <Experience data={staticData.experience} />
         <Work data={staticData.work} />
