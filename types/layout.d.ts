@@ -16,7 +16,7 @@ interface NavItemProps {
 }
 
 interface LayoutProps {
-  hero: any;
+  data: any;
   children: Component;
 }
 
