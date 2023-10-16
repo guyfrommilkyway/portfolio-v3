@@ -23,9 +23,9 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
   return (
     <div className='flex flex-col lg:flex-row justify-start items-start gap-8 w-full max-w-full xl:max-w-[calc(50%-10px)]'>
       <Card height='h-full'>
-        <div className='relative w-full p-4'>
+        <div className='relative w-full px-4'>
           {!!image && (
-            <div className='relative bottom-0 mb-4 aspect-video rounded-lg opacity-80 hover:opacity-100 overflow-hidden select-none transition-opacity ease-in-out delay-100'>
+            <div className='relative bottom-0 mb-4 aspect-video rounded-xl opacity-80 hover:opacity-100 overflow-hidden select-none transition-opacity ease-in-out delay-100'>
               <Image
                 src={image}
                 fill={true}
