@@ -2,7 +2,7 @@
 import React from 'react';
 
 // assets
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaRegCircle } from 'react-icons/fa';
 
 const Course: React.FC<ContinuousLearningCourseProps> = props => {
   const { course, status } = props;
@@ -12,7 +12,7 @@ const Course: React.FC<ContinuousLearningCourseProps> = props => {
       {status === 'true' ? (
         <FaCheckCircle size={14} className='text-green-700' />
       ) : (
-        <FaTimesCircle size={14} className='text-red-900' />
+        <FaRegCircle size={14} className='text-neutral-600' />
       )}
       <span className='text-neutral-300'>{course}</span>
     </div>

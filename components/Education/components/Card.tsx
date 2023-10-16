@@ -2,10 +2,8 @@
 import React from 'react';
 
 // components
+import OutsideLink from '@/components/Links/OutsideLink';
 import Pill from '@/components/Pill';
-
-// assets
-import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
 const Card: React.FC<EducationCardProps> = props => {
   const { program, university, duration, description, skills, certificate } =
@@ -21,13 +19,7 @@ const Card: React.FC<EducationCardProps> = props => {
         {duration}
       </p>
       {!!certificate && (
-        <a
-          className='flex gap-2 w-fit mb-2 text-neutral-300 underline hover:text-white select-none cursor-pointer'
-          href={certificate}
-          target='_blank'
-        >
-          Verified Certificate <ArrowUpSVG width={14} height={14} />
-        </a>
+        <OutsideLink href='certificate' name='Verified Certificate' />
       )}
       {!!description && (
         <p className='my-4 text-neutral-300 select-none'>{description}</p>

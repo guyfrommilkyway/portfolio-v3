@@ -14,3 +14,13 @@ interface ProjectCardProps {
   disclaimer: string;
   technologies: any;
 }
+
+interface ProjectCardLinksProps {
+  link: string;
+  codebase: string;
+}
+
+interface ProjectCardImageProps {
+  name: string;
+  image: string;
+}

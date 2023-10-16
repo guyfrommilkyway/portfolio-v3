@@ -3,9 +3,7 @@ import React from 'react';
 
 // components
 import Card from '@/components/Card';
-
-// assets
-import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
+import OutsideLink from '@/components/Links/OutsideLink';
 
 const CertificationsCard: React.FC<CertificationsCardProps> = props => {
   const { name, organization, issued, link } = props;
@@ -23,14 +21,7 @@ const CertificationsCard: React.FC<CertificationsCardProps> = props => {
           <p className='w-fit mb-2 text-sm text-neutral-300 uppercase leading-none tracking-tighter select-none'>
             {issued}
           </p>
-          <a
-            className='flex gap-2 w-fit text-neutral-300 underline hover:text-white select-none'
-            href={link}
-            target='_blank'
-          >
-            View Credential
-            <ArrowUpSVG width={14} height={14} />
-          </a>
+          <OutsideLink href={link} name='View Credential' />
         </div>
       </Card>
     </div>
