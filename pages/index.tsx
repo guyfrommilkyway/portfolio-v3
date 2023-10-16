@@ -10,6 +10,9 @@ import About from '@/components/About';
 import Experience from '@/components/Experience';
 import Work from '@/components/Projects/Work';
 import Personal from '@/components/Projects/Personal';
+import Education from '@/components/Education';
+import ContinuousLearning from '@/components/ContinuousLearning';
+import Certifications from '@/components/Certifications';
 
 const Home: React.FC<HomeProps> = props => {
   const { staticdata } = props;
@@ -47,6 +50,9 @@ const Home: React.FC<HomeProps> = props => {
               <Experience data={data?.experience} />
               <Work data={data?.work} />
               <Personal data={data?.personal} />
+              <ContinuousLearning data={data?.continuouslearning} />
+              <Education data={data?.education} />
+              <Certifications data={data?.certifications} />
             </Fragment>
           );
         }}
