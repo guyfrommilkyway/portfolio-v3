@@ -2,10 +2,8 @@
 import React from 'react';
 
 // components
+import OutsideLink from '@/components/Links/OutsideLink';
 import Pill from '@/components/Pill';
-
-// assets
-import ArrowUpSVG from '@/assets/svg/iconoir_arrow-tr.svg';
 
 const Card: React.FC<ExperienceCardProps> = props => {
   const { duration, title, company, description, link, website, technologies } =
@@ -18,20 +16,13 @@ const Card: React.FC<ExperienceCardProps> = props => {
       <p className='w-fit mb-2 text-neutral-300 text-sm uppercase leading-none tracking-tighter select-none'>
         {duration}
       </p>
-      <a
-        className='flex gap-2 w-fit mb-4 text-neutral-300 underline hover:text-white select-none'
-        href={link}
-        target='_blank'
-      >
-        {website}
-        <ArrowUpSVG width={14} height={14} />
-      </a>
+      <OutsideLink href={link} name={website} />
       {!!description && (
-        <p className='mb-2 text-neutral-300 text-lg select-none'>
+        <p className='my-2 text-neutral-300 text-lg select-none'>
           {description}
         </p>
       )}
-      <div className='flex flex-wrap gap-2'>
+      <div className='flex flex-wrap gap-2 mt-4'>
         {Object.keys(technologies).map(item => {
           return <Pill key={item} tech={technologies[item]} />;
         })}
