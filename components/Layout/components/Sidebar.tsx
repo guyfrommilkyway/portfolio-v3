@@ -3,8 +3,8 @@ import React from 'react';
 
 // components
 import Navbar from '@/components/Navbar';
-import WhatsNew from '@/components/News/components/WhatsNew';
-import RecentNews from '@/components/News/components/RecentNews';
+import WhatsNewCard from '@/components/News/components/WhatsNewCard';
+import RecentNewsCard from '@/components/News/components/RecentNewsCard';
 
 // utils
 import useToggle from '@/hooks/useToggle';
@@ -38,8 +38,8 @@ const Sidebar: React.FC = () => {
           <span className='text-xs text-neutral-500'>NAVIGATION</span>
           <Navbar />
         </div>
-        <WhatsNew />
-        <RecentNews />
+        <WhatsNewCard />
+        <RecentNewsCard />
       </div>
     </div>
   );
