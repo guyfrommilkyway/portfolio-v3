@@ -19,8 +19,3 @@ interface LayoutProps {
   data: any;
   children: Component;
 }
-
-interface ContentBoxProps {
-  id: string;
-  children: Component;
-}

@@ -1,9 +1,9 @@
-interface InternalLinkProps {
+interface LinkExternalProps {
   href: string;
   title?: string;
   name?: string;
 }
 
-interface DummyLinkProps {
-  name?: string;
+interface LinkDummyProps {
+  name: string;
 }
