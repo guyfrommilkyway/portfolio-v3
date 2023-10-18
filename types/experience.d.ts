@@ -4,7 +4,8 @@ interface ExperienceCardProps {
   company: string;
   link: string;
   website: string;
-  description: string;
+  location: string;
+  setup: string;
   technologies: any;
 }
 
