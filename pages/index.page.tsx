@@ -4,9 +4,9 @@ import React, { Fragment } from 'react';
 // components
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Work from '@/components/Projects/Work';
+import About from '@/components/Sections/About';
+import Experience from '@/components/Sections/Experience';
+import Projects from '@/components/Sections/Projects';
 
 const Home: React.FC<StaticProps> = props => {
   const { staticData } = props;
@@ -17,7 +17,7 @@ const Home: React.FC<StaticProps> = props => {
       <Layout data={staticData.hero}>
         <About {...staticData.biography} />
         <Experience data={staticData.experience} />
-        <Work data={staticData.work} />
+        <Projects data={staticData.work} />
       </Layout>
     </Fragment>
   );

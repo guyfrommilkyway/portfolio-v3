@@ -4,10 +4,10 @@ import React, { Fragment } from 'react';
 // components
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
-import Personal from '@/components/Projects/Personal';
-import Education from '@/components/Education';
-import ContinuousLearning from '@/components/ContinuousLearning';
-import Certifications from '@/components/Certifications';
+import Projects from '@/components/Sections/Projects';
+import Education from '@/components/Sections/Education';
+import ContinuousLearning from '@/components/Sections/ContinuousLearning';
+import Certifications from '@/components/Sections/Certifications';
 
 const Initiatives: React.FC<StaticProps> = props => {
   const { staticData } = props;
@@ -17,7 +17,7 @@ const Initiatives: React.FC<StaticProps> = props => {
       <Head title='Initiatives' />
       <Layout data={staticData.hero}>
         <ContinuousLearning data={staticData.continuouslearning} />
-        <Personal data={staticData.personal} />
+        <Projects data={staticData.personal} />
         <Education data={staticData.education} />
         <Certifications data={staticData.certifications} />
       </Layout>
