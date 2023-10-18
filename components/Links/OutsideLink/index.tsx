@@ -13,6 +13,7 @@ const OutsideLink: React.FC<InternalLinkProps> = props => {
       href={href}
       title={title}
       target='_blank'
+      rel='noopener noreferrer'
     >
       {name ? name : 'Visit Website'}
       <ArrowUpSVG width={10} height={10} />
