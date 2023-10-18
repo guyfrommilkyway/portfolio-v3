@@ -7,4 +7,5 @@ interface CertificationsCardProps {
   organization: string;
   issued: string;
   link: string;
+  technologies: any;
 }
