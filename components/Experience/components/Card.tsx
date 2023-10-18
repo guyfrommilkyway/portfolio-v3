@@ -6,7 +6,7 @@ import OutsideLink from '@/components/Links/OutsideLink';
 import Pill from '@/components/Pill';
 
 const Card: React.FC<ExperienceCardProps> = props => {
-  const { duration, title, company, description, link, website, technologies } =
+  const { duration, title, company, link, website, location, technologies } =
     props;
 
   return (
@@ -16,12 +16,8 @@ const Card: React.FC<ExperienceCardProps> = props => {
       <p className='w-fit mb-2 text-neutral-300 text-sm uppercase leading-none tracking-tighter select-none'>
         {duration}
       </p>
+      <p className='my-2 text-neutral-300 select-none'>{location}</p>
       <OutsideLink href={link} name={website} />
-      {!!description && (
-        <p className='my-2 text-neutral-300 text-lg select-none'>
-          {description}
-        </p>
-      )}
       <div className='flex flex-wrap gap-2 mt-4'>
         {Object.keys(technologies).map(item => {
           return <Pill key={item} tech={technologies[item]} />;

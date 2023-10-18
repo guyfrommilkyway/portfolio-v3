@@ -47,7 +47,9 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
             })}
           </div>
           {!!disclaimer && (
-            <p className='mt-8 text-neutral-400 select-none'>{disclaimer}</p>
+            <p className='mt-8 text-neutral-400 text-sm leading-snug tracking-tight select-none'>
+              {disclaimer}
+            </p>
           )}
         </div>
       </Card>
