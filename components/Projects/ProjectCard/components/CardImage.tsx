@@ -6,7 +6,7 @@ const CardImage: React.FC<ProjectCardImageProps> = props => {
   const { name, image } = props;
 
   return (
-    <div className='relative bottom-0 mb-4 aspect-video rounded-xl overflow-hidden select-none transition-opacity ease-in-out delay-100'>
+    <div className='relative mb-4 aspect-video rounded-xl overflow-hidden select-none transition-opacity ease-in-out delay-100'>
       <Image
         src={image}
         fill={true}
