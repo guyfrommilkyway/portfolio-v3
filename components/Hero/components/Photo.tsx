@@ -15,11 +15,12 @@ const Photo: React.FC = () => {
       >
         <Image
           className='aspect-auto'
-          priority
           fill={true}
           sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
           src='/images/me.jpg'
           alt='almer-tampus.jpg'
+          placeholder='blur'
+          blurDataURL='/images/me.jpg'
         />
       </div>
       <div
@@ -30,11 +31,12 @@ const Photo: React.FC = () => {
       >
         <Image
           className='aspect-auto'
-          priority
           fill={true}
           sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
           src='/images/me_2.jpg'
           alt='almer-tampus.jpg'
+          placeholder='blur'
+          blurDataURL='/images/me.jpg'
         />
       </div>
     </div>
