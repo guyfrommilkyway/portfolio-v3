@@ -7,7 +7,7 @@ const NavItem: React.FC<NavItemProps> = props => {
 
   return (
     <Link
-      className='text-neutral-300 hover:underline hover:text-white transition-colors ease-in-out delay-100'
+      className='text-neutral-300 hover:underline hover:text-white transition-colors ease-in-out delay-100 select-none'
       href={link}
     >
       {name}

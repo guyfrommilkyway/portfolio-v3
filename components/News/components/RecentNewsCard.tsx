@@ -29,7 +29,7 @@ const RecentNewsCard: React.FC = () => {
 
   return (
     <CardUI>
-      <h1 className='mx-4 mb-2 text-white text-lg font-semibold'>
+      <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
         Recent News
       </h1>
       <div className='flex flex-col mb-2 text-neutral-300'>

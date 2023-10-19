@@ -29,7 +29,7 @@ const WhatsNewCard: React.FC = () => {
 
   return (
     <CardUI>
-      <h1 className='mx-4 mb-2 text-white text-lg font-semibold'>
+      <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
         What&apos;s New
       </h1>
       <div className='flex flex-col mb-2 text-neutral-300'>
