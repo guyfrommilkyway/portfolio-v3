@@ -8,6 +8,7 @@ interface ProjectCardProps {
   company: string;
   hostingProvider: string;
   teamSize: string;
+  role: string;
   codebase: string;
   status: string;
   description: string;

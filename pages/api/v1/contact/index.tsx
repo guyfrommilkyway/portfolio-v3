@@ -33,7 +33,6 @@ export default async function handler(
       return;
     }
 
-    const cleanSubject = req.body.subject.toString();
     const cleanMessage = req.body.message.toString();
     const cleanName = req.body.name.toString();
     const cleanEmail = req.body.email.toString();
@@ -41,7 +40,7 @@ export default async function handler(
     const response = await sgMail.send({
       to: process.env.NEXT_PUBLIC_SENDGRID_TO_EMAIL,
       from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL,
-      subject: cleanSubject,
+      subject: 'Message from Website',
       text: cleanMessage,
       html: `<h2>Sender: ${cleanName}</h2> <h3>Email: ${cleanEmail}</h3> <p style='font-size: 20px;'>${cleanMessage}</p>`,
     });

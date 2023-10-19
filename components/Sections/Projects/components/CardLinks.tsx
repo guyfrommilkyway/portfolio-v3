@@ -9,11 +9,11 @@ const CardLinks: React.FC<ProjectCardLinksProps> = props => {
   const { link, codebase } = props;
 
   return (
-    <div className='flex items-center gap-4 mb-2'>
+    <div className='flex items-center gap-2 mb-4'>
       {!!link ? (
         <LinkExternal href={link} title={link} />
       ) : (
-        <LinkDummy name='Link Unavailable' />
+        <LinkDummy name='Private Link' />
       )}
       {!!codebase ? (
         <LinkExternal href={codebase} title={codebase} name='View Codebase' />

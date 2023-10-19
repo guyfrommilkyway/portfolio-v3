@@ -17,26 +17,24 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
     technologies,
     hostingProvider,
     teamSize,
+    role,
     codebase,
   } = props;
 
   return (
     <div className='flex flex-col lg:flex-row justify-start items-start w-full max-w-full md:max-w-[calc(50%-10px)] lg:max-w-full xl:max-w-[calc(50%-10px)]'>
       <CardUI height='h-full'>
-        <div className='relative w-full px-4'>
-          {!!image && <CardImage name={name} image={image} />}
-          <h2 className='text-white text-lg font-semibold select-none'>
+        {!!image && <CardImage name={name} image={image} />}
+        <div className='relative w-full p-4'>
+          <h2 className='mb-2 text-white text-lg font-semibold select-none'>
             {name}
           </h2>
+          <p className='mb-2 text-neutral-300 select-none'>{description}</p>
           <CardLinks link={link} codebase={codebase} />
-          <p className='mb-4 text-neutral-300 select-none'>{description}</p>
-          <div className='flex flex-wrap items-center gap-2 mb-2'>
+          <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
             <Pill tech={`Deployed with ${hostingProvider}`} />
-            <Pill
-              tech={`Dev Team: ${teamSize} ${
-                +teamSize > 1 ? 'people' : 'person'
-              }`}
-            />
+            <Pill tech={`Team: ${teamSize}`} />
+            <Pill tech={`Role: ${role}`} />
           </div>
           <div className='flex flex-wrap gap-2'>
             {Object.keys(technologies).map(item => {

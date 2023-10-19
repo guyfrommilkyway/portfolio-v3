@@ -31,15 +31,21 @@ const Contact: React.FC = () => {
       return;
     }
 
-    // these are hidden input fields
+    // these are honey pot fields
     // humans can't normally see these
     // except when checking source code
-    // if any of these inputs are filled
-    // out, it's most likely a bot
+    // if any of these are filled out
+    // it's most likely a bot
     if (!!data.hidden1 || !!data.hidden2 || !!data.hidden3) {
       toastError('Bot detected!');
       return;
     }
+
+    // delete honey pot fields
+    // before submitting to API
+    delete data.hidden1;
+    delete data.hidden2;
+    delete data.hidden3;
 
     const response = await sendEmail(data);
 
@@ -51,7 +57,7 @@ const Contact: React.FC = () => {
       case 429:
         toastError(response.data.message);
         setErrMsg(
-          "We apologize, but it seems you've exceeded the request rate limit. To maintain system stability, we enforce a limit of one (1) request per minute.",
+          "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.",
         );
         break;
       default:
@@ -100,19 +106,6 @@ const Contact: React.FC = () => {
             )}
           </div>
           <div className='flex flex-col gap-2 mb-4'>
-            <label className='text-neutral-300 select-none'>Subject *</label>
-            <input
-              className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
-              type='text'
-              {...register('subject', {
-                required: 'Please provide a subject',
-              })}
-            />
-            {!!errors.subject && (
-              <FormErrorMessage message={errors.subject.message} />
-            )}
-          </div>
-          <div className='flex flex-col gap-2 mb-8'>
             <label className='text-neutral-300 select-none'>Message *</label>
             <textarea
               className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
