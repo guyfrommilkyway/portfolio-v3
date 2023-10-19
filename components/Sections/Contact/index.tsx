@@ -1,5 +1,5 @@
 // packages
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 // components
@@ -15,6 +15,7 @@ import { toastError, toastSuccess } from '@/utils/notifications';
 import LoadingSVG from '@/assets/svg/rolling.svg';
 
 const Contact: React.FC = () => {
+  const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
   const [errorMsg, setErrMsg] = useState<string>('');
 
   const {
@@ -24,50 +25,71 @@ const Contact: React.FC = () => {
     formState: { errors, isSubmitting },
   } = useForm<ContactForm>();
 
-  const onSubmit: SubmitHandler<ContactForm> = async data => {
-    // prevent submit spamming
-    if (isSubmitting) {
-      toastError('Request is still being process.');
-      return;
-    }
+  const onSubmit: SubmitHandler<ContactForm> = useCallback(
+    async data => {
+      // if submissin is still active
+      // terminate function
+      if (isSubmitting) return;
 
-    // these are honey pot fields
-    // humans can't normally see these
-    // except when checking source code
-    // if any of these are filled out
-    // it's most likely a bot
-    if (!!data.hidden1 || !!data.hidden2 || !!data.hidden3) {
-      toastError('Bot detected!');
-      return;
-    }
+      // if currently being rate
+      // limited, terminate function
+      if (isRateLimited) return;
 
-    // delete honey pot fields
-    // before submitting to API
-    delete data.hidden1;
-    delete data.hidden2;
-    delete data.hidden3;
+      // these are honey pot fields
+      // humans can't normally see these
+      // except when checking source code
+      // if any of these are filled out
+      // it's most likely a bot
+      if (!!data.hidden1 || !!data.hidden2 || !!data.hidden3) return;
 
-    const response = await sendEmail(data);
+      // delete honey pot fields
+      // before submitting to API
+      delete data.hidden1;
+      delete data.hidden2;
+      delete data.hidden3;
 
-    switch (response.status) {
-      case 200:
-        toastSuccess('Your message has been sent successfully.');
+      const response = await sendEmail(data);
+
+      switch (response.status) {
+        case 200:
+          toastSuccess('Your message has been sent successfully.');
+          setErrMsg('');
+          reset();
+          break;
+        case 429:
+          toastError(response.data.message);
+          setErrMsg(
+            "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.",
+          );
+          setIsRateLimited(true);
+          break;
+        default:
+          toastError('An error occured! Please try again later.');
+          setErrMsg('');
+          reset();
+          break;
+      }
+    },
+    [isSubmitting, isRateLimited, reset],
+  );
+
+  // will enable submit button and
+  // clear errMsg after one
+  // (1) minute of being rate limited
+  useEffect(() => {
+    let rateLimitTimer: ReturnType<typeof setTimeout>;
+
+    if (isRateLimited) {
+      rateLimitTimer = setTimeout(() => {
+        setIsRateLimited(false);
         setErrMsg('');
-        break;
-      case 429:
-        toastError(response.data.message);
-        setErrMsg(
-          "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.",
-        );
-        break;
-      default:
-        toastError('An error occured! Please try again later.');
-        setErrMsg('');
-        break;
+      }, 60000); // 1 minute
     }
 
-    reset();
-  };
+    // set up clean up function
+    // to avoid memory leaks
+    return () => clearTimeout(rateLimitTimer);
+  }, [isRateLimited]);
 
   return (
     <SectionUI headline='Contact'>
@@ -121,15 +143,17 @@ const Contact: React.FC = () => {
           </div>
           <div className='flex flex-wrap items-start gap-x-4 gap-y-8'>
             <button
-              className={`flex items-center gap-2 px-4 py-2 bg-white hover:bg-neutral-200 font-medium rounded-md select-none transition-all ease-in-out delay-100 ${
-                isSubmitting
-                  ? 'text-neutral-400 cursor-not-allowed'
-                  : 'text-neutral-700 cursor-pointer'
+              className={`flex items-center gap-2 px-4 py-2 font-medium rounded-md select-none transition-all ease-in-out delay-100 ${
+                isRateLimited
+                  ? 'text-red-200 bg-red-700 cursor-not-allowed'
+                  : 'text-neutral-700 bg-white cursor-pointer'
               }`}
-              disabled={isSubmitting}
+              disabled={isSubmitting || isRateLimited}
             >
               <span className=''>
-                {isSubmitting ? 'Sending...' : 'Send message'}
+                {!isSubmitting && !isRateLimited && 'Send message'}
+                {isSubmitting && !isRateLimited && 'Sending...'}
+                {isRateLimited && 'Rate Limited'}
               </span>
               {isSubmitting && <LoadingSVG width={24} height={24} />}
             </button>
