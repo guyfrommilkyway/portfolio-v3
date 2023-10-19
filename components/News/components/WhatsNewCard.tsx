@@ -29,22 +29,24 @@ const WhatsNewCard: React.FC = () => {
 
   return (
     <CardUI>
-      <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
-        What&apos;s New
-      </h1>
-      <div className='flex flex-col mb-2 text-neutral-300'>
-        {isLoading && <LoadingBox />}
-        {!isLoading &&
-          !!data &&
-          Object.keys(data)
-            .sort()
-            .reverse()
-            .slice(0, 3)
-            .map(item => {
-              return <NewsCard key={item} {...data[item]} />;
-            })}
+      <div className='py-4'>
+        <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
+          What&apos;s New
+        </h1>
+        <div className='flex flex-col mb-2 text-neutral-300'>
+          {isLoading && <LoadingBox />}
+          {!isLoading &&
+            !!data &&
+            Object.keys(data)
+              .sort()
+              .reverse()
+              .slice(0, 3)
+              .map(item => {
+                return <NewsCard key={item} {...data[item]} />;
+              })}
+        </div>
+        {!isLoading && !!data && Object.keys(data).length > 5 && <ShowMore />}
       </div>
-      {!isLoading && !!data && Object.keys(data).length > 5 && <ShowMore />}
     </CardUI>
   );
 };
