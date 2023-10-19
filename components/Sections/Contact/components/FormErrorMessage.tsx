@@ -8,9 +8,9 @@ const FormErrorMessage: React.FC<FormErrorMessageProps> = props => {
   const { message } = props;
 
   return (
-    <div className='flex items-center gap-2'>
-      <MdError className='text-red-600' size={20} />
-      <span className='text-red-600 select-none'>{message}</span>
+    <div className='flex gap-2 w-full max-w-sm'>
+      <MdError className='min-w-fit text-red-500' size={16} />
+      <p className='text-red-500 leading-snug select-none'>{message}</p>
     </div>
   );
 };
