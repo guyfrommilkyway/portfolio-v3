@@ -15,7 +15,7 @@ const LinkExternal: React.FC<LinkExternalProps> = props => {
       target='_blank'
       rel='noopener noreferrer'
     >
-      {name ? name : 'Visit Website'}
+      {name ? name : 'View Website'}
       <ArrowUpSVG width={10} height={10} />
     </a>
   );
