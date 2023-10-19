@@ -8,10 +8,7 @@ const About: React.FC<AboutProps> = props => {
   const { headline, paragraphs } = props;
 
   return (
-    <SectionUI id='summary'>
-      <h3 className='mb-4 text-white text-2xl font-semibold select-none'>
-        {headline}
-      </h3>
+    <SectionUI headline={headline}>
       {!!paragraphs &&
         Object.keys(paragraphs).map(item => {
           return (

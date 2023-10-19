@@ -9,8 +9,7 @@ const Experience: React.FC<ExperienceProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI id='experience'>
-      <h3 className='mb-4 text-white text-2xl font-semibold'>Experience</h3>
+    <SectionUI headline='Experience'>
       <div className='flex flex-col gap-8'>
         {!!data &&
           Object.keys(data)

@@ -9,8 +9,7 @@ const Certifications: React.FC<CertificationsProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI id='certifications'>
-      <h1 className='mb-4 text-white text-2xl font-semibold'>Certifications</h1>
+    <SectionUI headline='Certifications'>
       <div className='flex flex-wrap gap-5'>
         {!!data &&
           Object.keys(data)

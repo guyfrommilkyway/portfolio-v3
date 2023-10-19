@@ -9,10 +9,7 @@ const ContinuousLearning: React.FC<ContinuousLearningProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI id='learning'>
-      <h1 className='mb-2 text-white text-2xl font-semibold'>
-        Continuous Learning
-      </h1>
+    <SectionUI headline='Continuous Learning'>
       <p className='mb-4 text-neutral-300 select-none'>{data.description}</p>
       <div className='flex flex-col gap-5'>
         {!!data.courses &&

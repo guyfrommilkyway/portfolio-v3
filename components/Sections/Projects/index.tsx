@@ -9,8 +9,7 @@ const Projects: React.FC<ProjectsProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI id='works'>
-      <h3 className='mb-4 text-white text-2xl font-semibold'>Projects</h3>
+    <SectionUI headline='Projects'>
       <div className='flex flex-wrap items-stretch gap-5'>
         {!!data &&
           Object.keys(data)
