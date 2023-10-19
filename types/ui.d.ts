@@ -3,5 +3,5 @@ interface CardUIProps extends ChildrenProps {
 }
 
 interface SectionUIProps extends ChildrenProps {
-  id?: string;
+  headline: string;
 }

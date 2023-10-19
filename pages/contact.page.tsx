@@ -4,21 +4,15 @@ import React, { Fragment } from 'react';
 // components
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
-import About from '@/components/Sections/About';
-import Experience from '@/components/Sections/Experience';
-import Projects from '@/components/Sections/Projects';
 import Contact from '@/components/Sections/Contact';
 
-const HomePage: React.FC<StaticProps> = props => {
+const ContactPage: React.FC<StaticProps> = props => {
   const { staticData } = props;
 
   return (
     <Fragment>
-      <Head title='Almer Tampus' />
+      <Head title='Contact' />
       <Layout data={staticData.hero}>
-        <About {...staticData.biography} />
-        <Experience data={staticData.experience} />
-        <Projects data={staticData.work} />
         <Contact />
       </Layout>
     </Fragment>
@@ -48,4 +42,4 @@ export async function getStaticProps() {
   }
 }
 
-export default HomePage;
+export default ContactPage;

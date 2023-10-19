@@ -9,7 +9,7 @@ import Education from '@/components/Sections/Education';
 import ContinuousLearning from '@/components/Sections/ContinuousLearning';
 import Certifications from '@/components/Sections/Certifications';
 
-const Initiatives: React.FC<StaticProps> = props => {
+const InitiativesPage: React.FC<StaticProps> = props => {
   const { staticData } = props;
 
   return (
@@ -39,8 +39,6 @@ export async function getStaticProps() {
       revalidate: 60, // seconds
     };
   } catch (error) {
-    console.log(error);
-
     return {
       props: {
         staticData: null,
@@ -50,4 +48,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Initiatives;
+export default InitiativesPage;
