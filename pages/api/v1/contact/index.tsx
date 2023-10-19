@@ -1,7 +1,7 @@
 // packages
 import { NextApiRequest, NextApiResponse } from 'next';
-import requestIp from 'request-ip';
 import Redis from 'ioredis';
+import requestIp from 'request-ip';
 const sgMail = require('@sendgrid/mail');
 
 // utils
@@ -33,17 +33,21 @@ export default async function handler(
       return;
     }
 
+    const cleanSubject = req.body.subject.toString();
+    const cleanMessage = req.body.message.toString();
+    const cleanName = req.body.name.toString();
+    const cleanEmail = req.body.email.toString();
+
     const response = await sgMail.send({
       to: process.env.NEXT_PUBLIC_SENDGRID_TO_EMAIL,
       from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL,
-      subject: req.body.subject,
-      text: req.body.message,
-      html: `<h1>Sender: ${req.body.name}</h1> <h2>Email: ${req.body.email}</h2> <p>${req.body.message}</p>`,
+      subject: cleanSubject,
+      text: cleanMessage,
+      html: `<h2>Sender: ${cleanName}</h2> <h3>Email: ${cleanEmail}</h3> <p style='font-size: 20px;'>${cleanMessage}</p>`,
     });
 
     res.status(200).json(response);
   } catch (error: any) {
-    console.log('Error');
     res.status(error.code).json(error.response);
   }
 }
