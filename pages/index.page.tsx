@@ -7,8 +7,9 @@ import Layout from '@/components/Layout';
 import About from '@/components/Sections/About';
 import Experience from '@/components/Sections/Experience';
 import Projects from '@/components/Sections/Projects';
+import Contact from '@/components/Sections/Contact';
 
-const Home: React.FC<StaticProps> = props => {
+const HomePage: React.FC<StaticProps> = props => {
   const { staticData } = props;
 
   return (
@@ -18,6 +19,7 @@ const Home: React.FC<StaticProps> = props => {
         <About {...staticData.biography} />
         <Experience data={staticData.experience} />
         <Projects data={staticData.work} />
+        <Contact />
       </Layout>
     </Fragment>
   );
@@ -37,8 +39,6 @@ export async function getStaticProps() {
       revalidate: 60, // seconds
     };
   } catch (error) {
-    console.log(error);
-
     return {
       props: {
         staticData: null,
@@ -48,4 +48,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Home;
+export default HomePage;
