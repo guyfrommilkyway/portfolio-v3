@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
 
     reset();
     toastSuccess(
-      'Your message has been sent successfully! Thanks for reaching out.',
+      'Thanks for reaching out! Your message was sent successfully.',
     );
   };
 
