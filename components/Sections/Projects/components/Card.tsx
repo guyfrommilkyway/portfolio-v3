@@ -17,7 +17,6 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
     technologies,
     hostingProvider,
     teamSize,
-    role,
     codebase,
   } = props;
 
@@ -34,7 +33,6 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
           <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
             <Pill tech={`Deployed with ${hostingProvider}`} />
             <Pill tech={`Team: ${teamSize}`} />
-            <Pill tech={`Role: ${role}`} />
           </div>
           <div className='flex flex-wrap gap-2'>
             {Object.keys(technologies).map(item => {
