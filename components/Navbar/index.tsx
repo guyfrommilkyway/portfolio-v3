@@ -8,7 +8,6 @@ import NavItem from './components/NavItem';
 const nav = [
   { name: 'Experience', link: '/' },
   { name: 'Initiatives', link: '/initiatives' },
-  { name: 'Contact', link: '/contact' },
 ];
 
 const Navbar: React.FC = () => {
