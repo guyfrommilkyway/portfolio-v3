@@ -30,14 +30,10 @@ const Sidebar: React.FC = () => {
         )}
       </button>
       <div
-        className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[480px] px-4 pt-20 pb-12 bg-neutral-800 overflow-x-auto ${
+        className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col gap-4 w-full h-screen max-w-[480px] px-4 pt-20 pb-12 bg-neutral-950 overflow-x-auto ${
           toggle ? 'flex' : 'hidden'
         }`}
       >
-        <div className='flex flex-col gap-2'>
-          <span className='text-xs text-neutral-500'>NAVIGATION</span>
-          <Navbar />
-        </div>
         <WhatsNewCard />
         <RecentNewsCard />
       </div>
