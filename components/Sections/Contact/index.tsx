@@ -101,8 +101,11 @@ const Contact: React.FC = () => {
         <form className='' onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col gap-2 mb-4'>
             <input type='hidden' {...register('hidden1')} />
-            <label className='text-neutral-300 select-none'>Name *</label>
+            <label className='text-neutral-300 select-none' htmlFor='name'>
+              Name *
+            </label>
             <input
+              id='name'
               className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
               type='text'
               {...register('name', {
@@ -115,8 +118,11 @@ const Contact: React.FC = () => {
           </div>
           <input type='hidden' {...register('hidden2')} />
           <div className='flex flex-col gap-2 mb-4'>
-            <label className='text-neutral-300 select-none'>Email *</label>
+            <label className='text-neutral-300 select-none' htmlFor='email'>
+              Email *
+            </label>
             <input
+              id='email'
               className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
               type='email'
               {...register('email', {
@@ -128,8 +134,11 @@ const Contact: React.FC = () => {
             )}
           </div>
           <div className='flex flex-col gap-2 mb-4'>
-            <label className='text-neutral-300 select-none'>Message *</label>
+            <label className='text-neutral-300 select-none' htmlFor='message'>
+              Message *
+            </label>
             <textarea
+              id='message'
               className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
               rows={4}
               {...register('message', {
