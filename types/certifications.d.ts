@@ -8,4 +8,5 @@ interface CertificationsCardProps {
   issued: string;
   link: string;
   technologies: any;
+  image: string;
 }

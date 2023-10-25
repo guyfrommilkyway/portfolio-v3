@@ -6,8 +6,7 @@ import LinkExternal from '@/components/LinkExternal';
 import Pill from '@/components/Pill';
 
 const Card: React.FC<EducationCardProps> = props => {
-  const { program, university, duration, description, skills, certificate } =
-    props;
+  const { program, university, duration, skills, certificate } = props;
 
   return (
     <div className=''>
@@ -19,10 +18,7 @@ const Card: React.FC<EducationCardProps> = props => {
       {!!certificate && (
         <LinkExternal href='certificate' name='Verified Certificate' />
       )}
-      {!!description && (
-        <p className='mt-2 mb-4 text-neutral-300 select-none'>{description}</p>
-      )}
-      <div className='flex flex-wrap gap-2'>
+      <div className='flex flex-wrap gap-2 mt-2'>
         {!!skills &&
           Object.keys(skills).map(item => {
             return <Pill key={item} tech={skills[item]} />;

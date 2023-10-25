@@ -3,9 +3,9 @@ import React from 'react';
 
 // components
 import CardUI from '@/components/UI/CardUI';
-import Pill from '@/components/Pill';
 import CardImage from './CardImage';
 import CardLinks from './CardLinks';
+import Pill from '@/components/Pill';
 
 const ProjectCard: React.FC<ProjectCardProps> = props => {
   const {
@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
   } = props;
 
   return (
-    <div className='flex flex-col lg:flex-row justify-start items-start w-full max-w-full md:max-w-[calc(50%-10px)] lg:max-w-full xl:max-w-[calc(50%-10px)]'>
+    <div className='flex flex-col lg:flex-row justify-start items-start w-full'>
       <CardUI height='h-full'>
         {!!image && <CardImage name={name} image={image} />}
         <div className='relative w-full p-4'>
@@ -32,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
           <CardLinks link={link} codebase={codebase} />
           <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
             <Pill tech={`Deployed with ${hostingProvider}`} />
-            <Pill tech={`Team: ${teamSize}`} />
+            {teamSize !== 'hide' && <Pill tech={`Team: ${teamSize}`} />}
           </div>
           <div className='flex flex-wrap gap-2'>
             {Object.keys(technologies).map(item => {

@@ -7,6 +7,9 @@ import Layout from '@/components/Layout';
 import About from '@/components/Sections/About';
 import Experience from '@/components/Sections/Experience';
 import Projects from '@/components/Sections/Projects';
+import Education from '@/components/Sections/Education';
+import Certifications from '@/components/Sections/Certifications';
+import ContinuousLearning from '@/components/Sections/ContinuousLearning';
 import Contact from '@/components/Sections/Contact';
 
 const HomePage: React.FC<StaticProps> = props => {
@@ -18,7 +21,11 @@ const HomePage: React.FC<StaticProps> = props => {
       <Layout data={staticData.hero}>
         <About {...staticData.biography} />
         <Experience data={staticData.experience} />
-        <Projects data={staticData.work} />
+        <Projects headline='Works' data={staticData.work} />
+        <Projects headline='Side Projects' data={staticData.personal} />
+        <Certifications data={staticData.certifications} />
+        <Education data={staticData.education} />
+        <ContinuousLearning data={staticData.continuouslearning} />
         <Contact />
       </Layout>
     </Fragment>

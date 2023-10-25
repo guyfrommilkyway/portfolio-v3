@@ -17,10 +17,10 @@ const Hero: React.FC<HeroProps> = props => {
       <h1 className='mb-2 text-white font-bold text-3xl leading-tighter tracking-wider select-none'>
         {headline}
       </h1>
-      <h2 className='mb-4 text-neutral-300 text-lg leading-tighter tracking-wider select-none'>
+      <h2 className='mb-4 text-neutral-300 text-lg leading-tighter select-none'>
         {title}
       </h2>
-      <div className='flex gap-4 mb-4'>
+      <div className='flex gap-3 mb-4'>
         {social.map((item: SocialProps) => {
           return <Link key={item.name} {...item} />;
         })}

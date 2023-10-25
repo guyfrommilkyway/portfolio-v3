@@ -16,7 +16,7 @@ const Card: React.FC<ContinuousLearningCardProps> = props => {
       <p className='w-fit mb-4 text-sm text-neutral-300 uppercase leading-none tracking-tighter select-none'>
         {duration}
       </p>
-      <div className='flex flex-col items-start gap-1'>
+      <div className='flex flex-col items-start'>
         {!!courses &&
           Object.keys(courses).map(item => {
             return <Course key={item} {...courses[item]} />;

@@ -1,4 +1,5 @@
 interface ProjectsProps {
+  headline: string;
   data: any;
 }
 interface ProjectCardProps {

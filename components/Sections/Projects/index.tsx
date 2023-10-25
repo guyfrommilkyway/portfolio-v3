@@ -6,10 +6,10 @@ import SectionUI from '@/components/UI/SectionUI';
 import ProjectCard from './components/Card';
 
 const Projects: React.FC<ProjectsProps> = props => {
-  const { data } = props;
+  const { headline, data } = props;
 
   return (
-    <SectionUI headline='Projects'>
+    <SectionUI headline={headline}>
       <div className='flex flex-wrap items-stretch gap-5'>
         {!!data &&
           Object.keys(data)
