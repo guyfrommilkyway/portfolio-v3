@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 // components
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
-import About from '@/components/Sections/About';
 import Projects from '@/components/Projects';
 import ContinuousLearning from '@/components/Sections/ContinuousLearning';
 import Contact from '@/components/Sections/Contact';
@@ -16,7 +15,6 @@ const HomePage: React.FC<StaticProps> = props => {
     <Fragment>
       <Head title='Almer Tampus' />
       <Layout {...staticData}>
-        <About {...staticData.biography} />
         <Projects headline='Work' data={staticData.work} />
         <Projects headline='Personal' data={staticData.personal} />
         <ContinuousLearning data={staticData.continuouslearning} />
