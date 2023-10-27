@@ -4,15 +4,16 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 
 // components
 import SectionUI from '@/components/UI/SectionUI';
-import FormErrorMessage from './components/FormErrorMessage';
+import FormInput from './components/FormInput';
+import FormTextarea from './components/FormTextarea';
+import FormButton from './components/FormButton';
 
 // utils
 import { sendEmail } from '@/services/contact';
 import { toastError, toastSuccess } from '@/utils/notifications';
 
-// assets
-// asset
-import LoadingSVG from '@/assets/svg/rolling.svg';
+const RATE_LIMIT_MSG =
+  "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.";
 
 const Contact: React.FC = () => {
   const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
@@ -58,9 +59,7 @@ const Contact: React.FC = () => {
           break;
         case 429:
           toastError(response.data.message);
-          setErrMsg(
-            "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.",
-          );
+          setErrMsg(RATE_LIMIT_MSG);
           setIsRateLimited(true);
           break;
         default:
@@ -99,75 +98,42 @@ const Contact: React.FC = () => {
           or project in mind? Let&apos;s collaborate!
         </p>
         <form className='' onSubmit={handleSubmit(onSubmit)}>
-          <div className='flex flex-col gap-2 mb-4'>
-            <input type='hidden' {...register('hidden1')} />
-            <label className='text-neutral-300 select-none' htmlFor='name'>
-              Name *
-            </label>
-            <input
-              id='name'
-              className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
-              type='text'
-              {...register('name', {
-                required: 'Please provide your name',
-              })}
-            />
-            {!!errors.name && (
-              <FormErrorMessage message={errors.name.message} />
-            )}
-          </div>
+          <input type='hidden' {...register('hidden1')} />
           <input type='hidden' {...register('hidden2')} />
-          <div className='flex flex-col gap-2 mb-4'>
-            <label className='text-neutral-300 select-none' htmlFor='email'>
-              Email *
-            </label>
-            <input
-              id='email'
-              className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
-              type='email'
-              {...register('email', {
-                required: 'Please provide a valid email',
-              })}
-            />
-            {!!errors.email && (
-              <FormErrorMessage message={errors.email.message} />
-            )}
-          </div>
-          <div className='flex flex-col gap-2 mb-4'>
-            <label className='text-neutral-300 select-none' htmlFor='message'>
-              Message *
-            </label>
-            <textarea
-              id='message'
-              className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
-              rows={4}
-              {...register('message', {
-                required: 'Please provide a message',
-              })}
-            ></textarea>
-            {!!errors.message && (
-              <FormErrorMessage message={errors.message.message} />
-            )}
-            <input type='hidden' {...register('hidden3')} />
-          </div>
-          <div className='flex flex-wrap items-start gap-x-4 gap-y-8'>
-            <button
-              className={`flex items-center gap-2 px-4 py-2 font-medium rounded-md select-none transition-all ease-in-out delay-100 ${
-                isRateLimited
-                  ? 'text-red-200 bg-red-700 cursor-not-allowed'
-                  : 'text-neutral-700 bg-white cursor-pointer'
-              }`}
-              disabled={isSubmitting || isRateLimited}
-            >
-              <span className=''>
-                {!isSubmitting && !isRateLimited && 'Send message'}
-                {isSubmitting && !isRateLimited && 'Sending...'}
-                {isRateLimited && 'Rate Limited'}
-              </span>
-              {isSubmitting && <LoadingSVG width={24} height={24} />}
-            </button>
-            {errorMsg && <FormErrorMessage message={errorMsg} />}
-          </div>
+          <FormInput
+            id='name'
+            label='Name *'
+            type='text'
+            isInvalid={!!errors?.name}
+            errMsg={errors.name?.message}
+            register={register('name', {
+              required: 'Please provide your name',
+            })}
+          />
+          <FormInput
+            id='email'
+            label='Email *'
+            type='email'
+            isInvalid={!!errors?.email}
+            errMsg={errors.email?.message}
+            register={register('email', {
+              required: 'Please provide your valid email',
+            })}
+          />
+          <FormTextarea
+            id='message'
+            label='Message *'
+            isInvalid={!!errors?.message}
+            errMsg={errors.message?.message}
+            register={register('message', {
+              required: 'Please provide your message',
+            })}
+          />
+          <FormButton
+            isSubmitting={isSubmitting}
+            isRateLimited={isRateLimited}
+            errMsg={errorMsg}
+          />
         </form>
       </div>
     </SectionUI>

@@ -19,7 +19,7 @@ const CertificationsCard: React.FC<CertificationsCardProps> = props => {
           rel='noopener noreferrer'
         >
           <CardImage name={organization} image={image} />
-          <div className='p-4'>
+          <div className='p-2'>
             <h2 className='text-white font-semibold leading-tight select-none'>
               {name}
             </h2>

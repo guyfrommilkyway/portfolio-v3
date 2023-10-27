@@ -10,9 +10,7 @@ const Card: React.FC<EducationCardProps> = props => {
 
   return (
     <div className=''>
-      <h2 className='text-white text-lg font-semibold select-none'>
-        {program}
-      </h2>
+      <h2 className='text-white font-semibold select-none'>{program}</h2>
       <h3 className='text-neutral-300 select-none'>{university}</h3>
       <p className='text-neutral-300 select-none'>{duration}</p>
       {!!certificate && (

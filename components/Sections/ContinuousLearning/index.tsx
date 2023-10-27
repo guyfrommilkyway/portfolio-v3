@@ -11,7 +11,7 @@ const ContinuousLearning: React.FC<ContinuousLearningProps> = props => {
   return (
     <SectionUI headline='Continuous Learning'>
       <p className='mb-4 text-neutral-300 select-none'>{data.description}</p>
-      <div className='flex flex-col gap-5'>
+      <div className='flex flex-col gap-4'>
         {!!data.courses &&
           Object.keys(data.courses)
             .sort()

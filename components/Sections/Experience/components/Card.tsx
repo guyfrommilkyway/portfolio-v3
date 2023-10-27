@@ -13,7 +13,7 @@ const Card: React.FC<ExperienceCardProps> = props => {
     <div className='w-full'>
       <h2 className='text-white text-lg font-semibold select-none'>{title}</h2>
       <h3 className='text-neutral-300 select-none'>{company}</h3>
-      <p className='w-fit text-neutral-300 select-none'>{duration}</p>
+      <p className='text-neutral-300 select-none'>{duration}</p>
       <p className='text-neutral-300 select-none'>{location}</p>
       <LinkExternal href={link} name={website} />
       <div className='flex flex-wrap gap-2 mt-4'>

@@ -6,10 +6,12 @@ const NewsItem: React.FC<NewsItemProps> = props => {
 
   return (
     <div className='px-4 py-1 transition-colors ease-in delay-150 hover:bg-neutral-900 cursor-pointer'>
-      <h2 className='text-neutral-400 leading-snug tracking-tighter select-none'>
+      <h2 className='text-neutral-400 text-xs leading-relaxed tracking-tighter uppercase select-none'>
         {tag}
       </h2>
-      <p className='text-neutral-300 select-none'>{description}</p>
+      <p className='text-neutral-300 leading-tight select-none'>
+        {description}
+      </p>
     </div>
   );
 };

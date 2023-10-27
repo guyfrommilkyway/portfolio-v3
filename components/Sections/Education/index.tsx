@@ -10,7 +10,7 @@ const Education: React.FC<EducationProps> = props => {
 
   return (
     <SectionUI headline='Education'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-5'>
         {!!data &&
           Object.keys(data)
             .sort()
