@@ -40,7 +40,7 @@ const RecentNewsCard: React.FC = () => {
             Object.keys(data)
               .sort()
               .reverse()
-              .slice(0, 3)
+              .slice(0, 4)
               .map(item => {
                 return <NewsCard key={item} {...data[item]} />;
               })}

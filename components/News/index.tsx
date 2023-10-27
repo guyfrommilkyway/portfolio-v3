@@ -7,7 +7,7 @@ import RecentNewsCard from './components/RecentNewsCard';
 
 const News: React.FC = () => {
   return (
-    <aside className='hidden lg:flex sticky top-[80px] z-50 flex-col gap-4 w-full max-w-[320px] h-fit p-4 px-4'>
+    <aside className='hidden lg:flex sticky top-[80px] z-50 flex-col gap-4 w-full max-w-[320px] h-fit px-4'>
       <WhatsNewCard />
       <RecentNewsCard />
     </aside>

@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
       <CardUI height='h-full'>
         {!!image && <CardImage name={name} image={image} />}
         <div className='relative w-full p-4'>
-          <h2 className='mb-2 text-white text-lg font-semibold select-none'>
+          <h2 className='text-white text-lg font-semibold select-none'>
             {name}
           </h2>
           <p className='mb-2 text-neutral-300 select-none'>{description}</p>
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
             })}
           </div>
           {!!disclaimer && (
-            <p className='mt-8 text-neutral-400 text-sm leading-snug tracking-tight select-none'>
+            <p className='mt-4 text-neutral-400 text-sm leading-tight tracking-tight select-none'>
               {disclaimer}
             </p>
           )}

@@ -10,7 +10,7 @@ const Experience: React.FC<ExperienceProps> = props => {
 
   return (
     <SectionUI headline='Experience'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-5'>
         {!!data &&
           Object.keys(data)
             .sort()

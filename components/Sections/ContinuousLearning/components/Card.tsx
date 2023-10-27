@@ -9,13 +9,9 @@ const Card: React.FC<ContinuousLearningCardProps> = props => {
 
   return (
     <div className=''>
-      <h2 className='text-white text-lg font-semibold select-none'>{name}</h2>
-      <h3 className='mb-2 text-neutral-300 text-lg select-none'>
-        {organization}
-      </h3>
-      <p className='w-fit mb-4 text-sm text-neutral-300 uppercase leading-none tracking-tighter select-none'>
-        {duration}
-      </p>
+      <h2 className='text-white font-semibold select-none'>{name}</h2>
+      <h3 className='text-neutral-300 select-none'>{organization}</h3>
+      <p className='mb-2 text-neutral-300 select-none'>{duration}</p>
       <div className='flex flex-col items-start'>
         {!!courses &&
           Object.keys(courses).map(item => {
