@@ -17,7 +17,7 @@ const Timer: React.FC = () => {
   const seconds = time.getSeconds().toString().padStart(2, '0');
 
   return (
-    <span className='text-neutral-300 italic leading-none tracking-tight select-none'>
+    <span className='text-neutral-300 leading-none tracking-tight select-none'>
       {hours}:{minutes}:{seconds}
     </span>
   );
