@@ -10,7 +10,7 @@ const Projects: React.FC<ProjectsProps> = props => {
 
   return (
     <SectionUI headline={headline}>
-      <div className='flex flex-wrap items-stretch gap-5'>
+      <div className='flex flex-wrap items-stretch gap-8'>
         {!!data &&
           Object.keys(data)
             .sort()

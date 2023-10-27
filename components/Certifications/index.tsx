@@ -2,15 +2,17 @@
 import React from 'react';
 
 // components
-import SectionUI from '@/components/UI/SectionUI';
 import Card from './components/Card';
 
 const Certifications: React.FC<CertificationsProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI headline='Certifications'>
-      <div className='flex flex-wrap gap-5'>
+    <div className='py-4 border-b border-neutral-900'>
+      <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
+        Certifications
+      </h1>
+      <div className='flex flex-col gap-3 px-4'>
         {!!data &&
           Object.keys(data)
             .sort()
@@ -19,7 +21,7 @@ const Certifications: React.FC<CertificationsProps> = props => {
               return <Card key={item} {...data[item]} />;
             })}
       </div>
-    </SectionUI>
+    </div>
   );
 };
 

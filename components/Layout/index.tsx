@@ -8,19 +8,30 @@ import Container from './components/Container';
 import Hero from '@/components/Hero';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
-import News from '@/components/News';
+import Information from '@/components/Information';
+import Experience from '@/components/Experience';
+import Education from '@/components/Education';
+import Certifications from '@/components/Certifications';
 
 const Layout: React.FC<LayoutProps> = props => {
-  const { data, children } = props;
+  const { hero, experience, education, certifications, children } = props;
 
   return (
     <Fragment>
       <Header />
       <Container>
-        <Sidebar />
-        <Hero {...data} />
+        <Sidebar>
+          <Experience data={experience} />
+          <Education data={education} />
+          <Certifications data={certifications} />
+        </Sidebar>
+        <Hero {...hero} />
         <Content>{children}</Content>
-        <News />
+        <Information>
+          <Experience data={experience} />
+          <Education data={education} />
+          <Certifications data={certifications} />
+        </Information>
       </Container>
       <Analytics />
     </Fragment>

@@ -4,13 +4,17 @@ import React from 'react';
 // components
 import SectionUI from '@/components/UI/SectionUI';
 import Card from './components/Card';
+import CardUI from '@/components/UI/CardUI';
 
-const Experience: React.FC<ExperienceProps> = props => {
+const Education: React.FC<EducationProps> = props => {
   const { data } = props;
 
   return (
-    <SectionUI headline='Experience'>
-      <div className='flex flex-col gap-5'>
+    <div className='py-4 border-b border-neutral-900'>
+      <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
+        Academic Profile
+      </h1>
+      <div className='flex flex-col gap-3 px-4'>
         {!!data &&
           Object.keys(data)
             .sort()
@@ -19,8 +23,8 @@ const Experience: React.FC<ExperienceProps> = props => {
               return <Card key={item} {...data[item]} />;
             })}
       </div>
-    </SectionUI>
+    </div>
   );
 };
 
-export default Experience;
+export default Education;

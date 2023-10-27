@@ -10,17 +10,17 @@ const Card: React.FC<ExperienceCardProps> = props => {
     props;
 
   return (
-    <div className='w-full'>
-      <h2 className='text-white text-lg font-semibold select-none'>{title}</h2>
+    <div className=''>
+      <h2 className='text-neutral-300 font-semibold select-none'>{title}</h2>
       <h3 className='text-neutral-300 select-none'>{company}</h3>
       <p className='text-neutral-300 select-none'>{duration}</p>
       <p className='text-neutral-300 select-none'>{location}</p>
       <LinkExternal href={link} name={website} />
-      <div className='flex flex-wrap gap-2 mt-4'>
+      {/* <div className='flex flex-wrap gap-2 mt-4'>
         {Object.keys(technologies).map(item => {
           return <Pill key={item} tech={technologies[item]} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
