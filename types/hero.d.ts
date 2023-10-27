@@ -6,7 +6,8 @@ interface HeroProps {
 
 // types
 interface SocialProps {
-  name: string;
+  name?: string;
+  username?: string;
   link: string;
   icon: Component;
 }

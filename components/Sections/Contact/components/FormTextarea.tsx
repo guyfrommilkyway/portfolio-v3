@@ -15,7 +15,7 @@ const FormTextarea: React.FC<FormInputProps> = props => {
       <textarea
         id={id}
         className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
-        rows={4}
+        rows={8}
         {...register}
       ></textarea>
       {isInvalid && <FormErrorMessage message={errMsg} />}

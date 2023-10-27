@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
   return (
     <SectionUI headline='Contact'>
       <div className='w-full min-h-[calc(100vh-84px)]'>
-        <p className='mb-4 text-neutral-300'>
+        <p className='mb-4 text-neutral-300 select-none'>
           Got a question, or just want to say hello? Hit me up! Have a proposal
           or project in mind? Let&apos;s collaborate!
         </p>

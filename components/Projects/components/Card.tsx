@@ -25,16 +25,16 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
       <CardUI height='h-full'>
         {!!image && <CardImage name={name} image={image} />}
         <div className='relative w-full p-4'>
-          <h2 className='text-white text-lg font-semibold select-none'>
-            {name}
-          </h2>
+          <h2 className='text-white font-semibold select-none'>{name}</h2>
           <p className='mb-2 text-neutral-300 select-none'>{description}</p>
           <CardLinks link={link} codebase={codebase} />
-          <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
-            <Pill tech={`Deployed with ${hostingProvider}`} />
-            {teamSize !== 'hide' && <Pill tech={`Team: ${teamSize}`} />}
-          </div>
+          {teamSize !== 'hide' && (
+            <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
+              <Pill tech={`Team: ${teamSize}`} />
+            </div>
+          )}
           <div className='flex flex-wrap gap-2'>
+            <Pill tech={`Deployed with ${hostingProvider}`} />
             {Object.keys(technologies).map(item => {
               return <Pill key={item} tech={technologies[item]} />;
             })}

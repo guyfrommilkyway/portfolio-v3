@@ -16,6 +16,9 @@ interface NavItemProps {
 }
 
 interface LayoutProps {
-  data: any;
+  hero: any;
+  experience: any;
+  education: any;
+  certifications: any;
   children: Component;
 }

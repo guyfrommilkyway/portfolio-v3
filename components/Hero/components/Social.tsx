@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Link: React.FC<SocialProps> = props => {
-  const { name, link, icon } = props;
+  const { username, link, icon } = props;
 
   return (
     <a
@@ -12,7 +12,7 @@ const Link: React.FC<SocialProps> = props => {
       rel='noopener noreferrer'
     >
       {icon}
-      <span className=''>{name}</span>
+      <span className='select-none'>{username}</span>
     </a>
   );
 };
