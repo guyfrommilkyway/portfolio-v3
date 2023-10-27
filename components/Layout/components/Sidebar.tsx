@@ -14,7 +14,7 @@ const Sidebar: React.FC<ChildrenProps> = props => {
   return (
     <div className='fixed top-5 right-4 z-50'>
       <button
-        className='relative z-50 block lg:hidden mb-2 bg-transparent'
+        className='relative z-50 block xl:hidden mb-2 bg-transparent'
         onClick={() => toggleHandler()}
       >
         <span className='sr-only'>Menu</span>
@@ -25,7 +25,7 @@ const Sidebar: React.FC<ChildrenProps> = props => {
         )}
       </button>
       <div
-        className={`fixed top-0 right-0 z-40 flex lg:hidden flex-col w-full h-screen max-w-[460px] pt-20 pb-12 bg-neutral-950 overflow-x-scroll ${
+        className={`fixed top-0 right-0 z-40 flex xl:hidden flex-col w-full h-screen max-w-[460px] px-2 pt-20 pb-12 bg-neutral-900 overflow-y-auto ${
           toggle ? 'flex' : 'hidden'
         }`}
       >
