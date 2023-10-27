@@ -10,7 +10,7 @@ const Experience: React.FC<ExperienceProps> = props => {
   return (
     <div className='py-4 border-b border-neutral-900'>
       <h1 className='mx-4 mb-2 text-white text-lg font-semibold select-none'>
-        Work Experience
+        Experience
       </h1>
       <div className='flex flex-col gap-3 px-4'>
         {!!data &&
