@@ -8,9 +8,11 @@ const Timer = dynamic(() => import('@/components/Timer'), { ssr: false });
 
 const Header: React.FC = () => {
   return (
-    <header className='sticky top-0 z-50 flex flex-col xl:flex-row xl:justify-between xl:items-center gap-2 w-full max-w-[1400px] min-h-[60px] mx-auto px-4 py-4 bg-[#080808] border-x border-b border-neutral-900'>
+    <header className='sticky top-0 z-50 flex justify-between items-center w-full max-w-[1400px] min-h-[60px] mx-auto px-4 py-4 bg-[#080808] border-x border-b border-neutral-900'>
       <Logo />
-      <Timer />
+      <div className='hidden xl:block'>
+        <Timer />
+      </div>
     </header>
   );
 };

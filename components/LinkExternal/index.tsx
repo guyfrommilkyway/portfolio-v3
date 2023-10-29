@@ -9,7 +9,7 @@ const LinkExternal: React.FC<LinkExternalProps> = props => {
 
   return (
     <a
-      className='flex gap-1 w-fit text-neutral-300 underline hover:text-white transition-colors ease-in-out delay-100 select-none'
+      className='flex gap-1 w-fit text-neutral-300 text-sm underline hover:text-white transition-colors ease-in-out delay-100 select-none'
       href={href}
       title={title}
       target='_blank'

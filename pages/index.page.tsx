@@ -5,7 +5,6 @@ import React, { Fragment } from 'react';
 import Head from '@/components/Head';
 import Layout from '@/components/Layout';
 import Projects from '@/components/Projects';
-import ContinuousLearning from '@/components/Sections/ContinuousLearning';
 import Contact from '@/components/Sections/Contact';
 
 const HomePage: React.FC<StaticProps> = props => {
@@ -17,7 +16,6 @@ const HomePage: React.FC<StaticProps> = props => {
       <Layout {...staticData}>
         <Projects headline='Work' data={staticData.work} />
         <Projects headline='Personal' data={staticData.personal} />
-        <ContinuousLearning data={staticData.continuouslearning} />
         <Contact />
       </Layout>
     </Fragment>

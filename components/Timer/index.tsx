@@ -12,7 +12,7 @@ const Timer: React.FC = () => {
     return () => clearInterval(timerInterval);
   }, []);
 
-  const hours = time.getHours();
+  const hours = time.getHours().toString().padStart(2, '0');
   const minutes = time.getMinutes().toString().padStart(2, '0');
   const seconds = time.getSeconds().toString().padStart(2, '0');
 

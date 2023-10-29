@@ -6,12 +6,12 @@ export const social = [
     name: 'LinkedIn',
     username: '@almerflorestampus',
     link: 'https://linkedin.com/in/almerflorestampus',
-    icon: <FaLinkedin size={20} />,
+    icon: <FaLinkedin size={18} />,
   },
   {
     name: 'GitHub',
     username: '@guyfrommilkyway',
     link: 'https://github.com/guyfrommilkyway',
-    icon: <FaGithub size={20} />,
+    icon: <FaGithub size={18} />,
   },
 ];

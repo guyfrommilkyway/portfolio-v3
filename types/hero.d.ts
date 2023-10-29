@@ -4,7 +4,6 @@ interface HeroProps {
   description: string;
 }
 
-// types
 interface SocialProps {
   name?: string;
   username?: string;
