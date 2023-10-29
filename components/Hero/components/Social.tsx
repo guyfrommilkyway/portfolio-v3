@@ -6,7 +6,7 @@ const Link: React.FC<SocialProps> = props => {
 
   return (
     <a
-      className='flex items-center gap-2 text-neutral-400 font-medium leading-none transition ease-in-out delay-100 hover:text-white hover:underline'
+      className='flex items-center gap-3 text-neutral-400 font-medium underline leading-none transition-colors ease-in-out delay-100 hover:text-white'
       href={link}
       target='_blank'
       rel='noopener noreferrer'
