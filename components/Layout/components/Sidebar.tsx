@@ -25,7 +25,7 @@ const Sidebar: React.FC<ChildrenProps> = props => {
         )}
       </button>
       <div
-        className={`fixed top-0 right-0 z-40 flex xl:hidden flex-col w-full h-screen max-w-[460px] px-2 pt-20 pb-12 bg-neutral-900 overflow-y-auto ${
+        className={`fixed top-0 right-0 z-40 flex xl:hidden flex-col gap-4 w-full h-screen max-w-[460px] px-4 pt-20 pb-12 bg-neutral-800 overflow-y-auto ${
           toggle ? 'flex' : 'hidden'
         }`}
       >

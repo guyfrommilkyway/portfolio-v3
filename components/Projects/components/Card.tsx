@@ -24,8 +24,10 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
     <div className='flex flex-nowrap flex-col lg:flex-row items-start gap-x-8 gap-y-4'>
       {!!image && <CardImage name={name} image={image} />}
       <div className=''>
-        <h2 className='text-white font-semibold select-none'>{name}</h2>
-        <p className='mb-2 text-neutral-300 select-none'>{description}</p>
+        <h2 className='text-white text-lg font-semibold select-none'>{name}</h2>
+        <p className='mb-2 text-neutral-300 leading-snug select-none'>
+          {description}
+        </p>
         <CardLinks link={link} codebase={codebase} />
         {teamSize !== 'hide' && (
           <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
