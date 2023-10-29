@@ -20,5 +20,6 @@ interface LayoutProps {
   experience: any;
   education: any;
   certifications: any;
+  continuouslearning: any;
   children: Component;
 }
