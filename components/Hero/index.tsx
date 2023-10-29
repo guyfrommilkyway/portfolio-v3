@@ -23,8 +23,8 @@ const Hero: React.FC<HeroProps> = props => {
         <p className='w-full max-w-sm mb-4 text-neutral-300 leading-snug select-none'>
           {description}
         </p>
-        <div className='flex flex-col gap-2'>
-          <span className='flex items-center gap-2 text-neutral-400 font-medium leading-none transition ease-in-out delay-100 hover:text-white hover:underline'>
+        <div className='flex flex-col gap-3'>
+          <span className='flex items-center gap-3 text-neutral-400 font-medium leading-none transition-colors ease-in-out delay-100 hover:text-white'>
             <FaLocationDot size={20} />
             <span className='select-none'>Manila, Philippines</span>
           </span>

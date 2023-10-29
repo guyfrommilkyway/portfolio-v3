@@ -16,7 +16,7 @@ const FormButton: React.FC<FormButtonProps> = props => {
         className={`flex items-center gap-2 px-4 py-2 font-medium rounded-md select-none transition-all ease-in-out delay-100 ${
           isRateLimited
             ? 'text-red-200 bg-red-700 cursor-not-allowed'
-            : 'text-neutral-700 bg-white cursor-pointer'
+            : 'text-neutral-300 bg-blue-900 cursor-pointer'
         }`}
         disabled={isSubmitting || isRateLimited}
       >

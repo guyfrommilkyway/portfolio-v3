@@ -5,7 +5,7 @@ const CardWrapper: React.FC<ChildrenProps> = props => {
   const { children } = props;
 
   return (
-    <div className='flex flex-wrap flex-col items-start mt-1 gap-2'>
+    <div className='flex flex-wrap flex-col items-start mt-1 gap-1'>
       {children}
     </div>
   );

@@ -4,14 +4,14 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export const social = [
   {
     name: 'LinkedIn',
-    username: '@almerflorestampus',
+    username: 'almerflorestampus',
     link: 'https://linkedin.com/in/almerflorestampus',
-    icon: <FaLinkedin size={18} />,
+    icon: <FaLinkedin size={20} />,
   },
   {
     name: 'GitHub',
-    username: '@guyfrommilkyway',
+    username: 'guyfrommilkyway',
     link: 'https://github.com/guyfrommilkyway',
-    icon: <FaGithub size={18} />,
+    icon: <FaGithub size={20} />,
   },
 ];
