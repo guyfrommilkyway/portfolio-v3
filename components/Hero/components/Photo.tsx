@@ -17,10 +17,10 @@ const Photo: React.FC = () => {
           className='aspect-auto'
           fill={true}
           sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
-          src='/images/me.jpg'
-          alt='almer-tampus.jpg'
+          src='/images/almer-tampus-1.jpg'
+          alt='almer tampus'
           placeholder='blur'
-          blurDataURL='/images/me.jpg'
+          blurDataURL='/images/almer-tampus-1.jpg'
         />
       </div>
       <div
@@ -33,10 +33,10 @@ const Photo: React.FC = () => {
           className='aspect-auto'
           fill={true}
           sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw'
-          src='/images/me_2.jpg'
-          alt='almer-tampus.jpg'
+          src='/images/almer-tampus-2.jpg'
+          alt='almer tampus'
           placeholder='blur'
-          blurDataURL='/images/me.jpg'
+          blurDataURL='/images/almer-tampus-2.jpg'
         />
       </div>
     </div>
