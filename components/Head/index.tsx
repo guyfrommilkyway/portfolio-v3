@@ -22,7 +22,7 @@ const Head = (props: Props) => {
       />
       <meta
         property='og:image'
-        content={`${process.env.NEXT_PUBLIC_URL}_next/image?url=%2Fimages%2Fme.jpg&w=1920&q=75`}
+        content={`${process.env.NEXT_PUBLIC_URL}_next/image?url=%2Fimages%2Falmer-tampus-1.jpg&w=1920&q=75`}
       />
       <meta property='og:image:alt' content='Almer Tampus' />
       <meta property='og:url' content={process.env.NEXT_PUBLIC_URL} />
@@ -41,7 +41,7 @@ const Head = (props: Props) => {
       />
       <meta
         name='twitter:image'
-        content={`${process.env.NEXT_PUBLIC_URL}_next/image?url=%2Fimages%2Fme.jpg&w=1920&q=75`}
+        content={`${process.env.NEXT_PUBLIC_URL}_next/image?url=%2Fimages%2Falmer-tampus-1.jpg&w=1920&q=75`}
       />
       <meta property='og:image:alt' content='Almer Tampus' />
       <meta name='twitter:url' content={process.env.NEXT_PUBLIC_URL} />
@@ -54,7 +54,7 @@ const Head = (props: Props) => {
       />
       <meta
         name='keywords'
-        content='Almer Tampus, Almer Flores Tampus, Almer, Tampus, almertampus.xyz, almertampus.xyz/, www.almertampus.xyz, www.almertampus.xyz/, https://almertampus.xyz, https://almertampus.xyz/, Agile Developer, Agile Software Developer, Frontend developer, Front End Developer, Front-End Developer, JavaScript Developer, React Developer, Next.js Developer, JavaScript, TypeScript, React, Next.js, Redux, Zustand, Tailwind CSS, Tailwind, Chakra UI, HTML, HTML5, CSS, Cascading Style Sheets (CSS), SASS, Syntactically Awesome Stylesheets, Software Development, Web Development, Web Application Development, Front-End Development, Front End Development, User Interface Design, UI, UI Design, User Experience, User Experience Design, UX, UX Design, Seaplane Group, Highly Succeed, Mile High Roller Club, Operator Portal, Personal Website, Portfolio Website'
+        content='Almer Tampus, Almer Flores Tampus, Almer, Tampus, almer, tampus, almertampus.xyz, almertampus.xyz/, www.almertampus.xyz, www.almertampus.xyz/, https://almertampus.xyz, https://almertampus.xyz/, Agile Developer, Agile Software Developer, Softwware Developer, Web Developer, Front-End Web Developer, Frontend Web Developer, Front End Web Developer, Frontend developer, Front End Developer, Front-End Developer, JavaScript Developer, TypeScript Developer, React Developer, Next.js Developer, JavaScript, TypeScript, React, Next.js, Redux, Zustand, Tailwind CSS, Tailwind, Chakra UI, HTML, HTML5, CSS, Cascading Style Sheets (CSS), SASS, Syntactically Awesome Stylesheets, Software Development, Web Development, Web Application Development, Front-End Development, Front End Development, User Interface Design, UI, UI Design, User Experience, User Experience Design, UX, UX Design, Personal Website, Portfolio Website'
       />
 
       <title>{title}</title>
