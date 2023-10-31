@@ -8,7 +8,7 @@ const Content: React.FC<ChildrenProps> = props => {
   const { children } = props;
 
   return (
-    <section className='relative w-full border-x border-neutral-900'>
+    <section className='relative w-full'>
       {children}
       <Footer />
     </section>
