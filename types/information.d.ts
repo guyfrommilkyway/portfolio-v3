@@ -4,6 +4,7 @@ interface InformationCardProps extends ChildrenProps {
 
 interface InformationCardHeaderProps {
   title: Required<string>;
+  href?: string;
 }
 
 interface InformationCardDurationProps {

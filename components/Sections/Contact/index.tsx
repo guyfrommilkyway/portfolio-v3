@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
 
   return (
     <SectionUI headline="Ready to collaborate or connect? Let's chat!">
-      <div className='w-full min-h-[calc(100vh-84px)]'>
+      <div className='w-full mb-20'>
         <form className='' onSubmit={handleSubmit(onSubmit)}>
           <input type='hidden' {...register('hidden1')} />
           <input type='hidden' {...register('hidden2')} />

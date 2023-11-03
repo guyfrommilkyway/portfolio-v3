@@ -11,9 +11,8 @@ const Certification: React.FC<CertificationsCardProps> = props => {
 
   return (
     <div className=''>
-      <CardHeader title={name} />
+      <CardHeader title={name} href={link} />
       <CardDuration duration={`${organization} • ${issued}`} />
-      <LinkExternal href={link} name='Verified Certificate' />
     </div>
   );
 };

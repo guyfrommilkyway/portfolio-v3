@@ -12,12 +12,9 @@ const Education: React.FC<EducationCardProps> = props => {
 
   return (
     <div className=''>
-      <CardHeader title={program} />
+      <CardHeader title={program} href={certificate} />
       <CardSubHeader title={university} />
       <CardDuration duration={duration} />
-      {!!certificate && (
-        <LinkExternal href='certificate' name='Verified Certificate' />
-      )}
     </div>
   );
 };
