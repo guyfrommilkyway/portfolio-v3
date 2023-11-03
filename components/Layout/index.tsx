@@ -13,17 +13,9 @@ import InformationCard from '@/components/Information/components/Card';
 import Experience from '@/components/Information/components/Experience';
 import Education from '@/components/Information/components/Education';
 import Certification from '@/components/Information/components/Certification';
-import ContinuousLearning from '@/components/Information/components/ContinuousLearning';
 
 const Layout: React.FC<LayoutProps> = props => {
-  const {
-    hero,
-    experience,
-    education,
-    certifications,
-    continuouslearning,
-    children,
-  } = props;
+  const { hero, experience, education, certifications, children } = props;
 
   const INFORMATION_CARDS = (
     <>
@@ -52,17 +44,6 @@ const Layout: React.FC<LayoutProps> = props => {
             .reverse()
             .map(item => {
               return <Certification key={item} {...certifications[item]} />;
-            })}
-      </InformationCard>
-      <InformationCard title='Continuous Learning'>
-        {!!continuouslearning &&
-          Object.keys(continuouslearning)
-            .sort()
-            .reverse()
-            .map(item => {
-              return (
-                <ContinuousLearning key={item} {...continuouslearning[item]} />
-              );
             })}
       </InformationCard>
     </>

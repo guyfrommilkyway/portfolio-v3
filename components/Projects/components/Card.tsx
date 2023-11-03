@@ -24,11 +24,23 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
     <div className='flex flex-nowrap flex-col lg:flex-row items-start gap-x-8 gap-y-4'>
       {!!image && <CardImage name={name} image={image} />}
       <div className=''>
-        <h2 className='text-white text-lg font-semibold select-none'>{name}</h2>
-        <p className='mb-2 text-neutral-300 leading-snug select-none'>
+        {link ? (
+          <a
+            className='inline-block w-fit mb-2 text-neutral-300 text-lg font-semibold leading-tight hover:underline hover:text-white transition-colors ease-in-out delay-100 select-none'
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            {name}
+          </a>
+        ) : (
+          <h2 className='mb-2 text-neutral-300 text-lg font-semibold leading-tight select-none'>
+            {name}
+          </h2>
+        )}
+        <p className='mb-4 text-neutral-300 leading-snug select-none'>
           {description}
         </p>
-        <CardLinks link={link} codebase={codebase} />
         {teamSize !== 'hide' && (
           <div className='flex flex-wrap flex-col items-start gap-2 mb-2'>
             <Pill tech={`Team: ${teamSize}`} />
@@ -41,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
           })}
         </div>
         {!!disclaimer && (
-          <p className='mt-4 text-neutral-400 text-sm leading-tight tracking-tight select-none'>
+          <p className='mt-4 text-neutral-500 text-sm leading-tight tracking-tight select-none'>
             {disclaimer}
           </p>
         )}

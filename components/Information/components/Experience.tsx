@@ -5,17 +5,15 @@ import React from 'react';
 import CardHeader from './CardHeader';
 import CardSubHeader from './CardSubHeader';
 import CardDuration from './CardDuration';
-import LinkExternal from '@/components/LinkExternal';
 
 const ExperienceCard: React.FC<ExperienceCardProps> = props => {
-  const { duration, title, company, link, website } = props;
+  const { duration, title, company, link } = props;
 
   return (
     <div className=''>
-      <CardHeader title={company} />
+      <CardHeader title={company} href={link} />
       <CardSubHeader title={title} />
       <CardDuration duration={duration} />
-      <LinkExternal href={link} name={website} />
     </div>
   );
 };
