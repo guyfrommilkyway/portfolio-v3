@@ -3,10 +3,6 @@ interface ExperienceCardProps {
   title: string;
   company: string;
   link: string;
-  website: string;
-  location: string;
-  setup: string;
-  technologies: any;
 }
 
 interface ExperienceProps {
