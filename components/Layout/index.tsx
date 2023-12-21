@@ -1,6 +1,7 @@
 // packages
 import React, { Fragment } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // components
 import Header from './components/Header';
@@ -67,6 +68,7 @@ const Layout: React.FC<LayoutProps> = props => {
         <Information>{INFORMATION_CARDS}</Information>
       </Container>
       <Analytics />
+      <SpeedInsights />
     </Fragment>
   );
 };
