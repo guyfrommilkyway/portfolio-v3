@@ -15,7 +15,7 @@ const HomePage: React.FC<StaticProps> = props => {
       <Head title='Almer Tampus' />
       <Layout {...staticData}>
         <Projects headline='Work' data={staticData.work} />
-        <Projects headline='Personal' data={staticData.personal} />
+        {/* <Projects headline='Personal' data={staticData.personal} /> */}
         <Contact />
       </Layout>
     </Fragment>
