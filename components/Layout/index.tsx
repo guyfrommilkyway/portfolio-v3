@@ -54,17 +54,6 @@ const Layout: React.FC<LayoutProps> = props => {
               return <Certification key={item} {...certifications[item]} />;
             })}
       </InformationCard>
-      <InformationCard title='Continuous Learning'>
-        {!!certifications &&
-          Object.keys(continuouslearning)
-            .sort()
-            .reverse()
-            .map(item => {
-              return (
-                <ContinuousLearning key={item} {...continuouslearning[item]} />
-              );
-            })}
-      </InformationCard>
     </>
   );
 
