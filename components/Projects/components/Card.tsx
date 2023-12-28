@@ -2,9 +2,7 @@
 import React from 'react';
 
 // components
-import CardUI from '@/components/UI/CardUI';
 import CardImage from './CardImage';
-import CardLinks from './CardLinks';
 import Pill from '@/components/Pill';
 
 const ProjectCard: React.FC<ProjectCardProps> = props => {
@@ -26,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
       <div className=''>
         {link ? (
           <a
-            className='inline-block w-fit mb-2 text-neutral-300 text-lg font-semibold leading-tight hover:underline hover:text-white transition-colors ease-in-out delay-100 select-none'
+            className='inline-block w-fit mb-2 text-neutral-300 text-lg font-semibold leading-tight tracking-wide underline hover:text-white transition-colors ease-in-out delay-100 select-none'
             href={link}
             target='_blank'
             rel='noopener noreferrer'
@@ -34,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
             {name}
           </a>
         ) : (
-          <h2 className='mb-2 text-neutral-300 text-lg font-semibold leading-tight select-none'>
+          <h2 className='mb-2 text-neutral-300 text-lg font-semibold leading-tight tracking-wide select-none'>
             {name}
           </h2>
         )}

@@ -1,9 +1,6 @@
 // react
 import React from 'react';
 
-// assets
-import { MdError } from 'react-icons/md';
-
 const FormErrorMessage: React.FC<FormErrorMessageProps> = props => {
   const { message } = props;
 
