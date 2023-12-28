@@ -2,9 +2,7 @@
 import React from 'react';
 
 // components
-import CardUI from '@/components/UI/CardUI';
 import CardImage from './CardImage';
-import CardLinks from './CardLinks';
 import Pill from '@/components/Pill';
 
 const ProjectCard: React.FC<ProjectCardProps> = props => {

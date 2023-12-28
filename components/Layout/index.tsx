@@ -14,7 +14,6 @@ import InformationCard from '@/components/Information/components/Card';
 import Experience from '@/components/Information/components/Experience';
 import Education from '@/components/Information/components/Education';
 import Certification from '@/components/Information/components/Certification';
-import ContinuousLearning from '../Information/components/ContinuousLearning';
 
 const Layout: React.FC<LayoutProps> = props => {
   const {

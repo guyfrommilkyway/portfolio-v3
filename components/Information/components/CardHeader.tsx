@@ -1,10 +1,6 @@
 // packages
 import React from 'react';
 
-// assets
-import ArrowUpSVG from '@/assets/svg/arrow.svg';
-import LinkExternal from '@/components/LinkExternal';
-
 const CardHeader: React.FC<InformationCardHeaderProps> = props => {
   const { title, href } = props;
 
