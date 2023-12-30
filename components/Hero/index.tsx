@@ -8,8 +8,6 @@ import Link from './components/Social';
 // data
 import { social } from './components/data';
 
-import { FaLocationDot } from 'react-icons/fa6';
-
 const Hero: React.FC<HeroProps> = props => {
   const { headline, description } = props;
 
@@ -23,11 +21,7 @@ const Hero: React.FC<HeroProps> = props => {
         <p className='w-full max-w-sm mb-4 text-neutral-300 leading-snug select-none'>
           {description}
         </p>
-        <div className='flex flex-col gap-3'>
-          <span className='flex items-center gap-3 text-neutral-400 font-medium leading-none transition-colors ease-in-out delay-100 hover:text-white'>
-            <FaLocationDot size={20} />
-            <span className='select-none'>Manila, Philippines</span>
-          </span>
+        <div className='flex gap-4 mb-4'>
           {social.map((item: SocialProps) => {
             return <Link key={item.name} {...item} />;
           })}
