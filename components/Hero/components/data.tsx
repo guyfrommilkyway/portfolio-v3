@@ -1,5 +1,5 @@
 // assets
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaHackerrank } from 'react-icons/fa';
 
 export const social = [
   {
@@ -13,5 +13,11 @@ export const social = [
     username: 'guyfrommilkyway',
     link: 'https://github.com/guyfrommilkyway',
     icon: <FaGithub size={24} />,
+  },
+  {
+    name: 'HackerRank',
+    username: 'guyfrommilkyway',
+    link: 'https://hackerrank.com/profile/guyfrommilkyway',
+    icon: <FaHackerrank size={24} />,
   },
 ];
