@@ -12,9 +12,6 @@ import FormButton from './components/FormButton';
 import { sendEmail } from '@/services/contact';
 import { toastError, toastSuccess } from '@/utils/notifications';
 
-const RATE_LIMIT_MSG =
-  "I apologize, but it seems you've exceeded the request rate limit. To maintain system stability, I enforce a limit of one (1) request per minute.";
-
 const Contact: React.FC = () => {
   const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
   const [errorMsg, setErrMsg] = useState<string>('');
@@ -28,7 +25,7 @@ const Contact: React.FC = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = useCallback(
     async data => {
-      // if submissin is still active
+      // if submitting is still active
       // terminate function
       if (isSubmitting) return;
 
@@ -49,21 +46,21 @@ const Contact: React.FC = () => {
       delete data.hidden2;
       delete data.hidden3;
 
-      const response = await sendEmail(data);
+      const res = await sendEmail(data);
 
-      switch (response.status) {
+      switch (res.status) {
         case 200:
-          toastSuccess('Your message has been sent successfully.');
+          toastSuccess(res.data.message);
           setErrMsg('');
           reset();
           break;
         case 429:
-          toastError(response.data.message);
-          setErrMsg(RATE_LIMIT_MSG);
+          toastError('Rate limit reached!');
+          setErrMsg("Looks like you've hit the rate limit. Try again later.");
           setIsRateLimited(true);
           break;
         default:
-          toastError('An error occured! Please try again later.');
+          toastError(res.data.message);
           setErrMsg('');
           reset();
           break;
