@@ -1,18 +1,17 @@
 // packages
 import { NextApiRequest, NextApiResponse } from 'next';
-import Redis from 'ioredis';
+import { createClient } from '@vercel/kv';
 import requestIp from 'request-ip';
 const sgMail = require('@sendgrid/mail');
 
 // utils
 import rateLimiter from '@/utils/rate-limiter';
 
-sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY!);
 
-const client = new Redis({
-  host: process.env.NEXT_PUBLIC_REDIS_URL!,
-  password: process.env.NEXT_PUBLIC_REDIS_TOKEN!,
-  port: +process.env.NEXT_PUBLIC_REDIS_PORT!,
+createClient({
+  url: process.env.KV_REST_API_URL!,
+  token: process.env.KV_REST_API_TOKEN!,
 });
 
 export default async function handler(
@@ -21,32 +20,33 @@ export default async function handler(
 ) {
   try {
     const identifier = requestIp.getClientIp(req);
-    const result = await rateLimiter(client, identifier!, 1, 60);
-    res.setHeader('X-RateLimit-Limit', result.limit);
-    res.setHeader('X-RateLimit-Remaining', result.remaining);
+    const result = await rateLimiter(identifier!, 1, 60);
 
-    if (!result.success) {
-      res.status(429).json({
-        status: 429,
-        message: 'Too many requests in 1 minute. Please try again later.',
-      });
-      return;
-    }
+    if (!result.success) throw new Error('429');
 
-    const cleanMessage = req.body.message.toString();
-    const cleanName = req.body.name.toString();
-    const cleanEmail = req.body.email.toString();
+    res.setHeader('X-RateLimit-Limit', result.limit!);
+    res.setHeader('X-RateLimit-Remaining', result.remaining!);
 
-    const response = await sgMail.send({
+    const { message, name, email } = req.body;
+
+    await sgMail.send({
       to: process.env.NEXT_PUBLIC_SENDGRID_TO_EMAIL,
       from: process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL,
-      subject: 'Message from Website',
-      text: cleanMessage,
-      html: `<h2>Sender: ${cleanName}</h2> <h3>Email: ${cleanEmail}</h3> <p style='font-size: 20px;'>${cleanMessage}</p>`,
+      subject: 'Re: Message from portfolio site',
+      text: message.toString(),
+      html: `<h1>Sender: ${name.toString()}</h1> <h2>Email: ${email.toString()}</h2> <p style='font-size: 20px;'>${message.toString()}</p>`,
     });
 
-    res.status(200).json(response);
-  } catch (error: any) {
-    res.status(error.code).json(error.response);
+    res.status(200).json({ message: 'Your message has been sent!' });
+  } catch (e: any) {
+    if (e.message === '429') {
+      res.status(429).json({
+        message: "Looks like you've hit the rate limit. Try again later.",
+      });
+
+      return; // terminate
+    }
+
+    res.status(400).json({ message: 'An error occurred. Try again later.' });
   }
 }
