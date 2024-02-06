@@ -8,7 +8,7 @@ const CardHeader: React.FC<InformationCardHeaderProps> = props => {
     <>
       {href ? (
         <a
-          className='inline-block w-fit text-neutral-300 text-sm font-semibold leading-tight tracking-wide underline hover:text-white transition-colors ease-in-out delay-100 select-none'
+          className='inline-block w-fit text-neutral-300 text-sm font-semibold leading-normal tracking-wide underline hover:text-white transition-colors ease-in-out delay-100 select-none'
           href={href}
           title={title}
           target='_blank'
@@ -17,9 +17,9 @@ const CardHeader: React.FC<InformationCardHeaderProps> = props => {
           {title}
         </a>
       ) : (
-        <h2 className='text-neutral-300 text-sm font-semibold leading-tight select-none'>
+        <span className='text-neutral-300 text-sm font-semibold leadi select-none'>
           {title}
-        </h2>
+        </span>
       )}
     </>
   );
