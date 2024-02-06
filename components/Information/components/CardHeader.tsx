@@ -17,9 +17,9 @@ const CardHeader: React.FC<InformationCardHeaderProps> = props => {
           {title}
         </a>
       ) : (
-        <h2 className='text-neutral-300 text-sm font-semibold leadi select-none'>
+        <span className='text-neutral-300 text-sm font-semibold leadi select-none'>
           {title}
-        </h2>
+        </span>
       )}
     </>
   );
