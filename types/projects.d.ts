@@ -16,6 +16,24 @@ interface ProjectCardProps {
   disclaimer: string;
   technologies: any;
 }
+interface ProjectCardHeader {
+  link: string;
+  name: string;
+}
+
+interface ProjectCardDescription {
+  description: string;
+}
+
+interface ProjectCardPills {
+  teamSize: string;
+  hostingProvider: string;
+  technologies: any;
+}
+
+interface ProjectCardDisclaimer {
+  disclaimer: string;
+}
 
 interface ProjectCardLinksProps {
   link: string;
