@@ -2,6 +2,7 @@ interface HeroProps {
   headline: string;
   title: string;
   description: string;
+  location: string;
 }
 
 interface SocialProps {
