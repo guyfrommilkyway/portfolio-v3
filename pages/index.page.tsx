@@ -7,7 +7,7 @@ import Layout from '@/components/Layout';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Sections/Contact';
 
-const PUBLIC_URL = `${process.env.NEXT_PUBLIC_URL}/api/v1/firebase/all`;
+const PUBLIC_URL = `${process.env.NEXT_PUBLIC_URL}/api/v1/firebase`;
 
 const HomePage: React.FC<StaticProps> = props => {
   const { data } = props;
