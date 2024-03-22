@@ -1,13 +1,11 @@
 const useScroll = () => {
-	const scrollHandler = (section: string) => {
-		const el = document.querySelector(section);
+  const scrollHandler = (section: string) => {
+    const el = document.querySelector(section);
 
-		if (el) {
-			el.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
-	return { scrollHandler };
+  return { scrollHandler };
 };
 
 export default useScroll;

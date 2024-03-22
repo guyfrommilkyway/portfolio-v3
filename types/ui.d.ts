@@ -1,7 +1,7 @@
-interface CardUIProps extends ChildrenProps {
+interface ICardUI extends IChildren {
   height?: string;
 }
 
-interface SectionUIProps extends ChildrenProps {
+interface ISectionUI extends IChildren {
   headline: string;
 }

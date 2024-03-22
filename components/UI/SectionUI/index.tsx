@@ -1,7 +1,7 @@
 // packages
 import React from 'react';
 
-const SectionUI: React.FC<SectionUIProps> = props => {
+const SectionUI: React.FC<ISectionUI> = props => {
   const { children, headline } = props;
 
   return (

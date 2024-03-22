@@ -6,16 +6,16 @@ type Component =
   | JSX.Element[]
   | MyReactNode;
 
-interface ChildrenProps {
+interface IChildren {
   children: Component;
 }
 
-interface NavItemProps {
+interface INavItem {
   name: string;
   link: string;
 }
 
-interface LayoutProps {
+interface ILayout {
   hero: any;
   experience: any;
   education: any;

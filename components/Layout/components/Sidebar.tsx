@@ -7,7 +7,7 @@ import useToggle from '@/hooks/useToggle';
 // assets
 import { RiMenu3Fill, RiCloseFill } from 'react-icons/ri';
 
-const Sidebar: React.FC<ChildrenProps> = props => {
+const Sidebar: React.FC<IChildren> = props => {
   const { children } = props;
   const { toggle, toggleHandler } = useToggle();
 

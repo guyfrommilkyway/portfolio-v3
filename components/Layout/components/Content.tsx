@@ -4,7 +4,7 @@ import React from 'react';
 // components
 import Footer from './Footer';
 
-const Content: React.FC<ChildrenProps> = props => {
+const Content: React.FC<IChildren> = props => {
   const { children } = props;
 
   return (

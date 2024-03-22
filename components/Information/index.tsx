@@ -1,7 +1,7 @@
 // packages
 import React from 'react';
 
-const Information: React.FC<ChildrenProps> = props => {
+const Information: React.FC<IChildren> = props => {
   const { children } = props;
 
   return (
