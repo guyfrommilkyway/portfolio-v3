@@ -1,3 +1,3 @@
-interface PillProps {
-	tech: string;
+interface IPill {
+  text: string;
 }

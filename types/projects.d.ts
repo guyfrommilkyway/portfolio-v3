@@ -1,8 +1,8 @@
-interface ProjectsProps {
+interface IProjects {
   headline: string;
   data: any;
 }
-interface ProjectCardProps {
+interface IProjectCard {
   image: string;
   name: string;
   link: string;
@@ -16,31 +16,29 @@ interface ProjectCardProps {
   disclaimer: string;
   technologies: any;
 }
-interface ProjectCardHeader {
+interface IProjectCardHeader {
   link: string;
   name: string;
 }
 
-interface ProjectCardDescription {
+interface IProjectCardDescription {
   description: string;
 }
 
-interface ProjectCardPills {
-  teamSize: string;
-  hostingProvider: string;
+interface IProjectCardPills {
   technologies: any;
 }
 
-interface ProjectCardDisclaimer {
+interface IProjectCardDisclaimer {
   disclaimer: string;
 }
 
-interface ProjectCardLinksProps {
+interface IProjectCardLinks {
   link: string;
   codebase: string;
 }
 
-interface ProjectCardImageProps {
+interface IProjectCardImage {
   name: string;
   image: string;
 }
