@@ -8,17 +8,8 @@ import CardDescription from './CardDescription';
 import CardPills from './CardPills';
 import CardDisclaimer from './CardDisclaimer';
 
-const ProjectCard: React.FC<ProjectCardProps> = props => {
-  const {
-    image,
-    name,
-    link,
-    description,
-    disclaimer,
-    technologies,
-    hostingProvider,
-    teamSize,
-  } = props;
+const ProjectCard: React.FC<IProjectCard> = props => {
+  const { image, name, link, description, disclaimer, technologies } = props;
 
   return (
     <div className='flex flex-nowrap flex-col lg:flex-row items-start gap-x-8 gap-y-4'>
@@ -26,11 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = props => {
       <div>
         <CardHeader link={link} name={name} />
         <CardDescription description={description} />
-        <CardPills
-          teamSize={teamSize}
-          hostingProvider={hostingProvider}
-          technologies={technologies}
-        />
+        <CardPills technologies={technologies} />
         {disclaimer && <CardDisclaimer disclaimer={disclaimer} />}
       </div>
     </div>

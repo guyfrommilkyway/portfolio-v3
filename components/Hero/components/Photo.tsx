@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Photo: React.FC = () => {
+const HeroPhoto: React.FC = () => {
   return (
     <div className='mb-10 select-none'>
       <div className='relative w-full max-w-[240px] h-[320px] rounded-2xl overflow-hidden transition-all ease-in-out delay-100 cursor-pointer select-none hover:z-30 hover:opacity-100'>
@@ -20,4 +20,4 @@ const Photo: React.FC = () => {
   );
 };
 
-export default Photo;
+export default HeroPhoto;

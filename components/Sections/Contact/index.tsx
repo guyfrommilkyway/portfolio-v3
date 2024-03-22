@@ -25,23 +25,10 @@ const Contact: React.FC = () => {
 
   const onSubmit: SubmitHandler<ContactForm> = useCallback(
     async data => {
-      // if submitting is still active
-      // terminate function
       if (isSubmitting) return;
-
-      // if currently being rate
-      // limited, terminate function
       if (isRateLimited) return;
-
-      // these are honey pot fields
-      // humans can't normally see these
-      // except when checking source code
-      // if any of these are filled out
-      // it's most likely a bot
       if (!!data.hidden1 || !!data.hidden2 || !!data.hidden3) return;
 
-      // delete honey pot fields
-      // before submitting to API
       delete data.hidden1;
       delete data.hidden2;
       delete data.hidden3;
@@ -69,9 +56,6 @@ const Contact: React.FC = () => {
     [isSubmitting, isRateLimited, reset],
   );
 
-  // will enable submit button and
-  // clear errMsg after one
-  // (1) minute of being rate limited
   useEffect(() => {
     let rateLimitTimer: ReturnType<typeof setTimeout>;
 
@@ -82,8 +66,7 @@ const Contact: React.FC = () => {
       }, 60000); // 1 minute
     }
 
-    // set up clean up function
-    // to avoid memory leaks
+    // clean up function
     return () => clearTimeout(rateLimitTimer);
   }, [isRateLimited]);
 

@@ -1,7 +1,7 @@
 // packages
 import React from 'react';
 
-const CardUI: React.FC<CardUIProps> = props => {
+const CardUI: React.FC<ICardUI> = props => {
   const { height, children } = props;
 
   return (

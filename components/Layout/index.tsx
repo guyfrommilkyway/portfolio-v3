@@ -10,20 +10,12 @@ import Hero from '@/components/Hero';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
 import Information from '@/components/Information';
-import InformationCard from '@/components/Information/components/Card';
-import Experience from '@/components/Information/components/Experience';
-import Education from '@/components/Information/components/Education';
-import Certification from '@/components/Information/components/Certification';
+import InformationCard from '@/components/common/Card';
+import Experience from '@/components/Experience';
+import Education from '@/components/Education';
 
-const Layout: React.FC<LayoutProps> = props => {
-  const {
-    hero,
-    experience,
-    education,
-    certifications,
-    continuouslearning,
-    children,
-  } = props;
+const Layout: React.FC<ILayout> = props => {
+  const { hero, experience, education, children } = props;
 
   const INFORMATION_CARDS = (
     <>
@@ -43,15 +35,6 @@ const Layout: React.FC<LayoutProps> = props => {
             .reverse()
             .map(item => {
               return <Education key={item} {...education[item]} />;
-            })}
-      </InformationCard>
-      <InformationCard title='Certifications'>
-        {!!certifications &&
-          Object.keys(certifications)
-            .sort()
-            .reverse()
-            .map(item => {
-              return <Certification key={item} {...certifications[item]} />;
             })}
       </InformationCard>
     </>

@@ -1,7 +1,7 @@
 // packages
 import React from 'react';
 
-const CardDisclaimer: React.FC<ProjectCardDisclaimer> = props => {
+const CardDisclaimer: React.FC<IProjectCardDisclaimer> = props => {
   const { disclaimer } = props;
 
   return (

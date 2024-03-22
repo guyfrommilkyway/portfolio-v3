@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const CardImage: React.FC<ProjectCardImageProps> = props => {
+const CardImage: React.FC<IProjectCardImage> = props => {
   const { name, image } = props;
 
   return (

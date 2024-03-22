@@ -4,7 +4,7 @@ import React from 'react';
 // assets
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
-const CardHeader: React.FC<ProjectCardHeader> = props => {
+const CardHeader: React.FC<IProjectCardHeader> = props => {
   const { link, name } = props;
 
   return (

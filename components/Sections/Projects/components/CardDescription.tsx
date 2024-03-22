@@ -1,7 +1,7 @@
 // packages
 import React from 'react';
 
-const CardDescription: React.FC<ProjectCardDescription> = props => {
+const CardDescription: React.FC<IProjectCardDescription> = props => {
   const { description } = props;
 
   return (

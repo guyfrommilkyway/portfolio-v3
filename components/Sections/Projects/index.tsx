@@ -5,7 +5,7 @@ import React from 'react';
 import SectionUI from '@/components/UI/SectionUI';
 import ProjectCard from './components/Card';
 
-const Projects: React.FC<ProjectsProps> = props => {
+const Projects: React.FC<IProjects> = props => {
   const { headline, data } = props;
 
   return (

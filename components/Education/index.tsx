@@ -2,15 +2,15 @@
 import React from 'react';
 
 // components
-import CardHeader from './CardHeader';
-import CardSubHeader from './CardSubHeader';
-import CardDuration from './CardDuration';
+import CardHeader from '@/components/common/Card/CardHeader';
+import CardDuration from '../common/Card/CardDuration';
+import CardSubHeader from '../common/Card/CardSubHeader';
 
 const Education: React.FC<EducationCardProps> = props => {
   const { program, university, duration, certificate } = props;
 
   return (
-    <div className=''>
+    <div>
       <CardHeader title={program} href={certificate} />
       <CardSubHeader title={university} />
       <CardDuration duration={duration} />

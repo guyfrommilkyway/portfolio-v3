@@ -2,10 +2,10 @@
 import React from 'react';
 
 // components
-import LinkExternal from '@/components/LinkExternal';
-import LinkDummy from '@/components/LinkDummy';
+import LinkExternal from '@/components/common/LinkExternal';
+import LinkDummy from '@/components/common/LinkDummy';
 
-const CardLinks: React.FC<ProjectCardLinksProps> = props => {
+const CardLinks: React.FC<IProjectCardLinks> = props => {
   const { link, codebase } = props;
 
   return (

@@ -2,36 +2,28 @@
 import React from 'react';
 
 // components
-import Photo from './components/Photo';
-import Link from './components/Social';
+import HeroPhoto from './components/Photo';
+import HeroSocials from './components/Socials';
 
 // data
-import { social } from './components/data';
+import SOCIAL from '@/data/socials';
+import HeroHeader from './components/Header';
+import HeroSubHeader from './components/SubHeader';
+import HeroLocation from './components/Location';
+import HeroDescription from './components/Description';
 
-const Hero: React.FC<HeroProps> = props => {
+const Hero: React.FC<IHero> = props => {
   const { headline, title, description, location } = props;
 
   return (
-    <aside className='relative flex flex-col w-full md:max-w-[320px] px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
-      <Photo />
+    <aside className='relative flex flex-col w-full md:max-w-[340px] px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
+      <HeroPhoto />
       <div className='lg:sticky lg:top-[80px]'>
-        <h1 className='mb-2 text-white font-bold text-3xl leading-none tracking-wider select-none'>
-          {headline}
-        </h1>
-        <h2 className='mb-2 text-neutral-300 text-lg font-semibold select-none'>
-          {title}
-        </h2>
-        <p className='w-full max-w-sm mb-2 text-neutral-400 leading-snug select-none'>
-          {location}
-        </p>
-        <p className='w-full max-w-sm mb-4 text-neutral-400 leading-snug select-none'>
-          {description}
-        </p>
-        <div className='flex gap-4 mb-4'>
-          {social.map((item: SocialProps) => {
-            return <Link key={item.name} {...item} />;
-          })}
-        </div>
+        <HeroHeader headline={headline} />
+        <HeroSubHeader title={title} />
+        <HeroLocation location={location} />
+        <HeroDescription description={description} />
+        <HeroSocials data={SOCIAL} />
       </div>
     </aside>
   );

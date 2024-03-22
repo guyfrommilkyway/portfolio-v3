@@ -7,8 +7,7 @@ const Timer: React.FC = () => {
   useEffect(() => {
     const timerInterval = setInterval(() => setTime(new Date()), 1000);
 
-    // set up clean function
-    // to prevent memory leaks
+    // clean up function
     return () => clearInterval(timerInterval);
   }, []);
 
