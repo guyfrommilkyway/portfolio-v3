@@ -3,15 +3,16 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // utils
 import fetchFirebase from '@/services/firebase';
+import { IFirebase } from '@/components/models/db';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
   try {
-    const response = await fetchFirebase('');
+    const response = await fetchFirebase();
 
-    res.status(response.status).json(response.data);
+    res.status(response?.status).json(response?.data);
   } catch (error: any) {
     res.status(error.code).json(error);
   }
