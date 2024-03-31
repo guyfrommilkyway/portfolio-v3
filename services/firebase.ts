@@ -1,9 +1,6 @@
 // packages
 import axios from 'axios';
 
-// models
-import { IFirebaseResponse } from '@/components/models/db';
-
 // env
 const API = process.env.NEXT_PUBLIC_FIREBASE_API;
 const API_KEY = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
@@ -21,7 +18,7 @@ const fetchFirebase = async (
   try {
     const response = await Firebase.get(`${endpoint}.json?auth=${API_KEY}`);
 
-    return { status: response?.status, data: response?.data };
+    return { status: response?.status, data: response?.data as IFirebase };
   } catch (error: any) {
     return error;
   }

@@ -2,26 +2,29 @@
 import React, { Fragment } from 'react';
 
 // components
-import Head from '@/components/Head';
-import Layout from '@/components/Layout';
+import Head from '@/components/common/Head';
+import Layout from '@/components/common/Layout';
+import Experience from '@/components/Sections/Experience';
 import Projects from '@/components/Sections/Projects';
 import Contact from '@/components/Sections/Contact';
 
-// models
-import { IFirebase } from '@/components/models/db';
-
 const PUBLIC_URL = `${process.env.NEXT_PUBLIC_URL}/api/v1/firebase`;
 
-const HomePage: React.FC<StaticProps> = props => {
-  const { data } = props;
+interface PHomePage {
+  data: IFirebase;
+}
+
+const HomePage: React.FC<PHomePage> = ({ data }) => {
+  const { experience, work, personal } = data;
 
   return (
     <Fragment>
       <Head title='Almer Tampus' />
-      {data && (
+      {!!data && (
         <Layout {...data}>
-          <Projects headline='Work' data={data.work} />
-          <Projects headline='Personal' data={data.personal} />
+          <Experience data={experience} />
+          <Projects headline='Work' data={work} />
+          <Projects headline='Personal' data={personal} />
           <Contact />
         </Layout>
       )}
@@ -32,7 +35,7 @@ const HomePage: React.FC<StaticProps> = props => {
 export async function getStaticProps() {
   try {
     const response = await fetch(PUBLIC_URL);
-    const data: IFirebase = await response.json();
+    const data = await response.json();
 
     return {
       props: {
@@ -41,8 +44,6 @@ export async function getStaticProps() {
       revalidate: 60, // seconds
     };
   } catch (error) {
-    console.log(error);
-
     return {
       props: {
         data: null,

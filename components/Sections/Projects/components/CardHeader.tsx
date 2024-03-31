@@ -4,11 +4,14 @@ import React from 'react';
 // assets
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
-const CardHeader: React.FC<IProjectCardHeader> = props => {
-  const { link, name } = props;
+interface PCardHeader {
+  link: string;
+  name: string;
+}
 
+const CardHeader: React.FC<PCardHeader> = ({ link, name }) => {
   return (
-    <h2 className='inline-block w-fit mb-2 text-neutral-300 text-lg font-semibold leading-tight tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
+    <h2 className='w-fit text-neutral-300 text-lg font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
       {link ? (
         <a
           className='w-fit select-none'

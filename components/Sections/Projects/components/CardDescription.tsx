@@ -1,14 +1,12 @@
 // packages
 import React from 'react';
 
-const CardDescription: React.FC<IProjectCardDescription> = props => {
-  const { description } = props;
+interface PCardDescription {
+  description: string;
+}
 
-  return (
-    <p className='mb-4 text-neutral-300 leading-snug select-none'>
-      {description}
-    </p>
-  );
+const CardDescription: React.FC<PCardDescription> = ({ description }) => {
+  return <p className='mb-2 text-neutral-400 select-none'>{description}</p>;
 };
 
 export default CardDescription;

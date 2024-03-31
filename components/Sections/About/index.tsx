@@ -2,13 +2,18 @@
 import React from 'react';
 
 // components
-import SectionUI from '@/components/UI/SectionUI';
+import Section from '@/components/common/Section';
 
-const About: React.FC<AboutProps> = props => {
-  const { headline, paragraphs } = props;
+interface PSectionAbout {
+  headline: string;
+  paragraphs: {
+    [key: string]: string;
+  };
+}
 
+const SectionAbout: React.FC<PSectionAbout> = ({ headline, paragraphs }) => {
   return (
-    <SectionUI headline={headline}>
+    <Section headline={headline}>
       {!!paragraphs &&
         Object.keys(paragraphs).map(item => {
           return (
@@ -20,8 +25,8 @@ const About: React.FC<AboutProps> = props => {
             </p>
           );
         })}
-    </SectionUI>
+    </Section>
   );
 };
 
-export default About;
+export default SectionAbout;

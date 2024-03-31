@@ -2,14 +2,19 @@
 import React from 'react';
 
 // components
-import SectionUI from '@/components/UI/SectionUI';
+import Section from '@/components/common/Section';
 import ProjectCard from './components/Card';
 
-const Projects: React.FC<IProjects> = props => {
-  const { headline, data } = props;
+interface PSectionProjects {
+  headline: string;
+  data?: {
+    [key: string]: IProject;
+  };
+}
 
+const SectionProjects: React.FC<PSectionProjects> = ({ headline, data }) => {
   return (
-    <SectionUI headline={headline}>
+    <Section headline={headline}>
       <div className='flex flex-col gap-8'>
         {!!data &&
           Object.keys(data)
@@ -19,8 +24,8 @@ const Projects: React.FC<IProjects> = props => {
               return <ProjectCard key={item} {...data[item]} />;
             })}
       </div>
-    </SectionUI>
+    </Section>
   );
 };
 
-export default Projects;
+export default SectionProjects;

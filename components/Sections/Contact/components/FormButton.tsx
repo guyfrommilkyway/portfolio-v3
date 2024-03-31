@@ -7,9 +7,17 @@ import FormErrorMessage from './FormErrorMessage';
 // assets
 import LoadingSVG from '@/assets/svg/rolling.svg';
 
-const FormButton: React.FC<FormButtonProps> = props => {
-  const { isSubmitting, isRateLimited, errMsg } = props;
+interface PFormButton {
+  isSubmitting: boolean;
+  isRateLimited: boolean;
+  errMsg: string;
+}
 
+const FormButton: React.FC<PFormButton> = ({
+  isSubmitting,
+  isRateLimited,
+  errMsg,
+}) => {
   return (
     <div className='flex flex-wrap items-center gap-x-4 gap-y-8 mt-5'>
       <button
