@@ -1,3 +1,0 @@
-interface IPill {
-  text: string;
-}

@@ -1,3 +1,0 @@
-interface StaticProps {
-  data: any;
-}
