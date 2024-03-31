@@ -6,7 +6,7 @@ interface PCardDescription {
 }
 
 const CardDescription: React.FC<PCardDescription> = ({ description }) => {
-  return <p className='mb-2 text-neutral-400 select-none'>{description}</p>;
+  return <p className='text-neutral-400 leading-snug'>{description}</p>;
 };
 
 export default CardDescription;

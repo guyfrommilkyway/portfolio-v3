@@ -1,9 +1,12 @@
 // packages
 import React from 'react';
 
-const CardHeader: React.FC<ICardHeader> = props => {
-  const { href, title } = props;
+interface PCardHeader {
+  title: string;
+  href?: string;
+}
 
+const CardHeader: React.FC<PCardHeader> = ({ title, href }) => {
   return (
     <h1 className='text-neutral-300 font-semibold leading-snug tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
       {href ? (

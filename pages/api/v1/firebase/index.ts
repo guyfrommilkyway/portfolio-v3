@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // utils
 import fetchFirebase from '@/services/firebase';
-import { IFirebase } from '@/components/models/db';
 
 export default async function handler(
   req: NextApiRequest,

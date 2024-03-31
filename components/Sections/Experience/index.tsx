@@ -3,29 +3,30 @@ import React from 'react';
 
 // components
 import Section from '@/components/common/Section';
-import ProjectCard from './components/Card';
+import ExperienceCard from './components/Card';
 
-interface PSectionProjects {
-  headline: string;
+interface PSectionExperience {
   data?: {
-    [key: string]: IProject;
+    [key: string]: IExperience;
   };
 }
 
-const SectionProjects: React.FC<PSectionProjects> = ({ headline, data }) => {
+const SectionExperience: React.FC<PSectionExperience> = props => {
+  const { data } = props;
+
   return (
-    <Section headline={headline}>
+    <Section headline='Work Experience'>
       <div className='flex flex-col gap-8'>
         {!!data &&
           Object.keys(data)
             .sort()
             .reverse()
             .map(item => {
-              return <ProjectCard key={item} {...data[item]} />;
+              return <ExperienceCard key={item} {...data[item]} />;
             })}
       </div>
     </Section>
   );
 };
 
-export default SectionProjects;
+export default SectionExperience;

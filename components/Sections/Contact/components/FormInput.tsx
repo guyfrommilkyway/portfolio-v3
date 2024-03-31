@@ -1,12 +1,27 @@
 // packages
 import React from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 // components
 import FormErrorMessage from './FormErrorMessage';
 
-const FormInput: React.FC<FormInputProps> = props => {
-  const { id, label, type, isInvalid, errMsg, register } = props;
+interface PFormInputs {
+  id: string;
+  label: string;
+  type: string;
+  isInvalid: boolean;
+  errMsg?: string;
+  register: UseFormRegisterReturn;
+}
 
+const FormInput: React.FC<PFormInputs> = ({
+  id,
+  label,
+  type,
+  isInvalid,
+  errMsg,
+  register,
+}) => {
   return (
     <div className='flex flex-col gap-2 mb-4'>
       <label className='text-neutral-300 select-none' htmlFor={id}>

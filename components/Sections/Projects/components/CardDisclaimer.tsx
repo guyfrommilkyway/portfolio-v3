@@ -1,11 +1,13 @@
 // packages
 import React from 'react';
 
-const CardDisclaimer: React.FC<IProjectCardDisclaimer> = props => {
-  const { disclaimer } = props;
+interface PCardDisclaimer {
+  disclaimer: string;
+}
 
+const CardDisclaimer: React.FC<PCardDisclaimer> = ({ disclaimer }) => {
   return (
-    <p className='mt-4 text-neutral-400 text-sm leading-tight tracking-tight select-none'>
+    <p className='text-neutral-400 leading-snug tracking-tight select-none'>
       {disclaimer}
     </p>
   );

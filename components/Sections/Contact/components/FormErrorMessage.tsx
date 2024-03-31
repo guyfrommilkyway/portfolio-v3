@@ -1,9 +1,11 @@
 // react
 import React from 'react';
 
-const FormErrorMessage: React.FC<FormErrorMessageProps> = props => {
-  const { message } = props;
+interface PFormErrorMessage {
+  message?: string;
+}
 
+const FormErrorMessage: React.FC<PFormErrorMessage> = ({ message }) => {
   return (
     <div className='w-full max-w-sm'>
       <p className='text-red-600 leading-tight select-none'>{message}</p>

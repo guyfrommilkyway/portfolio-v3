@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 // components
-import SectionUI from '@/components/UI/SectionUI';
+import Section from '@/components/common/Section';
 import FormInput from './components/FormInput';
 import FormTextarea from './components/FormTextarea';
 import FormButton from './components/FormButton';
@@ -12,7 +12,7 @@ import FormButton from './components/FormButton';
 import { sendEmail } from '@/services/contact';
 import { toastError, toastSuccess } from '@/utils/notifications';
 
-const Contact: React.FC = () => {
+const SectionContact: React.FC = () => {
   const [isRateLimited, setIsRateLimited] = useState<boolean>(false);
   const [errorMsg, setErrMsg] = useState<string>('');
 
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
   }, [isRateLimited]);
 
   return (
-    <SectionUI headline="Ready to collaborate or connect? Let's chat!">
+    <Section headline="Ready to collaborate or connect? Let's chat!">
       <div className='w-full mb-20'>
         <form className='' onSubmit={handleSubmit(onSubmit)}>
           <input type='hidden' {...register('hidden1')} />
@@ -112,8 +112,8 @@ const Contact: React.FC = () => {
           />
         </form>
       </div>
-    </SectionUI>
+    </Section>
   );
 };
 
-export default Contact;
+export default SectionContact;

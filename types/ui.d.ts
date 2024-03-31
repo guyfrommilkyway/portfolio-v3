@@ -2,6 +2,6 @@ interface ICardUI extends IChildren {
   height?: string;
 }
 
-interface ISectionUI extends IChildren {
+interface ISection extends IChildren {
   headline: string;
 }

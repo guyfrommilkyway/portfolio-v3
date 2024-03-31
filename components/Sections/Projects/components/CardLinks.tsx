@@ -5,11 +5,14 @@ import React from 'react';
 import LinkExternal from '@/components/common/LinkExternal';
 import LinkDummy from '@/components/common/LinkDummy';
 
-const CardLinks: React.FC<IProjectCardLinks> = props => {
-  const { link, codebase } = props;
+interface PCardLinks {
+  link: string;
+  codebase: string;
+}
 
+const CardLinks: React.FC<PCardLinks> = ({ link, codebase }) => {
   return (
-    <div className='flex items-center gap-2 mb-4'>
+    <div className='flex items-center gap-2'>
       {!!link ? (
         <LinkExternal href={link} title={link} />
       ) : (

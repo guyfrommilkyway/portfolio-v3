@@ -27,8 +27,6 @@ const rateLimiter = async (
 
     return { limit, remaining: limit - (count + 1), success: true };
   } catch (e) {
-    console.log(e);
-
     return { success: false };
   }
 };
