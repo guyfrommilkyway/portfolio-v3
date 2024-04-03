@@ -20,19 +20,19 @@ interface PSectionHero {
 }
 
 const SectionHero: React.FC<PSectionHero> = ({
-  headline,
-  title,
-  description,
-  location,
+  headline = '',
+  title = '',
+  description = '',
+  location = '',
 }) => {
   return (
-    <aside className='relative flex flex-col w-full md:max-w-[340px] px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
+    <aside className='relative flex flex-col w-full md:max-w-full lg:max-w-sm px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
       <HeroPhoto />
       <div className='lg:sticky lg:top-[80px]'>
-        <HeroHeader headline={headline ?? ''} />
-        <HeroSubHeader title={title ?? ''} />
-        <HeroLocation location={location ?? ''} />
-        <HeroDescription description={description ?? ''} />
+        <HeroHeader headline={headline} />
+        <HeroSubHeader title={title} />
+        <HeroLocation location={location} />
+        <HeroDescription description={description} />
         <HeroSocials data={SOCIAL} />
       </div>
     </aside>
