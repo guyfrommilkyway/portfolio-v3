@@ -5,7 +5,7 @@ import Image from 'next/image';
 const HeroPhoto: React.FC = () => {
   return (
     <div className='mb-10 select-none'>
-      <div className='relative w-full max-w-[100%] rounded-2xl overflow-hidden transition-all ease-in-out delay-100 cursor-pointer select-none hover:z-30 hover:opacity-100'>
+      <div className='relative w-full rounded-2xl overflow-hidden transition-all ease-in-out delay-100 cursor-pointer select-none hover:z-30 hover:opacity-100'>
         <Image
           className='aspect-auto'
           layout='responsive'
