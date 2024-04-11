@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // components
 import Header from './components/Header';
-import Container from './components/Container';
+import Main from './components/Main';
 import Hero from '@/components/Sections/Hero';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
@@ -46,12 +46,12 @@ const Layout: React.FC<PLayout> = props => {
   return (
     <Fragment>
       <Header />
-      <Container>
+      <Main>
         <Sidebar>{INFORMATION_CARDS}</Sidebar>
         <Hero {...hero} />
         <Content>{children}</Content>
         <SideContent>{INFORMATION_CARDS}</SideContent>
-      </Container>
+      </Main>
       <Analytics />
       <SpeedInsights />
     </Fragment>

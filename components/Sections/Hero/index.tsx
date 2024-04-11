@@ -26,7 +26,7 @@ const SectionHero: React.FC<PSectionHero> = ({
   location = '',
 }) => {
   return (
-    <aside className='relative flex flex-col w-full max-w-full lg:max-w-[300px] px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
+    <aside className='relative flex flex-col w-full max-w-full lg:max-w-[340px] px-4 pt-4 pb-10 md:px-8 lg:px-4 border-b md:border-none border-neutral-900'>
       <HeroPhoto />
       <div className='lg:sticky lg:top-[80px]'>
         <HeroHeader headline={headline} />

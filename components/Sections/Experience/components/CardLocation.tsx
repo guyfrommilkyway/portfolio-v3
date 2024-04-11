@@ -6,7 +6,7 @@ interface PCardLocation {
 }
 
 const CardLocation: React.FC<PCardLocation> = ({ location }) => {
-  return <p className='text-neutral-400'>{location}</p>;
+  return <p className='text-neutral-400 select-none'>{location}</p>;
 };
 
 export default CardLocation;
