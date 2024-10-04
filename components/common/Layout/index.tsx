@@ -5,53 +5,24 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // components
 import Header from './components/Header';
-import Main from './components/Main';
-import Hero from '@/components/Sections/Hero';
-import Sidebar from './components/Sidebar';
+import MainContainer from './components/MainContainer';
+import Hero from '@/components/routes/home/components/Hero';
 import Content from './components/Content';
-import SideContent from './components/SideContent';
-import Card from '@/components/common/Card';
-import Education from '@/components/Cards/Education';
-import RecentNews from '@/components/Cards/RecentNews';
+import Footer from './components/Footer';
 
 interface PLayout extends IFirebase, PChildren {}
 
 const Layout: React.FC<PLayout> = props => {
-  const { hero, education, recentnews, children } = props;
-
-  const INFORMATION_CARDS = (
-    <>
-      <Card title='Education'>
-        {!!education &&
-          Object.keys(education)
-            .sort()
-            .reverse()
-            .map(item => {
-              return <Education key={item} {...education[item]} />;
-            })}
-      </Card>
-      <Card title='Recent news'>
-        {!!recentnews &&
-          Object.keys(recentnews)
-            .sort()
-            .reverse()
-            .slice(0, 5)
-            .map(item => {
-              return <RecentNews key={item} {...recentnews[item]} />;
-            })}
-      </Card>
-    </>
-  );
+  const { hero, children } = props;
 
   return (
     <Fragment>
       <Header />
-      <Main>
-        <Sidebar>{INFORMATION_CARDS}</Sidebar>
+      <MainContainer>
         <Hero {...hero} />
         <Content>{children}</Content>
-        <SideContent>{INFORMATION_CARDS}</SideContent>
-      </Main>
+      </MainContainer>
+      <Footer />
       <Analytics />
       <SpeedInsights />
     </Fragment>

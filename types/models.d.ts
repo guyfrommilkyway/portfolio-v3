@@ -6,14 +6,9 @@ interface ICertification {
 }
 
 interface IEducation {
-  certificate: string;
   duration: string;
   program: string;
   university: string;
-  description: string;
-  skills: {
-    [key: string]: string;
-  };
 }
 
 interface IExperience {

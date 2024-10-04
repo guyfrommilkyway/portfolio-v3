@@ -20,8 +20,6 @@ const SOCIALS = [
     link: 'https://hackerrank.com/profile/guyfrommilkyway',
     icon: <FaHackerrank size={25} />,
   },
-];
-
-Object.freeze(SOCIALS);
+] as const;
 
 export default SOCIALS;

@@ -1,8 +1,6 @@
 const NAV = [
   { name: 'Experience', link: '/' },
   { name: 'Initiatives', link: '/initiatives' },
-];
-
-Object.freeze(NAV);
+] as const;
 
 export default NAV;

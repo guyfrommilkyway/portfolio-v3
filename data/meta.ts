@@ -1,5 +1,5 @@
 const DESCRIPTION =
-  'A frontend developer with 1+ years of professional experience, specializing in front-end web development. Expertise lies in building web applications using a versatile tech stack. Proficient in JavaScript and TypeScript, and excels in harnessing the power of modern frameworks and libraries, such as React, Next.js, Redux, Zustand, and CSS frameworks like Tailwind, Chakra UI and Bootstrap.';
+  'A software engineer with ~2 years of professional experience, specializing in front-end web development. Expertise lies in building web applications using a versatile tech stack. Proficient in TypeScript and JavaScript, and excels in harnessing the power of modern frameworks and libraries such as React and Next.js, and CSS frameworks like MUI, Ant Design, Tailwind, Chakra UI and Bootstrap.';
 
 const META = {
   // open graph meta tags
@@ -25,9 +25,7 @@ const META = {
   author: 'Almer Tampus',
   description: DESCRIPTION,
   keywords:
-    'Almer Tampus, Almer Flores Tampus, Almer, Tampus, almer, tampus, almertampus, almertampus.xyz, almertampus.xyz/, www.almertampus.xyz, www.almertampus.xyz/, https://almertampus.xyz, https://almertampus.xyz/, Agile Developer, Agile Software Developer, Softwware Developer, Web Developer, Front-End Web Developer, Frontend Web Developer, Front End Web Developer, Frontend developer, Front End Developer, Front-End Developer, JavaScript Developer, TypeScript Developer, React Developer, Next.js Developer, JavaScript, TypeScript, React, Next.js, Redux, Zustand, Tailwind CSS, Tailwind, Chakra UI, HTML, HTML5, CSS, Cascading Style Sheets (CSS), SASS, Syntactically Awesome Stylesheets, Software Development, Web Development, Web Application Development, Front-End Development, Front End Development, User Interface Design, UI, UI Design, User Experience, User Experience Design, UX, UX Design, Personal Website, Portfolio Website',
-};
-
-Object.freeze(META);
+    'Almer Tampus, Almer Flores Tampus, Almer, Tampus, almer, tampus, almertampus, almertampus.space, almertampus.space/, www.almertampus.space, www.almertampus.space/, https://almertampus.space, https://almertampus.space/, Software Engineer, Agile Developer, Agile Software Developer, Softwware Developer, Web Developer, Front-End Web Developer, Frontend Web Developer, Front End Web Developer, Frontend developer, Front End Developer, Front-End Developer, JavaScript Developer, TypeScript Developer, React Developer, Next.js Developer, JavaScript, TypeScript, React, Next.js, Redux, Zustand, Tailwind CSS, Tailwind, Chakra UI, HTML, HTML5, CSS, Cascading Style Sheets (CSS), SASS, Syntactically Awesome Stylesheets, Software Development, Web Development, Web Application Development, Front-End Development, Front End Development, User Interface Design, UI, UI Design, User Experience, User Experience Design, UX, UX Design, Personal Website, Portfolio Website',
+} as const;
 
 export default META;
