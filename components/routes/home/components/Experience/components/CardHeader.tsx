@@ -11,7 +11,7 @@ interface Props {
 
 const CardHeader: React.FC<Props> = ({ link, company }) => {
   return (
-    <h2 className='inline-block w-fit text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
+    <h2 className='inline-block w-fit text-sm text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
       {link ? (
         <a
           className='w-fit select-none'

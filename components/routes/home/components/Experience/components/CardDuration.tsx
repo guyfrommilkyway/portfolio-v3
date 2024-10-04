@@ -8,7 +8,7 @@ interface Props {
 
 const CardDuration: React.FC<Props> = ({ duration, setup }) => {
   return (
-    <p className='text-neutral-400 select-none'>
+    <p className='text-sm text-neutral-400 select-none'>
       {duration} &#x2022; {setup}
     </p>
   );

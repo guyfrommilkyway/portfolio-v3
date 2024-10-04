@@ -7,7 +7,7 @@ interface Props {
 
 const CardSubHeader: React.FC<Props> = ({ title }) => {
   return (
-    <h2 className='text-neutral-400 font-medium select-none'>
+    <h2 className='text-sm text-neutral-400 font-medium select-none'>
       <span>{title}</span>
     </h2>
   );

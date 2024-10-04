@@ -7,9 +7,7 @@ interface Props {
 
 const HeroSubHeader: React.FC<Props> = ({ title }) => {
   return (
-    <h2 className='mb-2 text-neutral-300 text-lg font-semibold select-none'>
-      {title}
-    </h2>
+    <h2 className='mb-2 text-neutral-300 font-semibold select-none'>{title}</h2>
   );
 };
 
