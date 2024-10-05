@@ -46,12 +46,12 @@ const SectionGitHub: React.FC<Props> = props => {
                                 {item?.name} <FaArrowUpRightFromSquare className='inline ml-1 -mt-3' size={10} />
                             </a>
                             {item?.fork && (
-                                <span className='ml-2 p-1 text-xs text-blue-500 font-semibold border border-blue-500 rounded-sm'>
+                                <span className='ml-2 p-1 text-xs text-blue-100 font-semibold bg-blue-800 rounded-sm'>
                                     Forked
                                 </span>
                             )}
                             {item?.archived && (
-                                <span className='ml-2 p-1 text-xs text-orange-500 font-semibold border border-orange-500 rounded-sm'>
+                                <span className='ml-2 p-1 text-xs text-orange-100 font-semibold bg-orange-800 rounded-sm'>
                                     Public archive
                                 </span>
                             )}

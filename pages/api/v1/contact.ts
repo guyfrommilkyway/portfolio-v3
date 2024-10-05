@@ -43,6 +43,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return; // terminate
         }
 
-        res.status(400).json({ message: 'An error occurred. Try again later.' });
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 }
