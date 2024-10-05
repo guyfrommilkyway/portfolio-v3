@@ -16,7 +16,7 @@ const SectionExperience: React.FC<Props> = props => {
     const { data } = props;
 
     return (
-        <Section headline='Work Experience'>
+        <Section headline='Experience'>
             <div className='flex flex-col gap-2'>
                 {!!data &&
                     Object.keys(data)

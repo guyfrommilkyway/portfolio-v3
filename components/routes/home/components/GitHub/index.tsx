@@ -15,11 +15,11 @@ const SectionGitHub: React.FC<Props> = props => {
     const { user, data } = props;
 
     return (
-        <Section headline='GitHub'>
+        <Section>
             <div className='mb-4'>
                 <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
                     <a className='w-fit select-none' href={user?.html_url} target='_blank' rel='noopener noreferrer'>
-                        {user?.name} @{user?.login}
+                        GitHub (@{user?.login})
                     </a>
                 </h2>
                 <div className='flex gap-2 mb-2'>
