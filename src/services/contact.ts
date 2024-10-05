@@ -13,8 +13,6 @@ const sendEmail = async (data: ContactForm) => {
     try {
         const response = await SendGrid.post('contact', data);
 
-        console.log(response);
-
         return response;
     } catch (error: any) {
         return error.response;

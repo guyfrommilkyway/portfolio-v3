@@ -15,8 +15,6 @@ const Home: React.FC<PageProps> = props => {
 
     const { repo } = useRepo();
 
-    console.log(repo);
-
     const SectionExperienceProps = { data: firebase?.experience };
     const SectionGitHubProps = { user, data: repo };
 
