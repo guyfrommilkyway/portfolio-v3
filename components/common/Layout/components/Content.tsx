@@ -1,8 +1,11 @@
-// packages
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const Content: React.FC<PChildren> = ({ children }) => {
-  return <section className='relative w-full'>{children}</section>;
+interface Props {
+    children: ReactNode;
+}
+
+const Content: React.FC<Props> = ({ children }) => {
+    return <section className='relative w-full'>{children}</section>;
 };
 
 export default Content;
