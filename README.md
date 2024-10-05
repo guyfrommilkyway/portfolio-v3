@@ -27,6 +27,8 @@ KV_REST_API_READ_ONLY_TOKEN=
 NEXT_PUBLIC_GITHUB_TOKEN=
 ```
 
+#### Running the application
+
 To run the application, follow these commands based on your environment (development or production mode):
 
 ```bash
@@ -35,10 +37,8 @@ yarn build     # build the application for production (.env.production)
 yarn start     # run application in production mode (.env.production)
 ```
 
-#### Running the application
-
-Development Mode: open http://localhost:8080 in your browser to see the result.
-Production Mode: open http://localhost:3000 in your browser to see the result.
+- On development mode, go to http://localhost:8080 in your browser
+- On production mode, go to http://localhost:3000 in your browser
 
 ### Project structure
 This project follows a well-organized directory structure for better maintainability and scalability. Below is an overview of the various directories and their purposes:
@@ -48,16 +48,16 @@ This project follows a well-organized directory structure for better maintainabi
 ```plaintext
 src/
 ├── components/
-│   ├── routes/           # components for routing and page layouts
-│   └── common/           # shared components (buttons, modals, inputs)
-├── constants/            # application-wide constant values (API URLs, configs, static data)
-├── enums/                # typeScript enums to improve code readability and type safety
-├── services/             # service layer responsible for API requests and data handling
-├── utils/                # utility functions (data formatting, validation, etc.)
-├── hooks/                # custom React hooks for using state and lifecycle features
-├── styles/               # global and component-specific styles (CSS, SCSS, or styled-components)
-├── pages/                # application’s page components, each corresponding to a route
-└── types/                # typeScript interfaces or classes representing data structures
+│   ├── routes/       # components for routing and page layouts
+│   └── common/       # shared components (buttons, modals, inputs)
+├── constants/        # application-wide constant values (API URLs, configs, static data)
+├── enums/            # typeScript enums to improve code readability and type safety
+├── services/         # service layer responsible for API requests and data handling
+├── utils/            # utility functions (data formatting, validation, etc.)
+├── hooks/            # custom React hooks for using state and lifecycle features
+├── styles/           # global and component-specific styles (CSS, SCSS, or styled-components)
+├── pages/            # application’s page components, each corresponding to a route
+└── types/            # typeScript interfaces or classes representing data structures
 ```
 
 #### Component directory
