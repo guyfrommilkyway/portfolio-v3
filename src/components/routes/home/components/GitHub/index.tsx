@@ -52,7 +52,7 @@ const SectionGitHub: React.FC<Props> = props => {
                             )}
                             {item?.archived && (
                                 <span className='ml-2 p-1 text-xs text-orange-100 font-semibold bg-orange-800 rounded-sm'>
-                                    Public archive
+                                    Archived
                                 </span>
                             )}
                         </h2>
