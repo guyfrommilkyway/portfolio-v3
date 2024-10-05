@@ -13,7 +13,7 @@ const FormTextarea: React.FC<FormInputProps> = props => {
             </label>
             <textarea
                 id={id}
-                className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-md transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
+                className='w-full px-4 py-2 text-neutral-300 bg-neutral-800 rounded-sm transition-colors ease-in-out delay-100 hover:bg-neutral-700 focus:text-white focus:bg-neutral-700 focus:outline-none'
                 rows={8}
                 {...register}
             ></textarea>

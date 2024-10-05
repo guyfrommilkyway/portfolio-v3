@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSocials: React.FC = () => {
     return (
-        <div className='flex flex-col gap-2'>
+        <div className='flex gap-4 mb-4'>
             {SOCIALS?.map(item => {
                 return (
                     <a
@@ -14,7 +14,7 @@ const HeroSocials: React.FC = () => {
                         rel='noopener noreferrer'
                     >
                         {item.icon}
-                        <span className=''>{item.username}</span>
+                        <span className=''>{item.name}</span>
                     </a>
                 );
             })}

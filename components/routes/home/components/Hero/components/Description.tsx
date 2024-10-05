@@ -5,7 +5,11 @@ interface Props {
 }
 
 const HeroDescription: React.FC<Props> = ({ description }) => {
-    return <p className='w-full mb-4 text-sm text-neutral-400 leading-snug select-none'>{description}</p>;
+    return (
+        <p className='w-full mb-4 p-2 text-sm text-neutral-400 leading-snug bg-neutral-900 rounded-sm select-none'>
+            {description}
+        </p>
+    );
 };
 
 export default HeroDescription;

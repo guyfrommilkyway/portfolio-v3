@@ -7,6 +7,7 @@ import HeroHeader from './components/Header';
 import HeroLocation from './components/Location';
 import HeroPhoto from './components/Photo';
 import HeroSocials from './components/Socials';
+import HeroSubHeader from './components/SubHeader';
 
 interface Props {
     data?: IHero;
@@ -20,6 +21,7 @@ const SectionHero: React.FC<Props> = props => {
             <HeroPhoto />
             <div className='lg:sticky lg:top-[80px]'>
                 <HeroHeader headline={data?.headline} />
+                <HeroSubHeader title={data?.title} status={data?.status} />
                 <HeroLocation location={data?.location} />
                 <HeroDescription description={data?.description} />
                 <HeroSocials />

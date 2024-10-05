@@ -8,12 +8,6 @@ const SOCIALS = [
         icon: <FaLinkedin size={20} />,
     },
     {
-        name: 'GitHub',
-        username: 'guyfrommilkyway',
-        link: 'https://github.com/guyfrommilkyway',
-        icon: <FaGithub size={20} />,
-    },
-    {
         name: 'HackerRank',
         username: 'guyfrommilkyway',
         link: 'https://hackerrank.com/profile/guyfrommilkyway',

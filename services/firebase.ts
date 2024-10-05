@@ -15,6 +15,7 @@ export interface IHero {
     headline: string;
     location: string;
     title: string;
+    status: string;
 }
 
 export interface IFirebase {
