@@ -1,40 +1,59 @@
-Check this out on https://almertampus.vercel.app
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+Before running the application, you need to install the necessary dependencies. Run the following command in your project directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To run the application, follow these commands based on your environment (development or production mode):
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn dev       # run application in development mode (.env.development)
+yarn build     # build the application for production (.env.production)
+yarn start     # run application in production mode (.env.production)
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Running the application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Development Mode: open http://localhost:8080 in your browser to see the result.
+Production Mode: open http://localhost:3000 in your browser to see the result.
 
-## Learn More
+### Project structure
+This project follows a well-organized directory structure for better maintainability and scalability. Below is an overview of the various directories and their purposes:
 
-To learn more about Next.js, take a look at the following resources:
+#### Project directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```plaintext
+src/
+├── components/
+│   ├── routes/           # components for routing and page layouts
+│   └── common/           # shared components (buttons, modals, inputs)
+├── constants/            # application-wide constant values (API URLs, configs, static data)
+├── enums/                # typeScript enums to improve code readability and type safety
+├── services/             # service layer responsible for API requests and data handling
+├── utils/                # utility functions (data formatting, validation, etc.)
+├── hooks/                # custom React hooks for using state and lifecycle features
+├── styles/               # global and component-specific styles (CSS, SCSS, or styled-components)
+├── pages/                # application’s page components, each corresponding to a route
+└── types/                # typeScript interfaces or classes representing data structures
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Component directory
+```plaintext
+# Layout component (sample)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Layout/
+├── components/
+│   ├── Header.tsx        # the header component of the layout
+│   ├── Content.tsx       # the main content area component of the layout
+│   └── Footer.tsx        # the footer component of the layout
+├── controllers/
+│   ├── useSidebar.tsx    # custom hook for managing sidebar state and behavior
+│   └── useLayout.tsx     # custom hook for managing layout-specific logic
+└── styled.ts             # styled components or styles specific to the layout
+```
