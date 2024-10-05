@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 
 import '@/styles/globals.scss';
 
-import '../node_modules/react-toastify/dist/ReactToastify.min.css';
+import '/node_modules/react-toastify/dist/ReactToastify.min.css';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (

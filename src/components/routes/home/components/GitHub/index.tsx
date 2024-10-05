@@ -46,7 +46,7 @@ const SectionGitHub: React.FC<Props> = props => {
                                 {item?.name} <FaArrowUpRightFromSquare className='inline ml-1 -mt-3' size={10} />
                             </a>
                             {item?.fork && (
-                                <span className='ml-2 p-1 text-xs text-blue-100 font-semibold bg-blue-800 rounded-sm'>
+                                <span className='ml-2 p-1 text-xs text-teal-100 font-semibold bg-teal-800 rounded-sm'>
                                     Forked
                                 </span>
                             )}
@@ -72,7 +72,7 @@ const SectionGitHub: React.FC<Props> = props => {
                             ))}
                         </div>
 
-                        <p className='text-xs text-neutral-400'>Updated on {formatDate(item?.updated_at)}</p>
+                        <p className='text-xs text-neutral-400'>Updated on {formatDate(item?.pushed_at)}</p>
                     </div>
                 ))}
             </div>

@@ -1,6 +1,7 @@
-import META from '@/data/meta';
 import { default as NextHead } from 'next/head';
 import React from 'react';
+
+import META from '@/constants/meta';
 
 interface Props {
     title: string;

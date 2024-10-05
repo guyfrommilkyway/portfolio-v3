@@ -17,7 +17,7 @@ export const getUser = async () =>
 
 export const getRepo = async () =>
     await octokit.request(API.GITHUB_REPO, {
-        sort: 'updated',
+        sort: 'pushed',
         per_page: 100,
         headers,
     });

@@ -8,11 +8,11 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({ children }) => {
-    const { toggle, toggleHandler } = useToggle();
+    const { toggle, handleToggle } = useToggle();
 
     return (
         <div className='fixed top-5 right-4 z-50'>
-            <button className='relative z-50 block xl:hidden mb-2 bg-transparent' onClick={() => toggleHandler()}>
+            <button className='relative z-50 block xl:hidden mb-2 bg-transparent' onClick={() => handleToggle(prev => !prev)}>
                 <span className='sr-only'>Menu</span>
                 {toggle ? <RiCloseFill size='24px' color='#e5e5e5' /> : <RiMenu3Fill size='24px' color='#e5e5e5' />}
             </button>

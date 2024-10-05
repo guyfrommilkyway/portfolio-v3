@@ -3,9 +3,7 @@ import { useState } from 'react';
 const useToggle = () => {
     const [toggle, setToggle] = useState<boolean>(false);
 
-    const toggleHandler = (param?: boolean) => setToggle(prev => (param ? param : !prev));
-
-    return { toggle, toggleHandler };
+    return { toggle, handleToggle: setToggle };
 };
 
 export default useToggle;

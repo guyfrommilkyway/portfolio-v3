@@ -1,5 +1,6 @@
-import SOCIALS from '@/data/socials';
 import React from 'react';
+
+import SOCIALS from '@/constants/socials';
 
 const HeroSocials: React.FC = () => {
     return (

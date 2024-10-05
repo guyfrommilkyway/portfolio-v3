@@ -1,4 +1,3 @@
-import LoadingSVG from '@/assets/svg/rolling.svg';
 import React from 'react';
 
 import FormErrorMessage from './FormErrorMessage';
@@ -23,7 +22,6 @@ const FormButton: React.FC<Props> = ({ isSubmitting, isRateLimited, errMsg }) =>
                     {isSubmitting && !isRateLimited && 'Sending...'}
                     {isRateLimited && 'Rate Limited'}
                 </span>
-                {isSubmitting && <LoadingSVG width={24} height={24} />}
             </button>
             {!!errMsg && <FormErrorMessage message={errMsg} />}
         </div>
