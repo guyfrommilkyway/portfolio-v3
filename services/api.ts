@@ -31,11 +31,11 @@ class Services {
         this.client = Axios;
     }
 
-    async sendByGet(url: string) {
+    async sendByGet(url: string): Promise<AxiosResponse<any>> {
         try {
             const response = await this.client.get(url);
 
-            return response.data;
+            return response;
         } catch (error: any) {
             return error;
         }
@@ -45,7 +45,7 @@ class Services {
         try {
             const response = await this.client.post(url, data, config);
 
-            return response.data;
+            return response;
         } catch (error: any) {
             return error;
         }

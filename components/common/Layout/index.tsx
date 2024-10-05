@@ -18,7 +18,7 @@ interface Props extends PageProps {
 const Layout: React.FC<Props> = props => {
     const { firebase, children } = props;
 
-    const HeroProps = { data: firebase?.v1?.hero };
+    const HeroProps = { data: firebase?.hero };
 
     return (
         <Fragment>

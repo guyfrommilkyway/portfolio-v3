@@ -19,12 +19,10 @@ export interface IHero {
 }
 
 export interface IFirebase {
-    v1: {
-        experience?: {
-            [key: string]: IExperience;
-        };
-        hero?: IHero;
+    experience?: {
+        [key: string]: IExperience;
     };
+    hero?: IHero;
 }
 
 export interface IFirebaseResponse {
@@ -39,9 +37,9 @@ const options = {
 
 const Firebase = axios.create(options);
 
-const getFirebase = async (endpoint: string = ''): Promise<IFirebaseResponse> => {
+const getFirebase = async (): Promise<IFirebaseResponse> => {
     try {
-        const response = await Firebase.get(`${endpoint}.json?auth=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`);
+        const response = await Firebase.get(`/public/v1.json?auth=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`);
 
         return { status: response?.status, data: response?.data as IFirebase };
     } catch (error: any) {

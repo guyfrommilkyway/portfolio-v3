@@ -3,15 +3,19 @@ import React, { Fragment } from 'react';
 import Head from '@/components/common/Head';
 import Layout from '@/components/common/Layout';
 
+import useRepo from '@/hooks/useRepo';
+
 import { PageProps } from '@/types/pageProps';
 
 import SectionExperience from './components/Experience';
 import SectionGitHub from './components/GitHub';
 
 const Home: React.FC<PageProps> = props => {
-    const { firebase, user, repo } = props;
+    const { firebase, user } = props;
 
-    const SectionExperienceProps = { data: firebase?.v1?.experience };
+    const { repo } = useRepo();
+
+    const SectionExperienceProps = { data: firebase?.experience };
     const SectionGitHubProps = { user, data: repo };
 
     return (

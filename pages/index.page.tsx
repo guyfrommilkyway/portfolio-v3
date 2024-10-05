@@ -12,13 +12,15 @@ const Page: React.FC<PageProps> = props => <Home {...props} />;
 
 export async function getServerSideProps() {
     try {
-        const [firebase, user, repo] = await Promise.all([services.getFirebase(), services.getUser(), services.getRepo()]);
+        const [firebase, user] = await Promise.all([
+            services.getFirebase().then(response => response.data),
+            services.getUser().then(response => response.data),
+        ]);
 
         return {
             props: {
                 firebase,
                 user,
-                repo,
             },
         };
     } catch (error) {
@@ -26,7 +28,6 @@ export async function getServerSideProps() {
             props: {
                 firebase: null,
                 user: null,
-                repo: [],
             },
         };
     }
