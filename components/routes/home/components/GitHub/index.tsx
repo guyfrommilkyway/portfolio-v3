@@ -38,7 +38,7 @@ const SectionGitHub: React.FC<Props> = props => {
                     </p>
                 </div>
             </div>
-            <div className='flex flex-col gap-2 max-h-[420px] overflow-y-scroll overflow-x-hidden border border-neutral-900'>
+            <div className='flex flex-col gap-2 max-h-[420px] overflow-y-scroll overflow-x-hidden border border-neutral-900 rounded-sm'>
                 {data?.map(item => (
                     <div key={item?.id} className='w-full p-4 border-b border-neutral-900 select-none'>
                         <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
@@ -46,12 +46,12 @@ const SectionGitHub: React.FC<Props> = props => {
                                 {item?.name} <FaArrowUpRightFromSquare className='inline ml-1 -mt-3' size={10} />
                             </a>
                             {item?.fork && (
-                                <span className='ml-2 p-1 text-xs text-blue-500 font-semibold border border-blue-500 rounded-md'>
+                                <span className='ml-2 p-1 text-xs text-blue-500 font-semibold border border-blue-500 rounded-sm'>
                                     Forked
                                 </span>
                             )}
                             {item?.archived && (
-                                <span className='ml-2 p-1 text-xs text-orange-500 font-semibold border border-orange-500 rounded-md'>
+                                <span className='ml-2 p-1 text-xs text-orange-500 font-semibold border border-orange-500 rounded-sm'>
                                     Public archive
                                 </span>
                             )}
@@ -66,7 +66,7 @@ const SectionGitHub: React.FC<Props> = props => {
                         <p className='mb-2 text-sm text-neutral-400 font-medium select-none'>{item?.description}</p>
                         <div className='flex flex-wrap gap-1 mb-2'>
                             {item?.topics.map((item: string) => (
-                                <span key={item} className='p-1 text-xs text-neutral-300 bg-neutral-900 select-none rounded-md'>
+                                <span key={item} className='p-1 text-xs text-neutral-300 bg-neutral-900 select-none rounded-sm'>
                                     {item}
                                 </span>
                             ))}
