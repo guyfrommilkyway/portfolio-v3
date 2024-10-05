@@ -2,7 +2,6 @@ import { createClient } from '@vercel/kv';
 import { NextApiRequest, NextApiResponse } from 'next';
 import requestIp from 'request-ip';
 
-// utils
 import rateLimiter from '@/utils/rate-limiter';
 
 const sgMail = require('@sendgrid/mail');

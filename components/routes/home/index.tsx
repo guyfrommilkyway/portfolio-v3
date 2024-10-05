@@ -3,22 +3,23 @@ import React, { Fragment } from 'react';
 import Head from '@/components/common/Head';
 import Layout from '@/components/common/Layout';
 
-import { IFirebase } from '@/services/firebase';
+import { PageProps } from '@/types/pageProps';
 
 import SectionExperience from './components/Experience';
+import SectionGitHub from './components/GitHub';
 
-interface Props {
-    data: IFirebase;
-}
+const Home: React.FC<PageProps> = props => {
+    const { firebase, repo } = props;
 
-const Home: React.FC<Props> = props => {
-    const { data } = props;
+    const SectionExperienceProps = { data: firebase?.v1?.experience };
+    const SectionGitHubProps = { data: repo };
 
     return (
         <Fragment>
             <Head title='Almer Tampus' />
-            <Layout {...data}>
-                <SectionExperience data={data?.experience} />
+            <Layout {...props}>
+                <SectionExperience {...SectionExperienceProps} />
+                <SectionGitHub {...SectionGitHubProps} />
             </Layout>
         </Fragment>
     );

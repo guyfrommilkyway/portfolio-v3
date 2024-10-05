@@ -1,4 +1,3 @@
-// assets
 import LoadingSVG from '@/assets/svg/rolling.svg';
 import React from 'react';
 

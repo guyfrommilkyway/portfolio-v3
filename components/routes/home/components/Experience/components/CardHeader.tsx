@@ -1,5 +1,4 @@
 import React from 'react';
-// assets
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 interface Props {

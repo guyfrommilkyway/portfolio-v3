@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-export interface IEducation {
-    duration: string;
-    program: string;
-    university: string;
-}
-
 export interface IExperience {
     company: string;
     duration: string;
@@ -24,13 +18,12 @@ export interface IHero {
 }
 
 export interface IFirebase {
-    education?: {
-        [key: string]: IEducation;
+    v1: {
+        experience?: {
+            [key: string]: IExperience;
+        };
+        hero?: IHero;
     };
-    experience?: {
-        [key: string]: IExperience;
-    };
-    hero?: IHero;
 }
 
 export interface IFirebaseResponse {

@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-// utils
 import getFirebase from '@/services/firebase';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -9,6 +8,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         res.status(response?.status).json(response?.data);
     } catch (error: any) {
-        res.status(error.code).json(error);
+        res.status(500).json(error);
     }
 }

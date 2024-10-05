@@ -2,28 +2,31 @@ import React from 'react';
 
 import Home from '@/components/routes/home';
 
-import { IFirebase } from '@/services/firebase';
+import Services from '@/services/api';
 
-interface Props {
-    data: IFirebase;
-}
+import { PageProps } from '@/types/pageProps';
 
-const Page: React.FC<Props> = props => <Home {...props} />;
+const services = new Services();
+
+const Page: React.FC<PageProps> = props => <Home {...props} />;
 
 export async function getServerSideProps() {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/v1/firebase`);
-        const data = await response.json();
+        const [firebase, user, repo] = await Promise.all([services.getFirebase(), services.getUser(), services.getRepo()]);
 
         return {
             props: {
-                data: data?.v1,
+                firebase,
+                user,
+                repo,
             },
         };
     } catch (error) {
         return {
             props: {
-                data: null,
+                firebase: null,
+                user: null,
+                repo: [],
             },
         };
     }

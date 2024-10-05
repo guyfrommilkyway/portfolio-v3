@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-    headline: string;
+    headline?: string;
 }
 
 const HeroHeader: React.FC<Props> = ({ headline }) => {

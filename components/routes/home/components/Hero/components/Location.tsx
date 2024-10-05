@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-    location: string;
+    location?: string;
 }
 
 const HeroLocation: React.FC<Props> = ({ location }) => {
