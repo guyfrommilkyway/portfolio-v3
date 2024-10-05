@@ -9,10 +9,10 @@ import SectionExperience from './components/Experience';
 import SectionGitHub from './components/GitHub';
 
 const Home: React.FC<PageProps> = props => {
-    const { firebase, repo } = props;
+    const { firebase, user, repo } = props;
 
     const SectionExperienceProps = { data: firebase?.v1?.experience };
-    const SectionGitHubProps = { data: repo };
+    const SectionGitHubProps = { user, data: repo };
 
     return (
         <Fragment>
