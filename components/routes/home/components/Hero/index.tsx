@@ -21,7 +21,7 @@ const SectionHero: React.FC<Props> = props => {
             <HeroPhoto />
             <div className='lg:sticky lg:top-[80px]'>
                 <HeroHeader headline={data?.headline} />
-                <HeroSubHeader title={data?.title} status={data?.status} />
+                <HeroSubHeader title={data?.title} />
                 <HeroLocation location={data?.location} />
                 <HeroDescription description={data?.description} />
                 <HeroSocials />
