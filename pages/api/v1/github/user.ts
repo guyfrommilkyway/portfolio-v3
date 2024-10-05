@@ -1,14 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { octokit } from '@/services/github';
+import { getUser } from '@/services/github';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
-        const response = await octokit.request('GET /user', {
-            headers: {
-                'X-GitHub-Api-Version': '2022-11-28',
-            },
-        });
+        const response = await getUser();
 
         res.status(response?.status).json(response?.data);
     } catch (error: any) {

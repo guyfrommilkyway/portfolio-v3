@@ -1,16 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { octokit } from '@/services/github';
+import { getRepo } from '@/services/github';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
-        const response = await octokit.request('GET /users/guyfrommilkyway/repos', {
-            sort: 'updated',
-            per_page: 100,
-            headers: {
-                'X-GitHub-Api-Version': '2022-11-28',
-            },
-        });
+        const response = await getRepo();
 
         res.status(response?.status).json(response?.data);
     } catch (error: any) {
