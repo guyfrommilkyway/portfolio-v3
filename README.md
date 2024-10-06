@@ -61,6 +61,7 @@ src/
 ```
 
 #### Component directory
+
 ```plaintext
 # Layout component (sample)
 
@@ -72,5 +73,5 @@ Layout/
 ├── controllers/
 │   ├── useSidebar.tsx    # custom hook for managing sidebar state and behavior
 │   └── useLayout.tsx     # custom hook for managing layout-specific logic
-└── styled.ts             # styled components or styles specific to the layout
+└── index.tsx             # the main file that integrates all components and functionalities
 ```
