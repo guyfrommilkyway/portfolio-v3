@@ -1,14 +1,16 @@
 import React from 'react';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { FaUserGroup, FaDiagramProject, FaLocationPin } from 'react-icons/fa6';
+import { FaUserGroup, FaDiagramProject } from 'react-icons/fa6';
 
 import Section from '@/components/common/Section';
+
+import { IRepo, IUser } from '@/services/github';
 
 import formatDate from '@/utils/formatDate';
 
 interface Props {
-    user?: any;
-    data?: any[];
+    user: IUser | null;
+    data: IRepo;
 }
 
 const SectionGitHub: React.FC<Props> = props => {
@@ -39,7 +41,7 @@ const SectionGitHub: React.FC<Props> = props => {
                 </div>
             </div>
             <div className='flex flex-col gap-2 max-h-[420px] overflow-y-scroll overflow-x-hidden border border-neutral-900 rounded-sm'>
-                {data?.map(item => (
+                {data.map(item => (
                     <div key={item?.id} className='w-full p-4 border-b border-neutral-900 select-none'>
                         <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
                             <a className='w-fit select-none' href={item?.html_url} target='_blank' rel='noopener noreferrer'>
@@ -65,14 +67,18 @@ const SectionGitHub: React.FC<Props> = props => {
                         )}
                         <p className='mb-2 text-sm text-neutral-400 font-medium select-none'>{item?.description}</p>
                         <div className='flex flex-wrap gap-1 mb-2'>
-                            {item?.topics.map((item: string) => (
-                                <span key={item} className='p-1 text-xs text-neutral-300 bg-neutral-900 select-none rounded-sm'>
-                                    {item}
-                                </span>
-                            ))}
+                            {item?.topics &&
+                                item?.topics.map((item: string) => (
+                                    <span
+                                        key={item}
+                                        className='p-1 text-xs text-neutral-300 bg-neutral-900 select-none rounded-sm'
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
                         </div>
 
-                        <p className='text-xs text-neutral-400'>Updated on {formatDate(item?.pushed_at)}</p>
+                        <p className='text-xs text-neutral-400'>Updated on {item?.pushed_at && formatDate(item?.pushed_at)}</p>
                     </div>
                 ))}
             </div>

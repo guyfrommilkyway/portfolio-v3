@@ -3,6 +3,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import API from '@/constants/api';
 
 import { IFirebase } from './firebase';
+import { IRepo, IUser } from './github';
 
 class Services {
     protected client: AxiosInstance;
@@ -57,11 +58,11 @@ class Services {
         return await this.sendByGet(API.FIREBASE);
     }
 
-    async getUser(): Promise<AxiosResponse<any>> {
+    async getUser(): Promise<AxiosResponse<IUser>> {
         return await this.sendByGet(API.GITHUB_USER);
     }
 
-    async getRepo(): Promise<AxiosResponse<any>> {
+    async getRepo(): Promise<AxiosResponse<IRepo>> {
         return await this.sendByGet(API.GITHUB_REPO);
     }
 }
