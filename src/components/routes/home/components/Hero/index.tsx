@@ -4,7 +4,6 @@ import { IHero } from '@/services/firebase';
 
 import HeroDescription from './components/Description';
 import HeroHeader from './components/Header';
-import HeroLocation from './components/Location';
 import HeroPhoto from './components/Photo';
 import HeroSocials from './components/Socials';
 import HeroSubHeader from './components/SubHeader';
@@ -22,7 +21,6 @@ const SectionHero: React.FC<Props> = props => {
             <div className='lg:sticky lg:top-[80px]'>
                 <HeroHeader headline={data?.headline} />
                 <HeroSubHeader title={data?.title} />
-                <HeroLocation location={data?.location} />
                 <HeroDescription description={data?.description} />
                 <HeroSocials />
             </div>
