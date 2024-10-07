@@ -8,8 +8,8 @@ import CardLocation from './CardLocation';
 import CardSubHeader from './CardSubHeader';
 
 const ExperienceCard: React.FC<IExperience> = ({ company, duration, link, location, title, setup }) => {
-    const CardHeaderProps = { link, company };
-    const CardSubHeaderProps = { title };
+    const CardHeaderProps = { title };
+    const CardSubHeaderProps = { link, company };
     const CardDurationProps = { duration, setup };
     const CardLocationProps = { location };
 

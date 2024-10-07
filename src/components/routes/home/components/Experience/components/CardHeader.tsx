@@ -1,21 +1,13 @@
 import React from 'react';
-import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 interface Props {
-    link: string;
-    company: string;
+    title: string;
 }
 
-const CardHeader: React.FC<Props> = ({ link, company }) => {
+const CardHeader: React.FC<Props> = ({ title }) => {
     return (
-        <h2 className='inline-block w-fit text-sm text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
-            {link ? (
-                <a className='w-fit select-none' href={link} target='_blank' rel='noopener noreferrer'>
-                    {company} <FaArrowUpRightFromSquare className='inline ml-1 -mt-3' size={10} />
-                </a>
-            ) : (
-                <span>{company}</span>
-            )}
+        <h2 className='text-neutral-300 font-semibold select-none'>
+            <span>{title}</span>
         </h2>
     );
 };
