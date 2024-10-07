@@ -41,7 +41,7 @@ const Firebase = axios.create(options);
 
 const getFirebase = async (): Promise<IFirebaseResponse> => {
     try {
-        const response = await Firebase.get(`${API.FIREBASE}?auth=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`);
+        const response = await Firebase.get(`/public/v1.json?auth=${process.env.NEXT_PUBLIC_FIREBASE_API_KEY}`);
 
         return { status: response?.status, data: response?.data as IFirebase };
     } catch (error: any) {

@@ -11,13 +11,15 @@ const headers = {
 };
 
 export const getUser = async () =>
-    await octokit.request(API.GITHUB_USER, {
+    await octokit.request('GET /user', {
         headers,
     });
 
 export const getRepo = async () =>
-    await octokit.request(API.GITHUB_REPO, {
+    await octokit.request('GET /users/guyfrommilkyway/repos', {
         sort: 'pushed',
         per_page: 100,
         headers,
     });
+
+    

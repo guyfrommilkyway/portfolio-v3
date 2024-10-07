@@ -1,5 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
+import API from '@/constants/api';
+
 import { IFirebase } from './firebase';
 
 class Services {
@@ -52,15 +54,15 @@ class Services {
     }
 
     async getFirebase(): Promise<AxiosResponse<IFirebase>> {
-        return await this.sendByGet('/v1/firebase');
+        return await this.sendByGet(API.FIREBASE);
     }
 
     async getUser(): Promise<AxiosResponse<any>> {
-        return await this.sendByGet('/v1/github/user');
+        return await this.sendByGet(API.GITHUB_USER);
     }
 
     async getRepo(): Promise<AxiosResponse<any>> {
-        return await this.sendByGet('/v1/github/repositories');
+        return await this.sendByGet(API.GITHUB_REPO);
     }
 }
 

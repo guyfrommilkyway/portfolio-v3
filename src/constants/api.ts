@@ -1,9 +1,9 @@
 import { EAPI } from '@/enums/api';
 
 const API = {
-    [EAPI.FIREBASE]: '/public/v1.json',
-    [EAPI.GITHUB_USER]: 'GET /user',
-    [EAPI.GITHUB_REPO]: 'GET /users/guyfrommilkyway/repos',
+    [EAPI.FIREBASE]: '/v1/firebase',
+    [EAPI.GITHUB_USER]: '/v1/github/user',
+    [EAPI.GITHUB_REPO]: '/v1/github/repo',
 } as const;
 
 export default API;
