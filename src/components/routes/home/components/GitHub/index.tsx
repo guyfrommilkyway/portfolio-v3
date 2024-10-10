@@ -65,10 +65,12 @@ const SectionGitHub: React.FC<Props> = props => {
                                 </a>
                             </h3>
                         )}
-                        <p className='mb-2 text-sm text-neutral-400 font-medium select-none'>{item?.description}</p>
-                        <div className='flex flex-wrap gap-1 mb-2'>
-                            {item?.topics &&
-                                item?.topics.map((item: string) => (
+                        {item?.description && (
+                            <p className='mb-2 text-sm text-neutral-400 font-medium select-none'>{item?.description}</p>
+                        )}
+                        {item?.topics && (
+                            <div className='flex flex-wrap gap-1 mb-2'>
+                                {item?.topics.map((item: string) => (
                                     <span
                                         key={item}
                                         className='p-1 text-xs text-neutral-300 bg-neutral-900 select-none rounded-sm'
@@ -76,8 +78,8 @@ const SectionGitHub: React.FC<Props> = props => {
                                         {item}
                                     </span>
                                 ))}
-                        </div>
-
+                            </div>
+                        )}
                         <p className='text-xs text-neutral-400'>Updated on {item?.pushed_at && formatDate(item?.pushed_at)}</p>
                     </div>
                 ))}
