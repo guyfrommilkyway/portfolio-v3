@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { FaUserGroup, FaDiagramProject } from 'react-icons/fa6';
+import { FaArrowUpRightFromSquare, FaUserGroup, FaDiagramProject, FaEnvelope, FaLocationPin } from 'react-icons/fa6';
 
 import Section from '@/components/common/Section';
 
@@ -16,24 +15,46 @@ interface Props {
 const SectionGitHub: React.FC<Props> = props => {
     const { user, data } = props;
 
+    console.log(user);
+
     return (
         <Section>
             <div className='mb-4'>
-                <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
-                    <a className='w-fit select-none' href={user?.html_url} target='_blank' rel='noopener noreferrer'>
-                        GitHub (@{user?.login})
+                <h2 className='mb-2 text-lg text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
+                    GitHub
+                </h2>
+                <h2 className='mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
+                    <a className='inline-block w-fit select-none' href={user?.html_url} target='_blank' rel='noopener noreferrer'>
+                        {user?.name} (@{user?.login})
                     </a>
                 </h2>
-                <div className='flex gap-2 mb-2'>
-                    <FaUserGroup size={18} color='#a3a3a3' />
+                {user?.bio && (
+                    <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
+                        {user?.bio}
+                    </p>
+                )}
+                <div className='flex items-center gap-2 mb-2'>
+                    <FaUserGroup size={16} color='#a3a3a3' />
                     <p className='inline-block text-sm text-neutral-400'>
                         {' '}
                         <span className='text-white'>{user?.followers}</span> followers &#x2022;&nbsp;
                         <span className='text-white'>{user?.following}</span> following
                     </p>
                 </div>
-                <div className='flex gap-2 mb-2'>
-                    <FaDiagramProject size={18} color='#a3a3a3' />
+                {user?.location && (
+                    <div className='flex items-center gap-2 mb-2'>
+                        <FaLocationPin size={16} color='#a3a3a3' />
+                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.location}</p>
+                    </div>
+                )}
+                {user?.email && (
+                    <div className='flex items-center gap-2 mb-2'>
+                        <FaEnvelope size={16} color='#a3a3a3' />
+                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.email}</p>
+                    </div>
+                )}
+                <div className='flex items-center gap-2 mb-2'>
+                    <FaDiagramProject size={16} color='#a3a3a3' />
                     <p className='inline-block text-sm text-neutral-400'>
                         {' '}
                         <span className='text-white'>{user?.public_repos}</span> public repositories
