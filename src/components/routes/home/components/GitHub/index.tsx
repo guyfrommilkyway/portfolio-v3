@@ -15,8 +15,6 @@ interface Props {
 const SectionGitHub: React.FC<Props> = props => {
     const { user, data } = props;
 
-    console.log(user);
-
     return (
         <Section>
             <div className='mb-4'>
