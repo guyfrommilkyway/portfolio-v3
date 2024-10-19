@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaHackerrank } from 'react-icons/fa';
+import { FaFilePdf, FaLinkedin, FaHackerrank } from 'react-icons/fa';
 
 const SOCIALS = [
     {
@@ -12,6 +12,12 @@ const SOCIALS = [
         username: 'guyfrommilkyway',
         link: 'https://hackerrank.com/profile/guyfrommilkyway',
         icon: <FaHackerrank size={20} />,
+    },
+    {
+        name: 'Resume',
+        username: '',
+        link: '/resume.pdf',
+        icon: <FaFilePdf size={20} />,
     },
 ] as const;
 
