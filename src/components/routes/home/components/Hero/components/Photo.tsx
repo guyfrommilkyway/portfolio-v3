@@ -10,10 +10,10 @@ const HeroPhoto: React.FC = () => {
                     layout='responsive'
                     width={240}
                     height={320}
-                    src='/images/almer-tampus-1.jpg'
+                    src='/images/almer-tampus-3.jpg'
                     alt='almer tampus'
                     placeholder='blur'
-                    blurDataURL='/images/almer-tampus-1.jpg'
+                    blurDataURL='/images/almer-tampus-3.jpg'
                 />
             </div>
         </div>

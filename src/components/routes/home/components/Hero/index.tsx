@@ -16,7 +16,7 @@ const SectionHero: React.FC<Props> = props => {
     const { data } = props;
 
     return (
-        <aside className='relative flex flex-col w-full max-w-full lg:max-w-[300px] border-b md:border-none border-neutral-900'>
+        <aside className='relative flex flex-col w-full max-w-full lg:max-w-[380px] border-b md:border-none border-neutral-900'>
             <HeroPhoto />
             <div className='lg:sticky lg:top-[80px]'>
                 <HeroHeader headline={data?.headline} />
