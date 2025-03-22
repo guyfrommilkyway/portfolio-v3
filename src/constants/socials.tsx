@@ -1,17 +1,37 @@
-import { FaLinkedin, FaHackerrank } from 'react-icons/fa';
+import { FaLinkedin, FaHackerrank, FaInstagram } from 'react-icons/fa6';
+import { FaSquareXTwitter } from 'react-icons/fa6';
+import { SiWakatime } from 'react-icons/si';
 
 const SOCIALS = [
     {
         name: 'LinkedIn',
         username: 'almerflorestampus',
         link: 'https://linkedin.com/in/almerflorestampus',
-        icon: <FaLinkedin size={20} />,
+        icon: <FaLinkedin size={16} />,
     },
     {
         name: 'HackerRank',
         username: 'guyfrommilkyway',
         link: 'https://hackerrank.com/profile/guyfrommilkyway',
-        icon: <FaHackerrank size={20} />,
+        icon: <FaHackerrank size={16} />,
+    },
+    {
+        name: 'Wakatime',
+        username: 'guyfrommilkyway',
+        link: 'https://wakatime.com/@guyfrommilkyway',
+        icon: <SiWakatime size={16} />,
+    },
+    {
+        name: 'X (formerly Twitter)',
+        username: 'guyfrommilkyway',
+        link: 'https://x.com/guyfrommilkyway',
+        icon: <FaSquareXTwitter size={16} />,
+    },
+    {
+        name: 'Instagram',
+        username: 'aftampus',
+        link: 'https://instagram.com/aftampus',
+        icon: <FaInstagram size={16} />,
     },
 ] as const;
 

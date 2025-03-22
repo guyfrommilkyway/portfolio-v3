@@ -26,11 +26,6 @@ const SectionGitHub: React.FC<Props> = props => {
                         {user?.name} (@{user?.login})
                     </a>
                 </h2>
-                {user?.bio && (
-                    <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
-                        {user?.bio}
-                    </p>
-                )}
                 <div className='flex items-center gap-2 mb-2'>
                     <FaUserGroup size={16} color='#a3a3a3' />
                     <p className='inline-block text-sm text-neutral-400'>
@@ -39,18 +34,6 @@ const SectionGitHub: React.FC<Props> = props => {
                         <span className='text-white'>{user?.following}</span> following
                     </p>
                 </div>
-                {user?.location && (
-                    <div className='flex items-center gap-2 mb-2'>
-                        <FaLocationPin size={16} color='#a3a3a3' />
-                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.location}</p>
-                    </div>
-                )}
-                {user?.email && (
-                    <div className='flex items-center gap-2 mb-2'>
-                        <FaEnvelope size={16} color='#a3a3a3' />
-                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.email}</p>
-                    </div>
-                )}
                 <div className='flex items-center gap-2 mb-2'>
                     <FaDiagramProject size={16} color='#a3a3a3' />
                     <p className='inline-block text-sm text-neutral-400'>
