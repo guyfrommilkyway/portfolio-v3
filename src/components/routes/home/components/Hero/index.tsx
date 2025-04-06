@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { FaEnvelope, FaLocationPin } from 'react-icons/fa6';
+import { FaLocationPin } from 'react-icons/fa6';
 
 import SOCIALS from '@/constants/socials';
 
@@ -36,24 +36,19 @@ const SectionHero: React.FC<Props> = props => {
                 <h2 className='flex items-center mb-2 text-neutral-400 font-semibold text-lg select-none'>
                     {data?.title} &nbsp;
                 </h2>
+                https://ph.pinterest.com/guyfrommilkyway/
                 {user?.bio && (
                     <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
                         {user?.bio}
                     </p>
                 )}
                 {user?.location && (
-                    <div className='flex items-center gap-2 mb-2'>
+                    <div className='flex items-center gap-2 mb-4'>
                         <FaLocationPin size={16} color='#a3a3a3' />
                         <p className='text-sm text-neutral-400 font-medium select-none'>{user?.location}</p>
                     </div>
                 )}
-                {user?.email && (
-                    <div className='flex items-center gap-2 mb-2'>
-                        <FaEnvelope size={16} color='#a3a3a3' />
-                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.email}</p>
-                    </div>
-                )}
-                <div className='flex flex-col gap-2 mb-4'>
+                <div className='flex gap-2 mb-4'>
                     {SOCIALS?.map(item => {
                         return (
                             <a
@@ -64,7 +59,7 @@ const SectionHero: React.FC<Props> = props => {
                                 rel='noopener noreferrer'
                             >
                                 {item.icon}
-                                <span className=''>{item.name}</span>
+                                <span className='sr-only'>{item.name}</span>
                             </a>
                         );
                     })}

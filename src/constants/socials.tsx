@@ -1,6 +1,7 @@
 import { FaLinkedin, FaHackerrank, FaInstagram } from 'react-icons/fa6';
-import { FaSquareXTwitter } from 'react-icons/fa6';
+import { FaPinterest, FaSquareXTwitter } from 'react-icons/fa6';
 import { SiWakatime } from 'react-icons/si';
+
 
 const SOCIALS = [
     {
@@ -33,6 +34,12 @@ const SOCIALS = [
         link: 'https://instagram.com/aftampus',
         icon: <FaInstagram size={16} />,
     },
+    {
+        name: 'Pinterest',
+        username: 'guyfrommilkyway',
+        link: 'https://ph.pinterest.com/guyfrommilkyway',
+        icon: <FaPinterest size={16} />,
+    }
 ] as const;
 
 export default SOCIALS;
