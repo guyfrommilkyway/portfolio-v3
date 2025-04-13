@@ -36,7 +36,6 @@ const SectionHero: React.FC<Props> = props => {
                 <h2 className='flex items-center mb-2 text-neutral-400 font-semibold text-lg select-none'>
                     {data?.title} &nbsp;
                 </h2>
-                https://ph.pinterest.com/guyfrommilkyway/
                 {user?.bio && (
                     <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
                         {user?.bio}
