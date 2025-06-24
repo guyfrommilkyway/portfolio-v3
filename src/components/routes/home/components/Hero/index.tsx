@@ -32,20 +32,24 @@ const SectionHero: React.FC<Props> = props => {
                 </div>
             </div>
             <div className='lg:sticky lg:top-[80px]'>
-                <h1 className='mb-2 text-white font-bold text-xl leading-none tracking-wider select-none'>{data?.headline}</h1>
-                <h2 className='flex items-center mb-2 text-neutral-400 font-semibold text-lg select-none'>
+                <h1 className='mb-2 text-white font-bold text-xl leading-none tracking-wider select-none'>
+                    {data?.headline}
+                    {data?.status === 'open' && (
+                        <span className='ml-2 p-1 text-green-300 text-xs uppercase bg-green-900 rounded-sm'>Open to work</span>
+                    )}
+                </h1>
+                <h2 className='flex items-center mb-2 text-neutral-400 text-lg font-semibold select-none'>
                     {data?.title} &nbsp;
                 </h2>
-                https://ph.pinterest.com/guyfrommilkyway/
                 {user?.bio && (
-                    <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
+                    <p className='mb-4 p-3 text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
                         {user?.bio}
                     </p>
                 )}
                 {user?.location && (
                     <div className='flex items-center gap-2 mb-4'>
                         <FaLocationPin size={16} color='#a3a3a3' />
-                        <p className='text-sm text-neutral-400 font-medium select-none'>{user?.location}</p>
+                        <p className='text-neutral-400 font-medium select-none'>{user?.location}</p>
                     </div>
                 )}
                 <div className='flex gap-2 mb-4'>
