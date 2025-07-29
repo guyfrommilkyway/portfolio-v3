@@ -24,10 +24,10 @@ const SectionHero: React.FC<Props> = props => {
                         layout='responsive'
                         width={240}
                         height={320}
-                        src='/images/almer-tampus-3.jpg'
+                        src='/images/profile-photo.jpg'
                         alt='almer tampus'
                         placeholder='blur'
-                        blurDataURL='/images/almer-tampus-3.jpg'
+                        blurDataURL='/images/profile-photo.jpg'
                     />
                 </div>
             </div>
