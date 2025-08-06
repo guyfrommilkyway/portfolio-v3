@@ -1,7 +1,8 @@
 import { IFirebase } from '@/services/firebase';
-import { IUser } from '@/services/github';
+import { IRepo, IUser } from '@/services/github';
 
 export interface PageProps {
-    firebase: IFirebase | null;
-    user: IUser | null;
+  firebase: IFirebase | null;
+  user: IUser | null;
+  repositories: IRepo | null;
 }
