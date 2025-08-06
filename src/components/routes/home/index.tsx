@@ -2,31 +2,28 @@ import React, { Fragment } from 'react';
 
 import Head from '@/components/common/Head';
 import Layout from '@/components/common/Layout';
-
-import useRepo from '@/hooks/useRepo';
+import GitHub from '@/components/routes/home/components/GitHub';
+import Work from '@/components/routes/home/components/Work';
 
 import { PageProps } from '@/types/pageProps';
 
-import SectionExperience from './components/Experience';
-import SectionGitHub from './components/GitHub';
-
 const Home: React.FC<PageProps> = props => {
-    const { firebase, user } = props;
+  const { firebase, user, repositories } = props;
 
-    const { repo } = useRepo();
+  if (!firebase || !user || !repositories) return null;
 
-    const SectionExperienceProps = { data: firebase?.experience };
-    const SectionGitHubProps = { user, data: repo };
+  const SectionExperienceProps = { data: firebase?.experience };
+  const SectionGitHubProps = { user, data: repositories };
 
-    return (
-        <Fragment>
-            <Head title='Almer Tampus' />
-            <Layout {...props}>
-                <SectionExperience {...SectionExperienceProps} />
-                <SectionGitHub {...SectionGitHubProps} />
-            </Layout>
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      <Head title='Almer Tampus' />
+      <Layout {...props}>
+        <Work {...SectionExperienceProps} />
+        <GitHub {...SectionGitHubProps} />
+      </Layout>
+    </Fragment>
+  );
 };
 
 export default Home;

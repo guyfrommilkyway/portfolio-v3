@@ -2,69 +2,68 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 import API from '@/constants/api';
 
-import { IFirebase } from './firebase';
-import { IRepo, IUser } from './github';
+import { IFirebase } from '@/services/firebase';
+import { IRepo, IUser } from '@/services/github';
 
 class Services {
-    protected client: AxiosInstance;
+  protected client: AxiosInstance;
 
-    constructor() {
-        const Axios = axios.create({
-            baseURL: process.env.NEXT_PUBLIC_URL,
-            headers: { 'Content-Type': 'application/json' },
-        });
+  constructor() {
+    const Axios = axios.create({
+      baseURL: process.env.NEXT_PUBLIC_URL,
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-        Axios.interceptors.request.use(
-            async config => config,
-            error => {
-                console.log('AXIOS_INTERCEPTOR_REQUEST_ERROR', error);
-                Promise.reject(error);
-            },
-        );
+    Axios.interceptors.request.use(
+      async config => config,
+      error => {
+        console.log('AXIOS_INTERCEPTOR_REQUEST_ERROR', error);
+        Promise.reject(error);
+      },
+    );
 
-        Axios.interceptors.response.use(
-            async response => response,
-            async error => {
-                console.log('AXIOS_INTERCEPTOR_RESPONSE_ERROR', error);
+    Axios.interceptors.response.use(
+      async response => response,
+      async error => {
+        console.log('AXIOS_INTERCEPTOR_RESPONSE_ERROR', error);
+        Promise.reject(error);
+      },
+    );
 
-                Promise.reject(error);
-            },
-        );
+    this.client = Axios;
+  }
 
-        this.client = Axios;
+  async sendByGet(url: string): Promise<AxiosResponse<any>> {
+    try {
+      const response = await this.client.get(url);
+
+      return response;
+    } catch (error: any) {
+      return error;
     }
+  }
 
-    async sendByGet(url: string): Promise<AxiosResponse<any>> {
-        try {
-            const response = await this.client.get(url);
+  async sendByPost(url: string, data: any, config: any) {
+    try {
+      const response = await this.client.post(url, data, config);
 
-            return response;
-        } catch (error: any) {
-            return error;
-        }
+      return response;
+    } catch (error: any) {
+      return error;
     }
+  }
 
-    async sendByPost(url: string, data: any, config: any) {
-        try {
-            const response = await this.client.post(url, data, config);
+  async getFirebase(): Promise<AxiosResponse<IFirebase>> {
+    return await this.sendByGet(API.FIREBASE);
+  }
 
-            return response;
-        } catch (error: any) {
-            return error;
-        }
-    }
+  async getUser(): Promise<AxiosResponse<IUser>> {
+    return await this.sendByGet(API.GITHUB_USER);
+  }
 
-    async getFirebase(): Promise<AxiosResponse<IFirebase>> {
-        return await this.sendByGet(API.FIREBASE);
-    }
-
-    async getUser(): Promise<AxiosResponse<IUser>> {
-        return await this.sendByGet(API.GITHUB_USER);
-    }
-
-    async getRepo(): Promise<AxiosResponse<IRepo>> {
-        return await this.sendByGet(API.GITHUB_REPO);
-    }
+  async getRepositories(): Promise<AxiosResponse<IRepo>> {
+    return await this.sendByGet(API.GITHUB_REPO);
+  }
 }
 
 export default Services;
