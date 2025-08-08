@@ -24,8 +24,7 @@ const Work: React.FC<Props> = props => {
             .map(item => {
               const { company, duration, link, location, title } = data[item];
               return (
-                <div key={company} className={`relative flex flex-col px-4 py-2 border-l border-neutral-700`}>
-                  <div className={`absolute top-3 -left-1 w-2 h-2 bg-neutral-700 rounded-full`} />
+                <div key={company} className='relative flex flex-col py-2'>
                   <div className='flex flex-col lg:flex-row justify-between align-items'>
                     <h2 className='text-neutral-300 font-semibold '>{title}</h2>
                     <span className='text-sm text-neutral-400 italic'>{duration}</span>

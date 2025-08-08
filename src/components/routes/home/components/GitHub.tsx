@@ -41,7 +41,7 @@ const Github: React.FC<Props> = props => {
           </p>
         </div>
       </div>
-      <div className='flex flex-col gap-2 max-h-[380px] min-h-[380px] items-center overflow-y-scroll overflow-x-hidden'>
+      <div className='flex flex-col gap-2 max-h-[380px] min-h-[380px] items-center p-4 overflow-y-scroll overflow-x-hidden bg-neutral-900 rounded-sm'>
         {data.map(item => (
           <div key={item?.id} className='w-full pb-4 select-none'>
             <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
