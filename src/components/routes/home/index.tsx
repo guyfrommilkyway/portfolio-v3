@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import Head from '@/components/common/Head';
 import Layout from '@/components/common/Layout';
 import GitHub from '@/components/routes/home/components/GitHub';
+import ThinkDifferent from '@/components/routes/home/components/ThinkDifferent';
 import Work from '@/components/routes/home/components/Work';
 
 import { PageProps } from '@/types/pageProps';
@@ -21,6 +22,7 @@ const Home: React.FC<PageProps> = props => {
       <Layout {...props}>
         <Work {...SectionExperienceProps} />
         <GitHub {...SectionGitHubProps} />
+        <ThinkDifferent />
       </Layout>
     </Fragment>
   );
