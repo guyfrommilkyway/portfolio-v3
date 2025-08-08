@@ -16,11 +16,8 @@ const Github: React.FC<Props> = props => {
   const { user, data } = props;
 
   return (
-    <Section>
+    <Section headline='Code & Contributions' subtitle='Work shaped by curiosity'>
       <div className='mb-4'>
-        <h2 className='mb-2 text-lg text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
-          GitHub
-        </h2>
         <h2 className='mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
           <a className='inline-block w-fit select-none' href={user?.html_url} target='_blank' rel='noopener noreferrer'>
             {user?.name} (@{user?.login})
@@ -41,7 +38,7 @@ const Github: React.FC<Props> = props => {
           </p>
         </div>
       </div>
-      <div className='flex flex-col gap-2 max-h-[380px] min-h-[380px] items-center p-4 overflow-y-scroll overflow-x-hidden bg-neutral-900 rounded-sm'>
+      <div className='flex flex-col gap-2 max-h-[380px] min-h-[380px] items-center p-4 overflow-y-scroll overflow-x-hidden bg-neutral-800 rounded-sm'>
         {data.map(item => (
           <div key={item?.id} className='w-full pb-4 select-none'>
             <h2 className='inline-block w-fit mb-2 text-neutral-300 font-semibold tracking-wide hover:text-white transition-colors ease-in-out delay-100 select-none'>
