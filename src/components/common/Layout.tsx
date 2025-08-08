@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = props => {
 
   return (
     <Fragment>
-      <header className='sticky top-0 z-50 flex justify-center items-center w-full min-h-[60px] mx-auto px-4 py-4 bg-[#080808]'>
+      <header className='sticky top-0 z-50 flex justify-center items-center w-full min-h-[60px] mx-auto px-4 py-4 bg-neutral-900'>
         <Logo />
       </header>
       <main
