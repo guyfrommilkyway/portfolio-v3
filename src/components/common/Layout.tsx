@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = props => {
 
   return (
     <Fragment>
-      <header className='sticky top-0 z-50 flex justify-center items-center w-full min-h-[60px] mx-auto px-4 py-4 bg-[#080808]'>
+      <header className='sticky top-0 z-50 flex justify-center items-center w-full min-h-[60px] mx-auto px-4 py-4 bg-neutral-900'>
         <Logo />
       </header>
       <main
@@ -28,7 +28,7 @@ const Layout: React.FC<Props> = props => {
         <Hero {...HeroProps} />
         <section className='relative w-full'>{children}</section>
       </main>
-      <footer className='flex flex-col justify-center items-center gap-8 lg:gap-4 w-full min-h-[75px] py-8 bg-neutral-900'>
+      <footer className='flex flex-col justify-center items-center gap-8 lg:gap-4 w-full min-h-[75px] py-8 bg-neutral-800'>
         <div className='block text-xs text-center text-neutral-300'>
           <p className='select-none'>Made from Figma. Built using Next.js and Tailwind.</p>
           <p className='select-none'>Integrated with Firebase. Deployed with Vercel.</p>
