@@ -35,7 +35,7 @@ const Hero: React.FC<Props> = props => {
         <h1 className='mb-2 text-white font-bold text-xl leading-none tracking-wider select-none'>{data?.headline}</h1>
         <h2 className='flex items-center mb-2 text-neutral-400 font-semibold text-lg select-none'>{data?.title} &nbsp;</h2>
         {user?.bio && (
-          <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-900 rounded-sm select-none'>
+          <p className='mb-4 p-3 text-sm text-neutral-400 italic font-medium bg-neutral-800 rounded-sm select-none'>
             {user?.bio}
           </p>
         )}
